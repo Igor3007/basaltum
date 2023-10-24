@@ -1,7 +1,7 @@
 .btn {
 
     padding: 0.8em 2.05em 0.85em 2.05em;
-    background: var(--main);
+    background: var(--green-dark);
     color: #fff;
     border: none;
     cursor: pointer;
@@ -19,7 +19,7 @@
     border-radius: 8px;
 
     &:hover {
-        background: var(--blue-medium, #515E93);
+        background: var(--green-light);
     }
 
     &:active,

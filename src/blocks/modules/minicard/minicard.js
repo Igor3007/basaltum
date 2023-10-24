@@ -1,4 +1,4 @@
-modules.define('main-block', ['i-bem-dom'], function(provide, bemDom) {
+modules.define('minicard', ['i-bem-dom'], function(provide, bemDom) {
 
 provide(bemDom.declBlock(this.name, {
     onSetMod: {

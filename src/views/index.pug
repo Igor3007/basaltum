@@ -7,7 +7,17 @@ block variables
 
 block main
 
-  div main page
+  include ../blocks/modules/main-block/main-block.pug
+  include ../blocks/modules/advantages/advantages.pug
+  include ../blocks/modules/slider-products/slider-products.pug
+  include ../blocks/modules/about-home/about-home.pug
+  include ../blocks/modules/home-contacts/home-contacts.pug
+
+  +main-block()
+  +advantages()
+  +slider-products()
+  +about-home()
+  +home-contacts()
        
  
 block scripts

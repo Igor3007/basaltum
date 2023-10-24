@@ -1,0 +1,13 @@
+include ../../modules/minicard/minicard.pug
+
+mixin slider-products
+    section.section-slider-products
+        .container
+            .slider-products__top
+                .slider-products__head
+                    .slider-products__title.section-title
+                    .slider-products__desc
+                .slider-products__button: a(href='#'): button.btn Смотреть весь каталог
+            .slider-products__list
+                each item in [1,1,1,1]
+                    .slider-products__item: +minicard()
