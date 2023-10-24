@@ -1,0 +1,11 @@
+mixin breadcrumb(data, modify, active)
+  .breadcrumb(class=""+(modify ? modify : '')+"")
+    ul
+      each item, index in data
+        if index === 0
+          li: a(href="/" class=(active == index ? 'active':''))!= item
+        else
+          if data.length == (index+1)
+            li: span!= item
+          else
+            li: a(href="#" class=(active == index ? 'active':''))!= item

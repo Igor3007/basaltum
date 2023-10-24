@@ -1,0 +1,277 @@
+.mobile-menu {
+
+
+
+    background: #242424;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0 !important;
+    bottom: 0;
+    top: 66px;
+    max-width: 720px;
+    flex-direction: column;
+    overflow-x: auto;
+    transform: translateX(-100%);
+    transition: 0.3s ease;
+    z-index: 10;
+    padding: 80px;
+
+    @media screen and (max-width: $w760) {
+        padding: 50px;
+    }
+
+    @media screen and (max-width: $w576) {
+        padding: 30px;
+    }
+
+    @media screen and (max-width: $w480) {
+        padding: 25px;
+    }
+
+    @media screen and (max-width: $w360) {
+        padding: 15px;
+
+    }
+
+    &.open {
+        display: flex;
+        transform: translateX(0);
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.541);
+    }
+
+    &__close {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__nav {
+
+        margin-top: rem(40);
+
+        & li {
+            & a {
+
+                font-style: normal;
+                font-weight: normal;
+                font-size: 22px;
+                line-height: 190%;
+                text-align: center;
+                color: #FFFFFF;
+                text-align: center;
+                display: block;
+                padding-bottom: 8px;
+
+                @media screen and (max-width: $w576) {
+                    font-size: 18px;
+                    line-height: 157%;
+                }
+
+                @media screen and (max-width: $w360) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    &__manager {
+        display: flex;
+        align-items: center;
+        border-right: 2px solid #fff;
+
+        @media screen and (max-width: $w576) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    }
+
+    &__consult {
+        display: flex;
+        align-items: center;
+
+        @include padd-top(50);
+
+        &>div {
+            width: 50%;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        text-align: center;
+
+        @media screen and (max-width: $w576) {
+            padding: 0 30px;
+        }
+
+        @media screen and (max-width: $w480) {
+            padding: 0 20px;
+            font-size: 13px;
+        }
+
+        @media screen and (max-width: $w360) {
+            padding: 0 10px;
+        }
+    }
+
+    &__phone {
+
+        padding-top: 30px;
+
+        & a {
+            font-weight: normal;
+            font-size: 22px;
+            line-height: 22px;
+            text-align: right;
+            display: block;
+            color: #FFFFFF;
+            text-align: center;
+        }
+    }
+
+    &__callback {
+        padding-top: 30px;
+
+        & .btn.btn-line {
+            border: 1px solid #fff;
+            color: #fff;
+            height: 40px;
+            margin: 0 auto;
+        }
+    }
+
+    &__msgr {
+        padding: 30px 15px 30px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & svg {
+            fill: #fff;
+            width: 30px;
+            height: 30px;
+        }
+
+        & a {
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
+
+
+        }
+    }
+
+}
+
+.menu-manager {
+    &__photo {
+        margin-right: 20px;
+
+        @media screen and (max-width: $w576) {
+            margin-right: 0px;
+            margin-bottom: 15px;
+        }
+
+        & .bgimage {
+            width: 80px;
+            height: 80px;
+            @include bgimage-cover;
+            border-radius: 50%;
+
+            @media screen and (max-width: $w480) {
+                width: 60px;
+                height: 60px;
+            }
+
+        }
+    }
+
+    &__name-title {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+        padding-bottom: 10px;
+
+        @media screen and (max-width: $w576) {
+            text-align: center;
+            justify-content: center;
+        }
+
+        @media screen and (max-width: $w480) {
+            font-size: 14px;
+            padding-bottom: 4px;
+        }
+    }
+
+    &__name-subtitle {
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 140%;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+
+        @media screen and (max-width: $w576) {
+            text-align: center;
+            justify-content: center;
+        }
+
+        @media screen and (max-width: $w480) {
+            font-size: 12px;
+        }
+    }
+
+    &__text {
+        max-width: 217px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.header-opacity.open .container {
+    background: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.fix-consult {
+
+    position: fixed;
+    z-index: 12;
+    bottom: 100px;
+    right: 100px;
+
+    @media screen and (max-width: $w1024) {
+        bottom: 40px;
+        right: 40px;
+    }
+
+    @media screen and (max-width: $w576) {
+        right: 20px;
+    }
+
+    &__photo {
+        margin-right: 20px;
+
+        & .bgimage {
+            width: 80px;
+            height: 80px;
+            @include bgimage-cover;
+            border-radius: 50%;
+
+            @media screen and (max-width: $w1024) {
+                width: 50px;
+                height: 50px;
+                margin-right: 0;
+            }
+
+
+        }
+    }
+}

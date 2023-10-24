@@ -1,0 +1,128 @@
+.bottom-popup {
+    position: fixed;
+    z-index: 10000000000000;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    transition: 0.3s ease;
+    display: none;
+    animation: slide-up 0.3s ease forwards;
+    text-align: left;
+    background-color: #121212;
+    transition: 0.8s ease;
+
+}
+
+.bottom-popup__wrp {
+    padding: 35px 45px;
+    max-width: 1400px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.bottom-popup__title {
+    font-size: 24px;
+    line-height: 28px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.bottom-popup__desc {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 150%;
+    color: #f5f5f5;
+}
+
+.bottom-popup__btn {
+    margin-left: auto;
+
+    & button.btn-line {
+        white-space: nowrap;
+        border-color: $main;
+        height: 50px;
+        padding: 0 47px;
+
+        &:hover {
+            background-color: $main;
+        }
+    }
+
+}
+
+.bottom-popup.open {
+    transform: translateY(0);
+    display: block;
+}
+
+.bottom-popup.open.hide-fade {
+    opacity: 0 !important;
+    animation: none;
+}
+
+.bottom-popup__main {
+    padding-right: 35px;
+}
+
+.bottom-popup__desc a {
+    color: $main;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 940px) {
+    .bottom-popup {
+        bottom: 0;
+    }
+
+    body>jdiv {
+        z-index: 1000;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 580px) {
+
+    .bottom-popup__main {
+        padding-right: 0;
+    }
+
+    .bottom-popup__wrp {
+        flex-direction: column;
+    }
+
+    .header-phones__links {
+        margin-bottom: 12px;
+    }
+
+
+    .bottom-popup__btn {
+        padding-top: 25px;
+        width: 100%;
+    }
+
+    .bottom-popup__btn .btn {
+        width: 100%;
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .bottom-popup__wrp {
+        padding: 20px 20px;
+    }
+
+    .bottom-popup__title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .bottom-popup__desc {
+        font-size: 14px;
+    }
+
+
+}

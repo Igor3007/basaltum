@@ -1,0 +1,115 @@
+ .pagination {
+     display: flex;
+     justify-content: space-between;
+     width: 100%;
+
+     @media screen and (max-width: $w480) {
+         flex-wrap: wrap;
+         flex-direction: column;
+     }
+
+     &__page {
+
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 100%;
+
+         & ul {
+             display: flex;
+             list-style-type: none;
+
+             & li {
+
+                 margin: 0 2px;
+
+                 & span,
+                 & a {
+                     width: rem(36);
+                     height: rem(36);
+                     display: flex;
+                     border-radius: 8px;
+                     align-items: center;
+                     justify-content: center;
+                     color: $black;
+                     font-weight: 500;
+
+                     @media screen and (min-width: $w992) {
+                         width: rem(48);
+                         height: rem(48);
+                     }
+
+                     & svg {
+                         fill: var(--blue);
+                         min-width: 48px;
+                         height: 48px;
+                     }
+
+                     &:hover {
+
+                         color: $accent-2-1;
+                         background-color: var(--bg-01);
+
+                         & svg {
+                             fill: $accent-2-1;
+                         }
+                     }
+                 }
+
+                 & span {
+                     & svg {
+                         fill: var(--blue);
+                     }
+                 }
+
+                 &.active a {
+                     background-color: $accent-2-1;
+                     color: #fff;
+
+                     & svg {
+                         fill: #fff;
+
+                     }
+                 }
+
+             }
+         }
+
+     }
+
+     &__more {
+
+
+         @media screen and (max-width: $w480) {
+             padding-bottom: 24px;
+
+         }
+
+         & .btn {
+
+             @media screen and (max-width: $w480) {
+                 width: 100%;
+             }
+
+             & svg {
+                 fill: var(--blue-dark);
+                 margin-left: 0.5em;
+                 margin-right: -0.5em;
+             }
+
+             &:hover {
+                 & svg {
+                     fill: var(--blue-medium);
+                 }
+             }
+         }
+     }
+
+     &--showmore {
+         & .pagination {
+             &__page {
+                 width: auto;
+             }
+         }
+     }
+ }
