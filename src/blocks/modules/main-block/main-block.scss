@@ -1,0 +1,34 @@
+.section-main-block {
+    @include section-padding;
+}
+
+.section-title {
+    font-family: Montserrat;
+    font-size: 24px;
+    padding-left: 60px;
+    position: relative;
+
+    @media screen and (min-width: $w480) {
+        font-size: 44px;
+    }
+
+    &::before {
+        width: 12px;
+        height: 72px;
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 14px;
+        background-color: var(--green-dark);
+    }
+
+    &::after {
+        width: 12px;
+        height: 72px;
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: 0;
+        background-color: var(--green-light);
+    }
+}

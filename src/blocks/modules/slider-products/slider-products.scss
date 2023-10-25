@@ -1,0 +1,74 @@
+.section-slider-products {
+    @include section-padding;
+}
+
+.slider-products {
+
+    &__top {
+
+        padding-bottom: 32px;
+
+        @media screen and (min-width: $w992) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__title {
+        padding-bottom: 16px;
+    }
+
+    &__desc {
+        color: var(--gray-64);
+        padding-left: 60px;
+        font-size: 16px;
+        padding-bottom: 32px;
+
+        @media screen and (min-width: $w760) {
+            font-size: 20px;
+        }
+    }
+
+    & .minicard {
+        width: 304px;
+    }
+
+    & .splide {
+        &__pagination {
+            position: static;
+            bottom: 0;
+
+            & li {
+                display: flex;
+                align-items: center;
+            }
+
+            &__page {
+
+                &.is-active {
+                    transform: scale(1);
+                }
+
+            }
+        }
+    }
+
+    &__nav {}
+
+    &__arrow {
+        display: flex;
+        justify-content: center;
+
+
+        &>div {
+            padding: 0 4px;
+        }
+    }
+
+    &__dots {
+        padding: 16px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

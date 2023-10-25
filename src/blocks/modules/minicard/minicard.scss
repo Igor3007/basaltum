@@ -1,0 +1,53 @@
+.minicard {
+    background-color: var(--gray-97);
+    padding: 8px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__image {
+        padding-bottom: 24px;
+
+        & picture {
+
+            background-color: #fff;
+
+            @include picture(90%, contain)
+        }
+    }
+
+    &__title {
+        padding-bottom: 8px;
+
+        color: var(--gray-20, #333);
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 160%;
+
+    }
+
+    &__desc {
+        padding-bottom: 12px;
+        color: var(--gray-36, #5B5B5B);
+        font-size: 15px;
+        line-height: 160%;
+        flex-grow: 1;
+    }
+
+    &__cost {
+        & span {
+            color: var(--green-dark, #1EBC61);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 160%
+        }
+    }
+
+    &__main {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+}

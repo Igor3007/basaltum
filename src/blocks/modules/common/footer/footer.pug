@@ -3,4 +3,32 @@ include ../../common/main-menu/main-menu.pug
 
 .footer
     .container
-        div footer
+        .footer-top
+            .footer-top__logo: +bgimage('/img/common/logщ-white.svg')
+            .footer-top__nav
+                small Меню:
+                ul
+                    each item in app.mainMenu
+                        li: a(href=item.href)= item.text
+            .footer-top__nav
+                small Информация:
+                ul
+                    li: a(href="/public-offer.html") Публичная офферта
+                    li: a(href="/privacy.html") Персональные данные
+            .footer-top__contacts
+                .footer-contact
+                    small Номер телефона:
+                    a(href='tel:+375222777700') +375 (222) 77-77-00
+                .footer-contact
+                    small Email:
+                    a(href='mailto:info@basaltum.by') info@basaltum.by
+    
+    
+    .footer-bottom
+        .container
+            .footer-bottom__wrp
+                .footer-bottom__copyright © ООО «Газосиликат Могилев», 2014-2023
+                .footer-bottom__dev
+                    a(href='https://promicom.ru' alt="Разработка сайта Promicom")
+                        span Создание и поддержка сайта:
+                        img(src="/img/common/logo-developer.svg" alt="Разработка сайта Promicom")

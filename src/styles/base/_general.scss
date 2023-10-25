@@ -50,10 +50,11 @@ html {
     --red: #DF1F26;
     --orange: #EB7D00;
     --green-dark: #1EBC61;
-    --green-light: #1EBC61;
+    --green-light: #A5E427;
 
     --gradient-green-inverted: linear-gradient(270deg, #1EBC61 0%, #A5E427 100%);
     --gradient-green: linear-gradient(270deg, #A5E427 0%, #1EBC61 100%);
+    --gradient-gray: linear-gradient(270deg, rgba(91, 91, 91, 0.99) 0%, #333 100%)
 }
 
 html,
@@ -312,7 +313,6 @@ input[type="date"] {
             background-color: #EFEFEF;
             color: #000;
             text-decoration: transparent;
-            font-size: 14px;
             font-weight: normal;
             text-align: left;
             text-align: center;
@@ -334,7 +334,6 @@ input[type="date"] {
         & td {
             padding: 20px 25px;
             border: 1px solid #CACACA;
-            font-size: 14px;
             font-weight: normal;
             text-align: center;
             min-width: 150px;
@@ -432,7 +431,6 @@ input[type="date"] {
             margin-bottom: 10px;
             color: #000;
             padding-left: 20px;
-            font-size: 14px;
 
             @media screen and (min-width: $w760) {
 
@@ -467,7 +465,6 @@ input[type="date"] {
 
         & strong {
             color: $main;
-            font-size: 20px;
             font-weight: 600;
 
             display: block;

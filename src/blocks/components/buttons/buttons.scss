@@ -13,13 +13,13 @@
     white-space: nowrap;
     transition: .3s cubic-bezier(.1, .82, .25, 1);
     font-style: normal;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 16px;
     text-align: center;
     border-radius: 8px;
 
     &:hover {
-        background: var(--green-light);
+        background: var(--gray-36);
     }
 
     &:active,
@@ -42,62 +42,7 @@
         margin-right: 1em;
     }
 
-    &.btn-special {
-        background-color: transparent;
-        border-radius: 0;
-        min-width: 260px;
-        background-repeat: no-repeat;
-        background-position: right center;
-        text-align: right;
-        justify-content: flex-end;
-        position: relative;
-        transition: 0.3s ease;
 
-
-        & span {
-            position: relative;
-            z-index: 2;
-            transition: 0.3s ease;
-        }
-
-        &::before {
-            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9IjQ4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0wIDBoNjEuNDJsLTIxLjggNDhIMFYwem01MC41MiA0OGwyMS44LTQ4aDIxLjhsLTIxLjggNDhoLTIxLjh6bTMyLjcgMGgxNTguMzE1YTQgNCAwIDAwMy4zMDYtMS43NDhsMTMuNjI1LTIwYTQuMDAyIDQuMDAyIDAgMDAwLTQuNTA0bC0xMy42MjUtMjBBNCA0IDAgMDAyNDEuNTM1IDBIMTA1LjAybC0yMS44IDQ4eiIgZmlsbD0iIzI1MzY3OCIvPjwvc3ZnPg==);
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            transition: 0.5s ease;
-        }
-
-        &:hover {
-
-            & span {
-                color: var(--main);
-            }
-
-            &::before {
-                filter: brightness(10) grayscale(1);
-            }
-        }
-    }
-
-    &.btn-gray {
-        background-color: #ECF0F5;
-        color: #253678;
-
-        &:hover {
-            background-color: #F1F5FA;
-            color: #515E93;
-        }
-
-        &:disabled {
-            background-color: #ECF0F5;
-            color: #A8AFC9;
-        }
-    }
 
     &.btn-white {
         background-color: #fff;
@@ -106,7 +51,7 @@
 
 
         &:hover {
-            color: var(--blue-medium, #515E93);
+            color: #F2F2F2;
         }
 
         &:disabled {
@@ -133,10 +78,6 @@
 
     &.btn-full {
         width: 100%;
-    }
-
-    &.btn-radius {
-        border-radius: 60px;
     }
 
     &.btn-small {
@@ -195,27 +136,6 @@
         }
     }
 
-    &.btn--add {
-        &::before {
-            content: '';
-            width: 14px;
-            height: 14px;
-            display: inline-block;
-            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03IDBhMSAxIDAgMDExIDF2NWg1YTEgMSAwIDExMCAySDh2NWExIDEgMCAxMS0yIDBWOEgxYTEgMSAwIDAxMC0yaDVWMWExIDEgMCAwMTEtMXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            margin-right: 10px;
-            margin-left: -5px;
-            transition: 0.5s ease;
-        }
-
-        &:hover {
-            &::before {
-                transform: rotate(360deg);
-            }
-        }
-    }
 
 
 }

@@ -217,7 +217,101 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     initMaska();
 
+    /* ====================================================
+     map footer
+     ====================================================*/
 
+    function initMapFooter() {
+        window.loadApiYmaps((ymaps) => {
+
+            //map footer
+            if (document.querySelector('#map-container')) {
+
+                const placemark = document.querySelector('#map-container').dataset.coordinates.split(',')
+                const center = document.querySelector('#map-container').dataset.center.split(',')
+                ymaps.ready(function () {
+                    const myMap = new ymaps.Map('map-container', {
+                        center: window.innerWidth > 992 ? center : placemark,
+                        zoom: 14,
+                        controls: []
+                    }, {
+                        searchControlProvider: 'yandex#search',
+                        suppressMapOpenBlock: true
+                    });
+                    const myPlacemark = new ymaps.Placemark(placemark, {
+                        hintContent: 'Базальтум',
+                    }, {
+                        iconLayout: 'default#image',
+                        iconImageHref: '/img/svg/ic_pin.svg',
+                        iconImageSize: [60, 68],
+                        iconImageOffset: [-30, -68]
+                    });
+                    myMap.geoObjects.add(myPlacemark)
+                })
+            }
+
+
+        })
+
+        window.removeEventListener('scroll', initMapFooter)
+    }
+
+    window.addEventListener('scroll', initMapFooter)
+
+    /* ================================
+    slider
+    ================================*/
+
+
+
+    if (document.querySelector('[data-slider="product"]')) {
+        var splide = new Splide('[data-slider="product"]', {
+
+            arrows: false,
+            pagination: true,
+            gap: 30,
+            autoWidth: true,
+            start: 0,
+            perPage: 4,
+
+            breakpoints: {
+                760: {
+                    perPage: 1,
+                    gap: 15,
+                },
+            },
+
+        });
+
+        splide.mount();
+
+        const prevButton = document.querySelector('[data-slider-prev="product"]')
+        const nextButton = document.querySelector('[data-slider-next="product"]')
+
+        prevButton.addEventListener('click', e => {
+            splide.go('<')
+        })
+
+        nextButton.addEventListener('click', e => {
+            splide.go('>')
+        })
+
+        splide.on('move', (newIndex, prevIndex, destIndex) => {
+
+            nextButton.removeAttribute('disabled')
+            prevButton.removeAttribute('disabled')
+
+            if (destIndex == 0) {
+                prevButton.setAttribute('disabled', 'disabled')
+            }
+
+            if (splide.length == (destIndex + splide.options.perPage)) {
+                nextButton.setAttribute('disabled', 'disabled')
+            }
+
+
+        })
+    }
 
 
 }); //domContentLoaded
