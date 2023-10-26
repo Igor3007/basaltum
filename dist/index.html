@@ -59,23 +59,33 @@
     <header> 
       <div class="container">
         <div class="header">
+          <div class="header__mobile">
+            <div class="header-mobile">
+              <div class="header-mobile__logo"><a href="/"><span class="bgimage" style="background-image: url(/img/common/logo-b.svg)"></span></a></div>
+              <div class="header-mobile__button">
+                <div class="btn-burger"><i></i><i></i><i></i></div>
+                <div class="btn-name">Меню</div>
+              </div>
+            </div>
+          </div>
           <div class="header__logo"><a href="/"><span class="bgimage" style="background-image: url(/img/common/logo.svg)"></span></a></div>
           <div class="header__nav">
             <nav>
               <ul>
-                <li class="nav-catalog"><a href="#catalog"><span class="ic_24" style="background-image: url('/img/svg/ic_catalog.svg')"> </span>Каталог</a></li>
-                <li><a href="#about">О компании</a></li>
-                <li><a href="#contacts">Контакты</a></li>
+                <li class="nav-catalog"><a href="/products.html"><span class="ic_24" style="background-image: url('/img/svg/ic_catalog.svg')"> </span>Продукция</a></li>
+                <li><a href="prices.html">Прайс</a></li>
+                <li><a href="vacancy.html">Вакансии</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
               </ul>
             </nav>
           </div>
           <div class="header__contacts">
-            <div class="header-contact">
+            <div class="header-contact header-contact--phone">
               <div class="header-contact__title">Номер телефона:</div>
               <div class="header-contact__link"><a href="tel:+375222777700">+375 (222) 77-77-00</a></div>
-              <div class="header-contact__more"><a href="#callback">Обратный звонок</a></div>
+              <div class="header-contact__more"><a href="#callback" data-modal="/parts/_popup-callback.html">Обратный звонок</a></div>
             </div>
-            <div class="header-contact">
+            <div class="header-contact header-contact--email">
               <div class="header-contact__title">Email:</div>
               <div class="header-contact__link"><a href="mailto:info@basaltum.by">info@basaltum.by</a></div>
             </div>
@@ -96,7 +106,7 @@
                   <div class="main-block__desc">
                     <div class="main-block__text">
                       <p>Гидрофобизированные жесткие плиты для тепло- и звукоизоляции на основе каменного (базальтового) волокна. </p>
-                      <p>Производятся по уникальной технологии из высококачественного минерального сырья.</p><a href="#">
+                      <p>Производятся по уникальной технологии из высококачественного минерального сырья.</p><a href="/products.html">
                         <button class="btn">Перейти в каталог</button></a>
                     </div>
                     <div class="main-block__image">
@@ -168,55 +178,13 @@
                       <div class="slider-products__title section-title">Наша продукция</div>
                       <div class="slider-products__desc">Утеплители для фасадов под любые форматы</div>
                     </div>
-                    <div class="slider-products__button"><a href="#">
+                    <div class="slider-products__button"><a href="/products.html">
                         <button class="btn">Смотреть весь каталог</button></a></div>
                   </div>
                   <div class="slider-products__list">
                     <div class="splide" data-slider="product">
                       <div class="splide__track">
                         <div class="splide__list">
-                          <div class="splide__slide">
-                                  <div class="minicard">
-                                    <div class="minicard__image">
-                                      <picture>
-                                        <source srcset="/img/common/product/1.webp" type="image/webp"/><img src="/img/common/product/1.png" loading="lazy" alt="image"/>
-                                      </picture>
-                                    </div>
-                                    <div class="minicard__main">
-                                      <div class="minicard__title">Базальтум Фасад Оптима</div>
-                                      <div class="minicard__desc">Материал Базальтум Фасад Оптима для тепло- и звукоизоляции в виде плит различной толщины. Сделаны из каменной ваты на основе каменного (базальтового) волокна добавлением синтетического связующего.</div>
-                                      <div class="minicard__cost"><span>100 руб/рулон</span></div>
-                                    </div>
-                                  </div>
-                          </div>
-                          <div class="splide__slide">
-                                  <div class="minicard">
-                                    <div class="minicard__image">
-                                      <picture>
-                                        <source srcset="/img/common/product/1.webp" type="image/webp"/><img src="/img/common/product/1.png" loading="lazy" alt="image"/>
-                                      </picture>
-                                    </div>
-                                    <div class="minicard__main">
-                                      <div class="minicard__title">Базальтум Фасад Оптима</div>
-                                      <div class="minicard__desc">Материал Базальтум Фасад Оптима для тепло- и звукоизоляции в виде плит различной толщины. Сделаны из каменной ваты на основе каменного (базальтового) волокна добавлением синтетического связующего.</div>
-                                      <div class="minicard__cost"><span>100 руб/рулон</span></div>
-                                    </div>
-                                  </div>
-                          </div>
-                          <div class="splide__slide">
-                                  <div class="minicard">
-                                    <div class="minicard__image">
-                                      <picture>
-                                        <source srcset="/img/common/product/1.webp" type="image/webp"/><img src="/img/common/product/1.png" loading="lazy" alt="image"/>
-                                      </picture>
-                                    </div>
-                                    <div class="minicard__main">
-                                      <div class="minicard__title">Базальтум Фасад Оптима</div>
-                                      <div class="minicard__desc">Материал Базальтум Фасад Оптима для тепло- и звукоизоляции в виде плит различной толщины. Сделаны из каменной ваты на основе каменного (базальтового) волокна добавлением синтетического связующего.</div>
-                                      <div class="minicard__cost"><span>100 руб/рулон</span></div>
-                                    </div>
-                                  </div>
-                          </div>
                           <div class="splide__slide">
                                   <div class="minicard">
                                     <div class="minicard__image">
@@ -352,7 +320,7 @@
                         <div class="contact-info__contact">212013, Республика Беларусь, Могилёвская область, Могилёвский район, Вейнянский с/c, д. Затишье</div>
                       </div>
                       <div class="contact-info__white">
-                        <button class="btn">Напишите нам</button>
+                        <button class="btn" data-modal="/parts/_popup-callback.html">Напишите нам</button>
                       </div>
                     </div>
                   </div>
@@ -364,13 +332,14 @@
       <div class="footer">
         <div class="container">
           <div class="footer-top">
-            <div class="footer-top__logo"><span class="bgimage lazyload" data-bg="/img/common/logщ-white.svg"></span>
+            <div class="footer-top__logo"><span class="bgimage lazyload" data-bg="/img/common/logo-white.svg"></span>
             </div>
             <div class="footer-top__nav"><small>Меню:</small>
               <ul>
-                <li><a href="#catalog">Каталог</a></li>
-                <li><a href="#about">О компании</a></li>
-                <li><a href="#contacts">Контакты</a></li>
+                <li><a href="/products.html">Продукция</a></li>
+                <li><a href="prices.html">Прайс</a></li>
+                <li><a href="vacancy.html">Вакансии</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
               </ul>
             </div>
             <div class="footer-top__nav"><small>Информация:</small>
@@ -394,6 +363,37 @@
           </div>
         </div>
       </div>
+            <div class="main-menu" data-menu="container">
+              <div class="main-menu__wrp">
+                <div class="main-menu__nav">
+                  <nav>
+                    <ul>
+                      <li><a href="/">Главная</a>
+                      </li>
+                      <li><a href="/products.html">Продукция</a>
+                      </li>
+                      <li><a href="prices.html">Прайс</a>
+                      </li>
+                      <li><a href="vacancy.html">Вакансии</a>
+                      </li>
+                      <li><a href="contacts.html">Контакты</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="main-menu__contact">
+                  <div class="header-contact"> 
+                    <div class="header-contact__title">Номер телефона:</div>
+                    <div class="header-contact__link"><a href="tel:+375222777700">+375 (222) 77-77-00</a></div>
+                    <div class="header-contact__more"><a href="#callback">Обратный звонок</a></div>
+                  </div>
+                  <div class="header-contact"> 
+                    <div class="header-contact__title">Email:</div>
+                    <div class="header-contact__link"><a class="color--green" href="mailto:info@basaltum.by">info@basaltum.by </a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
     </footer>
     <script src="/js/vendor.js"> </script>
     <script src="/js/common.js"> </script>

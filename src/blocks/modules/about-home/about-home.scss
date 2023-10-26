@@ -1,5 +1,10 @@
 .section-about-home {
-    @include section-padding;
+    padding: 45px 0;
+
+    @media screen and (min-width: $w576) {
+        padding: 90px 0;
+    }
+
     overflow: hidden;
 
 }
@@ -35,12 +40,13 @@
 
     &__desc {
         color: var(--gray-64);
-        padding-left: 60px;
+        padding-left: 36px;
         font-size: 16px;
         padding-bottom: 32px;
 
         @media screen and (min-width: $w760) {
             font-size: 20px;
+            padding-left: 60px;
         }
     }
 
@@ -55,9 +61,16 @@
         border-bottom-left-radius: 20px;
         flex-direction: column;
 
+        @media screen and (min-width: $w1200) {
+            font-size: 20px;
+            margin-top: 10px;
+            margin-right: -60px;
+        }
+
         @media screen and (min-width: 700px) {
             margin-left: -40%;
             border-bottom-left-radius: 0;
+
         }
 
         @media screen and (min-width: $w576) {
@@ -71,9 +84,15 @@
             padding: 12px 0;
             padding-top: 0;
 
+            @media screen and (min-width: $w1200) {
+                max-width: 500px;
+            }
+
             @media screen and (min-width: $w576) {
                 padding-right: 18px;
                 text-align: right;
+
+                padding-bottom: 0;
             }
 
         }
@@ -83,5 +102,20 @@
 
     &__text {
         padding-bottom: 24px;
+        line-height: 160%;
+
+
+        @media screen and (min-width: $w1440) {
+            padding-top: 36px;
+
+            & strong {
+                font-size: 20px;
+                line-height: 160%;
+            }
+
+            & p {
+                margin: 1.6em 0;
+            }
+        }
     }
 }

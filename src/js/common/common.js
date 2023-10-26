@@ -259,6 +259,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener('scroll', initMapFooter)
 
     /* ================================
+    mobile-menu
+    ================================*/
+
+    if (document.querySelector('.header-mobile__button')) {
+        document.querySelector('.header-mobile__button').addEventListener('click', e => {
+            document.body.classList.toggle('open-mobile-menu')
+            document.querySelector('.btn-burger').classList.toggle('open')
+            document.querySelector('[data-menu="container"]').classList.toggle('open')
+        })
+    }
+
+    /* ================================
     slider
     ================================*/
 
@@ -283,7 +295,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         });
 
-        splide.mount();
+
 
         const prevButton = document.querySelector('[data-slider-prev="product"]')
         const nextButton = document.querySelector('[data-slider-next="product"]')
@@ -310,6 +322,82 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
 
+        })
+
+        splide.on('mounted', (e) => {
+
+            if (splide.length == (splide.options.perPage)) {
+                nextButton.setAttribute('aria-hidden', '')
+                prevButton.setAttribute('aria-hidden', '')
+            }
+        })
+
+        splide.mount();
+    }
+
+    /* =================================================
+     popups
+     =================================================*/
+
+    function popupSuccess() {
+        window.ajax({
+            type: 'GET',
+            url: '/parts/_popup-thanks.html'
+        }, (status, response) => {
+
+            const instansePopup = new afLightbox({
+                mobileInBottom: true
+            })
+
+            instansePopup.open(response, false)
+        })
+    }
+
+    if (document.querySelector('[data-modal]')) {
+        const items = document.querySelectorAll('[data-modal]')
+
+        items.forEach(item => {
+            item.addEventListener('click', e => {
+
+                window.ajax({
+                    type: 'GET',
+                    url: item.dataset.modal
+                }, (status, response) => {
+
+                    const instansePopup = new afLightbox({
+                        mobileInBottom: true
+                    })
+
+                    instansePopup.open(response, (instanse) => {
+                        initMaska()
+
+                        if (instanse.querySelector('form')) {
+                            const form = instanse.querySelector('form')
+
+                            form.addEventListener('submit', e => {
+
+                                e.preventDefault()
+
+                                const formData = new FormData(e.target)
+
+                                window.ajax({
+                                    type: 'GET',
+                                    url: item.dataset.modal
+                                }, (status, response) => {
+
+                                    if (status == 200) {
+                                        popupSuccess();
+                                        instansePopup.close()
+                                    }
+
+
+                                })
+                            })
+                        }
+                    })
+                })
+
+            })
         })
     }
 

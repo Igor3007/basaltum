@@ -9,14 +9,18 @@
     align-items: center;
     justify-content: center;
     min-width: 130px;
-    height: 48px;
+    height: 52px;
     white-space: nowrap;
     transition: .3s cubic-bezier(.1, .82, .25, 1);
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
     border-radius: 8px;
+
+    @media screen and (min-width: $w1200) {
+        height: 60px;
+    }
 
     &:hover {
         background: var(--gray-36);

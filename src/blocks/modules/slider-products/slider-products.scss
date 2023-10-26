@@ -1,5 +1,11 @@
 .section-slider-products {
-    @include section-padding;
+
+    padding: 45px 0;
+
+    @media screen and (min-width: $w576) {
+        padding: 45px 0;
+    }
+
 }
 
 .slider-products {
@@ -11,6 +17,28 @@
         @media screen and (min-width: $w992) {
             display: flex;
             justify-content: space-between;
+            align-items: center
+        }
+    }
+
+    &__button {
+
+
+
+        @media screen and (min-width: $w760) and (max-width: $w992) {
+            padding-top: 24px;
+        }
+
+        & .btn {
+            height: 60px;
+            width: 100%;
+            max-width: 360px;
+
+            @media screen and (min-width: $w480) {
+                width: auto;
+            }
+
+
         }
     }
 
@@ -18,14 +46,17 @@
         padding-bottom: 16px;
     }
 
+
+
     &__desc {
         color: var(--gray-64);
-        padding-left: 60px;
+        padding-left: 36px;
         font-size: 16px;
-        padding-bottom: 32px;
+        padding-bottom: 20px;
 
         @media screen and (min-width: $w760) {
             font-size: 20px;
+            padding-left: 60px;
         }
     }
 
@@ -39,8 +70,7 @@
             bottom: 0;
 
             & li {
-                display: flex;
-                align-items: center;
+                margin-top: -6px;
             }
 
             &__page {
@@ -53,16 +83,45 @@
         }
     }
 
-    &__nav {}
+    &__nav {
+        @media screen and (min-width: $w992) {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 24px;
+        }
+    }
 
     &__arrow {
         display: flex;
         justify-content: center;
 
+        & div[aria-hidden] {
+            display: none;
+        }
+
+        & div[disabled] {
+            opacity: 0.5 !important;
+            cursor: default;
+            pointer-events: none;
+            touch-action: none;
+        }
+
 
         &>div {
             padding: 0 4px;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
         }
+
+        & svg {
+            width: 40px;
+            height: 40px;
+        }
+
+
     }
 
     &__dots {
@@ -70,5 +129,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    &__list {
+
+        margin-right: -16px;
+
+        @media screen and (min-width: $w480) {
+            margin-right: 0;
+        }
     }
 }

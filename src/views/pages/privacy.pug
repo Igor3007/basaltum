@@ -1,0 +1,35 @@
+extends ../layouts/main
+ 
+block variables
+  include ../../data/data.pug
+  - const title = "БАЗАЛЬТУМ - Персональные данные"
+ 
+
+block main
+
+  include ../../blocks/components/breadcrumb/breadcrumb.pug
+ 
+
+  .container
+    .page
+      .page__breadcrumb
+        +breadcrumb([
+          'Главная',
+          'Персональные данные',
+        ])
+
+      .page__title
+        h1 Обработка персональных данных
+        
+
+      .page__content
+        .formated-text  
+          p Персональные данные
+         
+
+   
+       
+ 
+block scripts
+  script(src="/js/vendor.js") 
+  script(src="/js/common.js") 

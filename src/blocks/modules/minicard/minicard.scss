@@ -4,6 +4,9 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    border-radius: 8px;
+
+    transition: 0.3s ease;
 
     &__image {
         padding-bottom: 24px;
@@ -49,5 +52,20 @@
         display: flex;
         flex-direction: column;
         flex-grow: 1;
+    }
+
+    &:hover {
+
+        background-color: var(--gray-20);
+
+        & .minicard {
+            &__title {
+                color: #fff;
+            }
+
+            &__desc {
+                color: #fff;
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 @keyframes slide-X {
     from {
-        transform: translateX(100%);
+        transform: translateX(-100%);
     }
 
     to {
@@ -12,17 +12,17 @@
 .main-menu {
     position: fixed;
     z-index: 10;
-    background: var(--main);
-    top: 74px;
-    left: auto;
-    right: 0;
+    background: var(--gray-97);
+    top: 68px;
+    right: auto;
+    left: 0;
     bottom: 0;
     color: #242424;
     display: none;
     overflow-y: scroll;
     overflow-x: hidden;
     padding: rem(80) rem(25);
-    animation: slide-X 0.3s ease forwards;
+    animation: slide-Y 0.3s ease forwards;
     width: 100%;
     max-width: 576px;
 
@@ -37,6 +37,7 @@
 
     @media screen and (min-width: $w576) {
         max-width: 400px;
+        animation: slide-X 0.3s ease forwards;
     }
 
     // &::before {
@@ -101,6 +102,7 @@
     &__nav {
 
         flex-grow: 1;
+        padding-top: 52px;
 
 
         & nav {
@@ -123,7 +125,6 @@
 
                         &>a {
                             color: $accent-1-2;
-
                         }
                     }
 
@@ -261,13 +262,13 @@
                         display: flex;
                         height: 36px;
                         align-items: center;
-                        color: #fff;
+                        color: var(--gray-36);
                         //max-width: calc(100% - 36px);
                         position: relative;
                         text-align: center;
                         justify-content: center;
-                        font-size: 18px;
-                        font-weight: 500;
+                        font-size: 20px;
+                        font-weight: bold;
 
                         &::after {
                             position: absolute !important;
@@ -279,6 +280,10 @@
                             width: 40px;
                             height: 40px;
                             margin-right: 10px;
+                        }
+
+                        &:hover {
+                            color: var(--green-dark);
                         }
 
 
@@ -301,27 +306,24 @@
     &__contact {
 
         padding: 20px 0;
+        padding-bottom: 50px;
 
-        & .btn {
-            margin: 0 auto;
-            width: 100%;
-            max-width: 280px;
-        }
+        & .header-contact {
+            font-size: 16px;
+            text-align: center;
+            padding-top: 30px;
 
-        &::before {
-            content: '';
+            &__title {
+                text-align: center;
+            }
 
-            height: 1px;
-            background-color: rgba(255, 255, 255, 0.226);
-            display: block;
-            margin-left: -24px;
-            margin-right: -24px;
-            margin-bottom: 25px;
+            &__link {
+                font-size: 20px;
 
-        }
-
-        & .item-contact {
-            margin-bottom: 20px;
+                & .color--green {
+                    color: var(--green-dark);
+                }
+            }
         }
 
     }
@@ -341,4 +343,27 @@
 
 
 
+}
+
+body.open-mobile-menu {
+
+    overflow-y: hidden !important;
+
+    & header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 12;
+        background-color: #fff;
+        right: 0;
+        width: 100%;
+    }
+
+    & main {
+        margin-top: 68px;
+
+        @media screen and (min-width: $w576) {
+            margin-top: 84px;
+        }
+    }
 }

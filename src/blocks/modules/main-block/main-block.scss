@@ -1,34 +1,261 @@
 .section-main-block {
-    @include section-padding;
+    @media screen and (min-width: $w576) {
+        padding: 62px 0 47px 0;
+    }
+
+    overflow: hidden;
 }
 
 .section-title {
     font-family: Montserrat;
     font-size: 24px;
-    padding-left: 60px;
+    padding-left: 36px;
     position: relative;
 
-    @media screen and (min-width: $w480) {
+    @media screen and (min-width: $w1440) {
         font-size: 44px;
     }
 
+    @media screen and (min-width: $w992) {
+        font-size: 34px;
+    }
+
+    @media screen and (min-width: $w360) {
+        font-size: 28px;
+    }
+
+    @media screen and (min-width: $w760) {
+        padding-left: 60px;
+    }
+
+
+
     &::before {
-        width: 12px;
-        height: 72px;
+        width: 6px;
+        height: 48px;
         content: '';
         position: absolute;
         left: 0;
         top: 14px;
         background-color: var(--green-dark);
+
+        @media screen and (min-width: $w760) {
+            width: 12px;
+            height: 72px;
+            left: 0;
+            top: 18px;
+        }
     }
 
     &::after {
-        width: 12px;
-        height: 72px;
+        width: 6px;
+        height: 48px;
         content: '';
         position: absolute;
-        left: 15px;
+        left: 10px;
         top: 0;
         background-color: var(--green-light);
+
+        @media screen and (min-width: $w760) {
+            width: 12px;
+            height: 72px;
+            left: 20px;
+            top: 0;
+        }
+    }
+}
+
+.main-block {
+    &__h1 {
+
+        text-align: right;
+
+        @media screen and (min-width: $w576) {
+            display: table;
+        }
+
+        & h1 {
+
+            color: var(--gray-20, #333);
+            font-family: Montserrat;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 125%;
+            margin: 0;
+
+
+            @media screen and (min-width: $w1200) {
+                font-size: 80px;
+                line-height: 115%;
+
+                & .title-h1 {
+
+                    position: relative;
+                    padding-left: 60px;
+
+                    &::before {
+                        width: 6px;
+                        height: 48px;
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 14px;
+                        background-color: var(--green-dark);
+
+                        @media screen and (min-width: $w760) {
+                            width: 12px;
+                            height: 72px;
+                            left: 0;
+                            top: 0;
+                        }
+                    }
+
+                    &::after {
+                        width: 6px;
+                        height: 48px;
+                        content: '';
+                        position: absolute;
+                        left: 10px;
+                        top: 0;
+                        background-color: var(--green-light);
+
+                        @media screen and (min-width: $w760) {
+                            width: 12px;
+                            height: 72px;
+                            left: 15px;
+                            top: 14px;
+                        }
+                    }
+                }
+
+
+            }
+
+            @media screen and (min-width: $w992) {
+                font-size: 65px;
+                line-height: 115%;
+            }
+
+            & span {
+                color: var(--gray-36, #5B5B5B);
+                font-size: 24px;
+                font-weight: bold;
+                line-height: 150%;
+                font-family: gilroy;
+
+                @media screen and (min-width: $w1440) {
+                    font-size: 36px;
+                    text-align: right;
+                    font-family: montserrat;
+                }
+            }
+        }
+    }
+
+    &__subtitle {
+        color: var(--green-dark, #1EBC61);
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 150%;
+        padding-bottom: 24px;
+
+        @media screen and (min-width: $w1200) {
+            font-size: 24px;
+            padding-bottom: 53px;
+        }
+
+        @media screen and (min-width: $w992) {
+            font-size: 22px;
+        }
+    }
+
+    &__desc {
+        border-radius: 0px 0px 0px 40px;
+        background: var(--gradient-gray, linear-gradient(270deg, rgba(91, 91, 91, 0.99) 0%, #333 100%));
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 24px;
+        line-height: 150%;
+        margin-right: -16px;
+
+
+        @media screen and (min-width: $w992) {
+            padding: 50px 64px 60px 64px;
+        }
+
+        @media screen and (min-width: $w760) {
+            display: flex;
+        }
+
+        @media screen and (min-width: $w1440) {
+            background-color: transparent;
+            position: relative;
+            margin-left: 110px;
+            font-size: 20px;
+
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: -30%;
+                bottom: 0;
+                border-radius: 0px 0px 0px 40px;
+                background: var(--gradient-gray, linear-gradient(270deg, rgba(91, 91, 91, 0.99) 0%, #333 100%));
+                z-index: 1;
+            }
+
+            &>div {
+                position: relative;
+                z-index: 2;
+            }
+        }
+
+        @media screen and (min-width: $w992) {
+            font-size: 18px;
+        }
+    }
+
+    &__text {
+
+        @media screen and (min-width: $w760) {
+            max-width: 460px;
+        }
+
+        @media screen and (min-width: $w1440) {
+            margin-right: 30px;
+        }
+
+
+        & p {
+            &:first-child {
+                margin-top: 0;
+            }
+
+            @media screen and (min-width: $w1440) {
+                margin: 1.8em 0;
+            }
+        }
+
+        & button {
+            width: 100%;
+
+            @media screen and (min-width: $w576) {
+                width: auto;
+            }
+        }
+    }
+
+    &__image {
+        max-width: 360px;
+        margin-left: auto;
+
+        @media screen and (min-width: $w760) {
+            max-width: 640px;
+            margin-top: -20%;
+        }
     }
 }

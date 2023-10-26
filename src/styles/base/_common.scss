@@ -191,3 +191,39 @@ a[data-tooltip]:hover::before {
 #status_btn {
     opacity: 1;
 }
+
+.page {
+
+    padding: 32px 0;
+
+    &__breadcrumb {
+        padding-bottom: 12px;
+    }
+
+    &__title {
+
+        padding-bottom: 12px;
+
+        & h1 {
+            margin: 0;
+        }
+
+        & .section-title {
+            padding-bottom: 12px;
+        }
+
+        & .section-desc {
+            color: var(--gray-64);
+            padding-left: 36px;
+            font-size: 16px;
+            padding-bottom: 20px;
+
+            @media screen and (min-width: $w760) {
+                font-size: 20px;
+                padding-left: 60px;
+            }
+        }
+    }
+
+
+}

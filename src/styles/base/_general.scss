@@ -103,7 +103,7 @@ body {
 }
 
 .color--green {
-    color: var(--green);
+    color: var(--green-dark);
 }
 
 .color--red {
@@ -181,6 +181,8 @@ main {
     background-repeat: no-repeat;
     background-position: -2vw 15%;
     background-size: 100% auto;
+
+    min-height: 70vh;
 }
 
 .page-store {
@@ -585,10 +587,10 @@ input[type="date"] {
 
 
 @mixin section-padding {
-    padding: 55px 0;
+    padding: 45px 0;
 
     @media screen and (min-width: $w576) {
-        padding: 70px 0;
+        padding: 60px 0;
     }
 }
 
@@ -669,6 +671,11 @@ input[type="date"] {
     font-size: 24px;
     font-weight: 700;
     line-height: 133%;
+    font-family: montserrat;
+
+    @media screen and (min-width: $w576) {
+        font-size: 28px;
+    }
 
 
 }

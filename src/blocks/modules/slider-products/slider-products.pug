@@ -8,12 +8,12 @@ mixin slider-products
                     .slider-products__head
                         .slider-products__title.section-title Наша продукция
                         .slider-products__desc Утеплители для фасадов под любые форматы
-                    .slider-products__button: a(href='#'): button.btn Смотреть весь каталог
+                    .slider-products__button: a(href='/products.html'): button.btn Смотреть весь каталог
                 .slider-products__list
                     .splide(data-slider="product")
                         .splide__track
                             .splide__list
-                                each item in [1,1,1,1,1,1,1]
+                                each item in [1,1,1,1]
                                     .splide__slide: +minicard()
                         .slider-products__nav
                             .slider-products__dots: ul.splide__pagination

@@ -1,0 +1,33 @@
+extends ../layouts/main
+ 
+block variables
+  include ../../data/data.pug
+  - const title = "БАЗАЛЬТУМ - Прайс"
+ 
+
+block main
+
+  include ../../blocks/components/breadcrumb/breadcrumb.pug
+
+  .container
+    .page
+      .page__breadcrumb
+        +breadcrumb([
+          'Главная',
+          'Прайс',
+        ])
+
+      .page__title
+        h1.section-title Прайс-листы продукции
+        div.section-desc Утеплители для фасадов под любые форматы
+
+      .page__content
+        .formated-text
+          strong  Прайс
+
+   
+       
+ 
+block scripts
+  script(src="/js/vendor.js") 
+  script(src="/js/common.js") 

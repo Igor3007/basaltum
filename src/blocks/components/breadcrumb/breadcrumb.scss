@@ -33,18 +33,29 @@
 
     & li {
 
+        & a,
+        & span {
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-flex;
+        }
+
         & a {
-            color: var(--text-02);
+            color: #fff;
             font-size: 13px;
+            background-color: var(--green);
 
             &:hover {
-                color: $accent-2-1;
+                background-color: var(--green-light);
             }
         }
 
         & span {
             font-size: 13px;
+            background: #EBEBEB;
         }
+
+
 
         &::after {
             content: '-';
