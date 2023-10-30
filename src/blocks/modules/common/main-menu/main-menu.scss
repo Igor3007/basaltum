@@ -103,6 +103,7 @@
 
         flex-grow: 1;
         padding-top: 52px;
+        padding-bottom: 20px;
 
 
         & nav {
@@ -307,6 +308,8 @@
 
         padding: 20px 0;
         padding-bottom: 50px;
+        border-top: 1px solid var(--gray-88);
+        padding-top: 0;
 
         & .header-contact {
             font-size: 16px;

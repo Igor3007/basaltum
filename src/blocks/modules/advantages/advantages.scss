@@ -32,9 +32,13 @@
     }
 
     &__item {
-        padding: 24px 16px;
+        padding: 16px 16px;
         flex-grow: 1;
         flex-basis: 340px;
+
+        @media screen and (min-width: $w576) {
+            padding: 24px 16px;
+        }
     }
 }
 
@@ -42,6 +46,8 @@
 
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 3;
 
     @media screen and (min-width: $w576) {
         display: block;
@@ -50,7 +56,8 @@
 
     &__icon {
 
-
+        transition: transform 0.2s ease;
+        transform: translateY(1px);
 
         @media screen and (min-width: $w576) {
             padding-bottom: 28px;
@@ -58,14 +65,51 @@
 
         & .bgimage {
             width: 56px;
-            height: 56px;
-            @include bgimage-contain;
+            height: 55px;
             margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-size: 100% auto;
+            background-position: top center;
+            position: relative;
+            z-index: 1;
+
+
 
             @media screen and (min-width: $w576) {
                 width: 80px;
-                height: 80px;
+                height: 79px;
             }
+
+            & svg {
+                fill: #333;
+                margin-top: 7px;
+                position: relative;
+                z-index: 1;
+                width: 36px;
+                height: 36px;
+
+                @media screen and (min-width: $w576) {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+        }
+
+        &:hover {
+            transform: translateY(-7px);
+
+            & .bgimage {
+                background-size: 100% auto;
+                background-position: bottom center;
+            }
+
+            & svg {
+                fill: var(--green);
+            }
+
         }
     }
 

@@ -262,9 +262,10 @@
 
     &__logo {
         & .bgimage {
-            width: 52px;
+            width: 53px;
             height: 52px;
             @include bgimage-contain;
+            margin-right: -1px;
         }
     }
 

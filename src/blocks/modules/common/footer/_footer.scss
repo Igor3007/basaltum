@@ -122,6 +122,12 @@
     &__wrp {
         padding: 18px 0;
 
+        text-align: center;
+
+        @media screen and (min-width: $w992) {
+            text-align: left;
+        }
+
         @media screen and (min-width: $w760) {
             display: flex;
             justify-content: space-between;
@@ -152,9 +158,15 @@
         & img {
 
             max-width: 170px;
+            margin: 4px auto 0 auto;
+
+            @media screen and (min-width: $w992) {
+                margin: 0;
+            }
 
             @media screen and (min-width: $w576) {
                 max-width: 208px;
+
             }
         }
     }

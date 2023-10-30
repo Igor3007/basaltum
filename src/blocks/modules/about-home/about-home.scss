@@ -2,7 +2,7 @@
     padding: 45px 0;
 
     @media screen and (min-width: $w576) {
-        padding: 90px 0;
+        padding: 0 0 90px 0;
     }
 
     overflow: hidden;
@@ -30,7 +30,10 @@
 
         @media screen and (min-width: $w992) {
             width: 30%;
-            display: block;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
         }
     }
 
@@ -50,6 +53,19 @@
         }
     }
 
+    &__logo--mobile {
+
+        padding-bottom: 32px;
+
+        & img {
+            margin: auto;
+        }
+
+        @media screen and (min-width: $w992) {
+            display: none;
+        }
+    }
+
     &__details {
         background: var(--gradient-gray);
         color: #fff;
@@ -58,13 +74,15 @@
         align-items: center;
         justify-content: flex-end;
         border-bottom-right-radius: 20px;
-        border-bottom-left-radius: 20px;
         flex-direction: column;
+        margin-left: -16px;
+        padding-left: 16px;
 
         @media screen and (min-width: $w1200) {
             font-size: 20px;
             margin-top: 10px;
             margin-right: -60px;
+
         }
 
         @media screen and (min-width: 700px) {
@@ -75,14 +93,15 @@
 
         @media screen and (min-width: $w576) {
             flex-direction: row;
+            padding: 32px;
         }
 
         &-text {
             max-width: 360px;
             line-height: 150%;
-            text-align: center;
             padding: 12px 0;
             padding-top: 0;
+            font-size: 20px;
 
             @media screen and (min-width: $w1200) {
                 max-width: 500px;

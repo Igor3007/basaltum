@@ -233,10 +233,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     const myMap = new ymaps.Map('map-container', {
                         center: window.innerWidth > 992 ? center : placemark,
                         zoom: 14,
-                        controls: []
+                        controls: ['zoomControl'],
+
                     }, {
                         searchControlProvider: 'yandex#search',
-                        suppressMapOpenBlock: true
+                        suppressMapOpenBlock: true,
+                        zoomControlPosition: {
+                            right: 32,
+                            top: 32
+                        },
+
                     });
                     const myPlacemark = new ymaps.Placemark(placemark, {
                         hintContent: 'Базальтум',
@@ -247,6 +253,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         iconImageOffset: [-30, -68]
                     });
                     myMap.geoObjects.add(myPlacemark)
+                    myMap.behaviors.disable('scrollZoom');
+
                 })
             }
 
