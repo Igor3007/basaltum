@@ -4680,7 +4680,7 @@ section.section-home-contacts {
 .map-container {
   height: 70vh;
   max-height: 600px;
-  background-color: #eee;
+  background-color: #f7f7f7;
 }
 
 .home-contacts {
@@ -4812,6 +4812,35 @@ section.section-home-contacts {
 }
 
 .popup-success__btn .btn {
+  width: 100%;
+}
+
+.section-form-callback {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.form-callback {
+  background-color: var(--gray-97);
+  padding: 32px 16px;
+  border-radius: 10px;
+}
+
+.form-callback__title {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 133.333%;
+  padding-bottom: 0.3em;
+}
+
+.form-callback__desc {
+  font-size: 16px;
+  padding-bottom: 1em;
+  line-height: 140%;
+}
+
+.form-callback__fields .btn {
   width: 100%;
 }
 
@@ -5173,6 +5202,15 @@ a[data-tooltip]:hover::before {
   .popup-success__title {
     font-size: 28px;
   }
+
+  .form-callback {
+    padding: 32px;
+    border-radius: 20px;
+  }
+
+  .form-callback__title {
+    font-size: 30px;
+  }
 }
 
 @media screen and (min-width: 700px) {
@@ -5344,6 +5382,10 @@ a[data-tooltip]:hover::before {
   .about-home__desc {
     font-size: 20px;
     padding-left: 60px;
+  }
+
+  .form-callback__fields .form__subitem--button {
+    max-width: 422px;
   }
 
   .page__title .section-desc {
@@ -5924,6 +5966,10 @@ a[data-tooltip]:hover::before {
   .popup-form .form input[type=email] {
     height: 58px;
   }
+
+  .form-callback__title {
+    font-size: 36px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -6026,6 +6072,16 @@ a[data-tooltip]:hover::before {
 @media screen and (min-width: 767px) and (max-width: 992.98px) {
   .slider-products__button {
     padding-top: 24px;
+  }
+
+  .form-callback__fields .form__item {
+    flex-wrap: wrap;
+  }
+
+  .form-callback__fields .form__subitem {
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 

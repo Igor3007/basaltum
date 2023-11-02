@@ -654,12 +654,17 @@ input[type="date"] {
 @mixin font-h3 {
 
 
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 160%;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 133.333%;
+
+    @media screen and (min-width: $w1440) {
+        font-size: 36px;
+    }
 
     @media screen and (min-width: $w576) {
-        font-size: 20px;
+        font-size: 30px;
     }
 
 
