@@ -187,19 +187,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     window.scrollToTargetAdjusted = function (elem) {
 
-        //elem string selector
-
-        if (!document.querySelector(elem)) return false;
-
-        let element = document.querySelector(elem);
-        let headerOffset = 0;
+        let element = typeof elem == 'string' ? document.querySelector(elem) : elem
+        let headerOffset = 20;
         let elementPosition = element.offsetTop
         let offsetPosition = elementPosition - headerOffset;
 
         var offset = element.getBoundingClientRect();
 
         window.scrollTo({
-            top: offset.top,
+            top: offsetPosition,
             behavior: "smooth"
         });
     }
@@ -407,6 +403,113 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             })
         })
+    }
+
+    /* ================================================
+    data toggle is-open
+    ================================================*/
+
+    if (document.querySelector('[data-isopen="card-vacancy"]')) {
+        const items = document.querySelectorAll('[data-isopen="card-vacancy"]')
+
+        items.forEach(item => {
+
+            const buttonText = item.innerText
+
+            if (item.dataset.isopen) {
+                item.addEventListener('click', e => {
+                    let el = e.target.closest('.' + item.dataset.isopen)
+                    el.classList.toggle('is-open')
+                    el.querySelector('span').innerText = el.classList.contains('is-open') ? 'Свернуть' : buttonText
+                })
+            }
+        })
+
+    }
+
+
+    /* ================================================
+    data filter price
+    ================================================*/
+
+    if (document.querySelector('.pricelist__group')) {
+        const items = document.querySelectorAll('[data-filter]')
+
+        items.forEach((item, index) => {
+
+
+
+        })
+
+        class filterPrice {
+            constructor(params) {
+                this.$el = document.querySelectorAll('[data-filter]')
+                this.$link = document.querySelector('[data-list="filter"]')
+                this.active = [];
+
+                this.renderGroups()
+            }
+
+            renderButton() {
+
+                let list = document.createElement('ul')
+
+                this.$el.forEach((item, index) => {
+                    const li = document.createElement('li')
+                    li.innerHTML = `<li><a href="#price_${index}" >${item.dataset.filter}</a></li>`
+                    li.addEventListener('click', e => {
+
+                        e.preventDefault()
+
+                        this.changeActive(item.dataset.filter)
+                        window.scrollToTargetAdjusted(item)
+                    })
+                    this.active.includes(item.dataset.filter) ? li.classList.add('is-active') : ''
+                    list.append(li)
+
+                    item.setAttribute('id', 'price_' + index)
+                })
+
+                this.$link.innerHTML = ''
+                this.$link.append(list)
+            }
+
+            changeActive(id) {
+
+                if (this.active.includes(id)) {
+                    this.active.splice(this.active.indexOf(id), 1)
+                    this.renderGroups()
+
+                    return false
+                }
+
+                this.active.push(id)
+                this.active = Array.from(new Set(this.active))
+                this.renderGroups()
+            }
+
+            renderGroups() {
+
+                this.$el.forEach((item, index) => {
+
+                    if (!this.active.length) {
+                        if (index < 5) {
+                            !item.classList.contains('is-hide') || item.classList.remove('is-hide')
+                        } else {
+                            item.classList.add('is-hide')
+                        }
+                        return false
+                    }
+
+                    this.active.includes(item.dataset.filter) ? !item.classList.contains('is-hide') || item.classList.remove('is-hide') : item.classList.add('is-hide')
+                })
+
+                this.renderButton()
+            }
+        }
+
+        new filterPrice()
+
     }
 
 

@@ -2,6 +2,7 @@
     padding: 20px 15px;
     max-width: 490px;
 
+
     @media screen and (min-width: $w576) {
         padding: 24px;
     }
@@ -18,6 +19,14 @@
         font-size: 16px;
 
         color: var(--gray-36);
+    }
+
+    &__name {
+        font-weight: bold;
+        color: var(--green);
+        font-size: 18px;
+        padding-bottom: 12px;
+        line-height: 130%;
     }
 
     & .form {
@@ -86,6 +95,8 @@
 
         color: var(--gray-36);
     }
+
+
 
     &__btn {
         & .btn {

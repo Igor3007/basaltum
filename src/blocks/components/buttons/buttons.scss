@@ -43,7 +43,15 @@
 
     & svg {
         fill: #fff;
-        margin-right: 1em;
+
+
+        &:first-child {
+            margin-right: 1em;
+        }
+
+        &:last-child {
+            margin-left: 1em;
+        }
     }
 
 

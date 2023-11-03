@@ -8,6 +8,7 @@ block variables
 block main
 
   include ../../blocks/components/breadcrumb/breadcrumb.pug
+  include ../../blocks/modules/vacancies/vacancies.pug
 
   .container
     .page
@@ -22,8 +23,7 @@ block main
         div.section-desc Вакансии для специалистов
 
       .page__content
-        .formated-text
-          strong  Вакансии
+        +vacancies
 
    
        

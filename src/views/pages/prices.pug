@@ -8,6 +8,7 @@ block variables
 block main
 
   include ../../blocks/components/breadcrumb/breadcrumb.pug
+  include ../../blocks/modules/pricelist/pricelist.pug
 
   .container
     .page
@@ -22,8 +23,7 @@ block main
         div.section-desc Утеплители для фасадов под любые форматы
 
       .page__content
-        .formated-text
-          strong  Прайс
+        +pricelist
 
    
        

@@ -150,20 +150,35 @@ section.section-home-contacts {
         line-height: 140%;
 
         & a {
-            color: var(--green-dark);
-            white-space: nowrap;
+
+
             display: inline-block;
             margin-right: 5px;
+
+            &:not(.wrap) {
+                white-space: nowrap;
+                color: var(--green-dark);
+
+            }
 
 
             &:hover {
                 text-decoration: underline;
+                color: var(--green-dark);
             }
         }
 
         @media screen and (min-width: $w992) {
             font-size: 20px;
 
+        }
+    }
+
+    &>div:last-child {
+        & .contact-info {
+            &__contact {
+                padding-bottom: 0;
+            }
         }
     }
 }

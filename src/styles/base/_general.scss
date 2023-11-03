@@ -380,11 +380,7 @@ input[type="date"] {
 
     & ul {
 
-        padding: 20px 0;
-
-        @media screen and (min-width: $w760) {
-            padding-top: 20px;
-        }
+        margin: 20px 0;
 
         & li {
 
@@ -628,21 +624,22 @@ input[type="date"] {
 }
 
 @mixin font-h2 {
-    color: var(--text-01, #222429);
-    /* H2 */
-    font-style: normal;
-    font-weight: 700;
-    line-height: 133%;
-    font-size: 24px;
 
+
+    color: var(--gray-20, #333);
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 130%;
 
 
     @media screen and (min-width: $w760) {
-        font-size: 28px;
+        font-size: 36px;
     }
 
     @media screen and (min-width: $w1440) {
-        font-size: 36px;
+        font-size: 44px;
     }
 
 
@@ -673,15 +670,14 @@ input[type="date"] {
 @mixin font-h4 {
 
     /* H4 */
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
     line-height: 133%;
     font-family: montserrat;
 
-    @media screen and (min-width: $w576) {
+    @media screen and (min-width: $w760) {
         font-size: 28px;
     }
-
 
 }
 
