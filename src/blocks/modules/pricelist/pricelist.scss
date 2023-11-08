@@ -78,23 +78,37 @@
 
                 margin: 0;
                 border: none;
+                border-collapse: collapse;
 
                 & tr {
 
-                    & td,
-                    & th {
+                    &>td,
+                    &>th {
 
                         border: none;
-
 
                         &:first-child {
                             border-top-left-radius: 8px;
                             border-bottom-left-radius: 8px;
+                            //background-color: #f00;
                         }
 
                         &:last-child {
                             border-top-right-radius: 8px;
                             border-bottom-right-radius: 8px;
+                            //background-color: #0f0;
+
+                        }
+                    }
+
+                    &:hover {
+                        &>td {
+                            background-color: #fff;
+                            cursor: pointer;
+
+                            &:not(:first-child) {
+                                color: var(--green);
+                            }
                         }
                     }
                 }
@@ -107,9 +121,8 @@
                 }
 
                 & td {
-                    background-color: #fff;
-                    border-top: 12px solid var(--gray-97);
 
+                    border-top: 12px solid var(--gray-97) !important;
                     padding: 12px 12px;
                 }
             }

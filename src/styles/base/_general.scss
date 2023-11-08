@@ -250,6 +250,7 @@ input[type="date"] {
 }
 
 
+
 .formated-text {
 
     & * {
@@ -471,6 +472,14 @@ input[type="date"] {
         & p {
             margin: 0.7em 0;
         }
+    }
+}
+
+.table-responsive {
+    overflow-x: auto;
+
+    & table {
+        min-width: auto;
     }
 }
 

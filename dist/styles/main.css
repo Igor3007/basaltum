@@ -333,6 +333,14 @@ input[type="date"] {
   margin: 0.7em 0;
 }
 
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table-responsive table {
+  min-width: auto;
+}
+
 .w880 {
   max-width: 880px;
 }
@@ -5068,23 +5076,33 @@ section.section-home-contacts {
 .pricelist__table .formated-text table {
   margin: 0;
   border: none;
+  border-collapse: collapse;
 }
 
-.pricelist__table .formated-text table tr td,
-.pricelist__table .formated-text table tr th {
+.pricelist__table .formated-text table tr > td,
+.pricelist__table .formated-text table tr > th {
   border: none;
 }
 
-.pricelist__table .formated-text table tr td:first-child,
-.pricelist__table .formated-text table tr th:first-child {
+.pricelist__table .formated-text table tr > td:first-child,
+.pricelist__table .formated-text table tr > th:first-child {
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
 
-.pricelist__table .formated-text table tr td:last-child,
-.pricelist__table .formated-text table tr th:last-child {
+.pricelist__table .formated-text table tr > td:last-child,
+.pricelist__table .formated-text table tr > th:last-child {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+}
+
+.pricelist__table .formated-text table tr:hover > td {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.pricelist__table .formated-text table tr:hover > td:not(:first-child) {
+  color: var(--green);
 }
 
 .pricelist__table .formated-text table th {
@@ -5093,8 +5111,7 @@ section.section-home-contacts {
 }
 
 .pricelist__table .formated-text table td {
-  background-color: #fff;
-  border-top: 12px solid var(--gray-97);
+  border-top: 12px solid var(--gray-97) !important;
   padding: 12px 12px;
 }
 
