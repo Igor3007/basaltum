@@ -5170,6 +5170,8 @@ section.section-home-contacts {
 .top-products__text p {
   font-weight: 700;
   color: #333;
+  font-size: 16px;
+  line-height: 140%;
   max-width: 1080px;
 }
 
@@ -5206,6 +5208,7 @@ section.section-home-contacts {
   z-index: 99;
   background: rgba(30, 188, 97, 0.6);
   cursor: pointer;
+  pointer-events: none;
 }
 
 .top-products__video-play span {
@@ -5214,6 +5217,10 @@ section.section-home-contacts {
   height: 18px;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.top-products .top-products__video-play.hidden {
+  display: none !important;
 }
 
 .top-products__video {
@@ -5238,6 +5245,8 @@ section.section-home-contacts {
   z-index: 11;
   border-radius: 12px;
   outline: 4px solid #FFF;
+  pointer-events: none;
+  cursor: pointer;
 }
 
 .top-products__video:hover .top-products__video-play {
@@ -5260,6 +5269,8 @@ section.section-home-contacts {
 }
 
 .top-products__content-text p {
+  font-size: 16px;
+  line-height: 140%;
   font-weight: 500;
   color: #fff;
 }
@@ -5271,6 +5282,8 @@ section.section-home-contacts {
 }
 
 .top-products__expanded-text p {
+  font-size: 16px;
+  line-height: 140%;
   font-weight: 500;
   color: #fff;
 }
@@ -5363,7 +5376,14 @@ section.section-home-contacts {
 }
 
 .certificates__text p {
+  font-size: 16px;
+  line-height: 140%;
   color: #333;
+}
+
+.certificates .text-right {
+  font-size: 16px;
+  line-height: 140%;
 }
 
 .certificates picture {
@@ -5423,6 +5443,7 @@ section.section-home-contacts {
   position: absolute;
   left: 50%;
   top: 50%;
+  pointer-events: none;
 }
 
 .certificates__slider-content div span {
@@ -5484,6 +5505,8 @@ section.section-home-contacts {
 }
 
 .basaltum-catalog__text p {
+  font-size: 16px;
+  line-height: 140%;
   color: #333;
 }
 
@@ -5616,6 +5639,22 @@ section.section-home-contacts {
   font-weight: 500;
   line-height: 132%;
   color: #333;
+}
+
+.basaltum-catalog .rotate-180 {
+  transform: rotate(180deg) !important;
+}
+
+.basaltum-catalog .brightness-grayscale {
+  filter: brightness(255) grayscale(0) !important;
+}
+
+.basaltum-catalog .dark-background {
+  background: #333 !important;
+}
+
+.basaltum-catalog .light-text {
+  color: #FFF !important;
 }
 
 /* common styles */

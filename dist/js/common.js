@@ -531,6 +531,31 @@ if (document.querySelector('.top-products')) {
 }
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    let video = document.querySelector('.top-products__video-control');
+    let playButton = document.querySelector('.top-products__video-play');
+    let watchButton = document.querySelector('.btn-watch');
+
+    watchButton.addEventListener('click', function () {
+        if (video.paused) {
+            video.play();
+            hidePlayButton();
+        }
+    });
+
+    video.addEventListener('click', function () {
+        hidePlayButton();
+    });
+
+    function hidePlayButton() {
+        playButton.style.opacity = 0;
+        setTimeout(function () {
+            playButton.style.display = 'none';
+        }, 500);
+    }
+});
+
+
 if (document.querySelector('[data-slider="certificates"]')) {
     let sliderQuality = new Splide('[data-slider="certificates"]', {
         type: 'loop',
@@ -566,16 +591,16 @@ if (document.querySelector('.basaltum-catalog')) {
 
                 if (content.classList.contains('visible-characteristic')) {
                     content.classList.remove('visible-characteristic');
-                    svgIcon.style.transform = 'rotate(0deg)';
-                    svgIcon.style.filter = 'brightness(0) grayscale(255)';
-                    button.style.background = '#EBEBEB'
-                    spanButton.style.color = '#333'
+                    svgIcon.classList.remove('rotate-180');
+                    svgIcon.classList.remove('brightness-grayscale');
+                    button.classList.remove('dark-background');
+                    spanButton.classList.remove('light-text');
                 } else {
                     content.classList.add('visible-characteristic');
-                    svgIcon.style.transform = 'rotate(180deg)';
-                    svgIcon.style.filter = 'brightness(255) grayscale(0)';
-                    button.style.background = '#333'
-                    spanButton.style.color = '#FFF'
+                    svgIcon.classList.add('rotate-180');
+                    svgIcon.classList.add('brightness-grayscale');
+                    button.classList.add('dark-background');
+                    spanButton.classList.add('light-text');
                 }
             });
         });
