@@ -5454,6 +5454,7 @@ section.section-home-contacts {
 
 .certificates__slider-wrapper {
   position: relative;
+  display: block;
 }
 
 .certificates__slider-wrapper:hover .certificates__slider-content {

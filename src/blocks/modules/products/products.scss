@@ -407,6 +407,7 @@
 
   &__slider-wrapper {
     position: relative;
+    display: block;
 
     &:hover {
       .certificates__slider-content {
