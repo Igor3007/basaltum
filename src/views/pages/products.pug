@@ -1,33 +1,33 @@
 extends ../layouts/main
- 
+
 block variables
-  include ../../data/data.pug
-  - const title = "БАЗАЛЬТУМ - Продукция"
- 
+    include ../../data/data.pug
+    - const title = "БАЗАЛЬТУМ - Продукция"
+
 
 block main
 
-  include ../../blocks/components/breadcrumb/breadcrumb.pug
+    include ../../blocks/components/breadcrumb/breadcrumb.pug
+    include ../../blocks/modules/products/products.pug
 
-  .container
-    .page
-      .page__breadcrumb
-        +breadcrumb([
-          'Главная',
-          'Продукция',
-        ])
+    .container
+        .page
+            .page__breadcrumb
+                +breadcrumb([
+                    'Главная',
+                    'Продукция',
+                ])
 
-      .page__title
-        h1.section-title Продукция «Базальтум»
-        div.section-desc Утеплители для фасадов под любые форматы
+            .page__title
+                h1.section-title Продукция «Базальтум»
+                div.section-desc Утеплители для фасадов под любые форматы
 
-      .page__content
-        .formated-text
-          strong  Частное предприятие «Базальтум» входит в группу компаний «Газосиликат», которая с 2008 года осуществляет деятельность на рынке строительных материалов Республики Беларусь и Российской Федерации. Выпуск первой продукции компании «Базальтум»планируется в 4 квартале 2024 года. Основной вид выпускаемой продукции- плиты из каменной ваты на основе базальтового камня (группа минераловатной теплоизоляции).
+            .page__content
+                +products
 
-   
-       
- 
+
+
+
 block scripts
-  script(src="/js/vendor.js") 
-  script(src="/js/common.js") 
+    script(src="/js/vendor.js")
+    script(src="/js/common.js")

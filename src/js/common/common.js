@@ -279,7 +279,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     ================================*/
 
 
-
     if (document.querySelector('[data-slider="product"]')) {
         var splide = new Splide('[data-slider="product"]', {
 
@@ -298,7 +297,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             },
 
         });
-
 
 
         const prevButton = document.querySelector('[data-slider-prev="product"]')
@@ -438,7 +436,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         items.forEach((item, index) => {
 
 
-
         })
 
         class filterPrice {
@@ -514,3 +511,73 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 }); //domContentLoaded
+
+if (document.querySelector('.top-products')) {
+    document.addEventListener('DOMContentLoaded', function () {
+        let btn = document.querySelector('.top-products__content-btn div');
+        let expandedContent = document.querySelector('.top-products__expanded-text');
+        let arrowSpan = btn.querySelector('span');
+
+        btn.addEventListener('click', function () {
+            if (!expandedContent.classList.contains('get-more-text')) {
+                expandedContent.classList.add('get-more-text')
+                arrowSpan.style.transform = 'rotate(180deg)';
+            } else {
+                expandedContent.classList.remove('get-more-text')
+                arrowSpan.style.transform = 'rotate(0deg)';
+            }
+        });
+    });
+}
+
+
+if (document.querySelector('[data-slider="certificates"]')) {
+    let sliderQuality = new Splide('[data-slider="certificates"]', {
+        type: 'loop',
+        arrows: false,
+        pagination: true,
+        fixedWidth: '296px',
+        gap: 16,
+        start: 0,
+        mediaQuery: 'min',
+        breakpoints: {
+            991.98: {
+                fixedWidth: '310px',
+                gap: 24,
+            }
+        }
+
+    });
+
+    sliderQuality.mount();
+
+}
+
+
+if (document.querySelector('.basaltum-catalog')) {
+    document.addEventListener('DOMContentLoaded', function () {
+        let characteristicBtns = document.querySelectorAll('.get-characteristic');
+
+        characteristicBtns.forEach(function (button) {
+            button.addEventListener('click', function () {
+                let content = this.closest('.basaltum-catalog__content').querySelector('.basaltum-catalog__characteristic');
+                let svgIcon = this.querySelector('svg');
+                let spanButton = this.querySelector('span');
+
+                if (content.classList.contains('visible-characteristic')) {
+                    content.classList.remove('visible-characteristic');
+                    svgIcon.style.transform = 'rotate(0deg)';
+                    svgIcon.style.filter = 'brightness(0) grayscale(255)';
+                    button.style.background = '#EBEBEB'
+                    spanButton.style.color = '#333'
+                } else {
+                    content.classList.add('visible-characteristic');
+                    svgIcon.style.transform = 'rotate(180deg)';
+                    svgIcon.style.filter = 'brightness(255) grayscale(0)';
+                    button.style.background = '#333'
+                    spanButton.style.color = '#FFF'
+                }
+            });
+        });
+    });
+}
