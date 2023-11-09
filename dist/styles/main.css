@@ -5196,8 +5196,8 @@ section.section-home-contacts {
 
 .top-products__video-play {
   display: inline-flex;
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   justify-content: center;
   align-items: center;
   border-radius: 6px;
@@ -5213,8 +5213,8 @@ section.section-home-contacts {
 
 .top-products__video-play span {
   display: block;
-  width: 16px;
-  height: 18px;
+  width: 18px;
+  height: 20px;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -5224,19 +5224,16 @@ section.section-home-contacts {
 }
 
 .top-products__video {
+  display: block;
   position: relative;
   padding-bottom: 68%;
   height: 0;
   min-height: 0;
 }
 
-.top-products__video:hover {
-  transition: .7s ease;
-}
-
 .top-products__video:hover:before {
   content: '';
-  width: calc(100% - 2px);
+  width: calc(100%);
   height: 100%;
   background: #00000060;
   position: absolute;
@@ -5247,6 +5244,7 @@ section.section-home-contacts {
   outline: 4px solid #FFF;
   pointer-events: none;
   cursor: pointer;
+  transition: .7s ease;
 }
 
 .top-products__video:hover .top-products__video-play {
@@ -5545,6 +5543,11 @@ section.section-home-contacts {
   font-weight: 800;
   line-height: 142%;
   color: #1EBC61;
+}
+
+.basaltum-catalog__number a:hover {
+  opacity: .7;
+  transition: .3s ease;
 }
 
 .basaltum-catalog__btns button:first-child {
@@ -6600,8 +6603,8 @@ a[data-tooltip]:hover::before {
   }
 
   .top-products__video-wrapper {
-    flex: 0 0 45%;
-    margin-left: -12%;
+    flex: 0 0 40%;
+    margin-left: -6%;
   }
 
   .top-products__content {
@@ -7094,6 +7097,13 @@ a[data-tooltip]:hover::before {
 
   .page__title .section-title {
     font-size: 56px;
+  }
+}
+
+@media screen and (min-width: 1679.98px) {
+  .top-products__video-wrapper {
+    flex: 0 0 45%;
+    margin-left: -12%;
   }
 }
 

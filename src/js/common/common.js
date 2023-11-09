@@ -530,29 +530,17 @@ if (document.querySelector('.top-products')) {
     });
 }
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    let video = document.querySelector('.top-products__video-control');
-    let playButton = document.querySelector('.top-products__video-play');
+document.addEventListener("DOMContentLoaded", function() {
+    let lightbox = new FsLightbox();
     let watchButton = document.querySelector('.btn-watch');
+    let videoSource = document.querySelector('.top-products__video-control source').getAttribute('src');
 
-    watchButton.addEventListener('click', function () {
-        if (video.paused) {
-            video.play();
-            hidePlayButton();
-        }
+    watchButton.addEventListener('click', function() {
+        lightbox.open([{
+            src: videoSource,
+            type: 'video'
+        }]);
     });
-
-    video.addEventListener('click', function () {
-        hidePlayButton();
-    });
-
-    function hidePlayButton() {
-        playButton.style.opacity = 0;
-        setTimeout(function () {
-            playButton.style.display = 'none';
-        }, 500);
-    }
 });
 
 
