@@ -126,6 +126,8 @@
   }
 
 
+
+
   &__content {
     padding: 12px;
     @media screen and (min-width: 992.98px) {
@@ -543,7 +545,8 @@
       font-weight: 800;
       line-height: 142%;
       color: #1EBC61;
-      &:hover{
+
+      &:hover {
         opacity: .7;
         transition: .3s ease;
       }
@@ -729,4 +732,10 @@
     color: #FFF !important;
   }
 
+}
+
+.fslightbox-source {
+  width: calc(100% - 12px) !important;
+  transform: translate(-50%, 0);
+  left: 50%;
 }

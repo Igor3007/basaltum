@@ -5661,6 +5661,12 @@ section.section-home-contacts {
   color: #FFF !important;
 }
 
+.fslightbox-source {
+  width: calc(100% - 12px) !important;
+  transform: translate(-50%, 0);
+  left: 50%;
+}
+
 /* common styles */
 
 .ic_24 {
