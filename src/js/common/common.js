@@ -530,17 +530,39 @@ if (document.querySelector('.top-products')) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let lightbox = new FsLightbox();
     let watchButton = document.querySelector('.btn-watch');
     let videoSource = document.querySelector('.top-products__video-control source').getAttribute('src');
 
-    watchButton.addEventListener('click', function() {
-        lightbox.open([{
-            src: videoSource,
-            type: 'video'
-        }]);
+    watchButton.addEventListener('click', function () {
+        lightbox.props.sources = [videoSource];
+        lightbox.open();
     });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    let video = document.querySelector('.top-products__video-control');
+    let playButton = document.querySelector('.top-products__video-play');
+
+    playButton.addEventListener('click', function () {
+        if (video.paused) {
+            video.play();
+            hidePlayButton();
+        }
+    });
+
+    video.addEventListener('click', function () {
+        video.setAttribute('controls', '')
+        hidePlayButton();
+    });
+
+    function hidePlayButton() {
+        playButton.style.opacity = 0;
+        setTimeout(function () {
+            playButton.style.display = 'none';
+        }, 500);
+    }
 });
 
 
