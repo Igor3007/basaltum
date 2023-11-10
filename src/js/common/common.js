@@ -554,6 +554,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     video.addEventListener('click', function () {
         video.setAttribute('controls', '')
+        video.setAttribute('autoplay', '')
         video.play();
         hidePlayButton();
     });

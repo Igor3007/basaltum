@@ -102,7 +102,6 @@
         top: 0;
         z-index: 11;
         border-radius: 12px;
-        outline: 4px solid #FFF;
         pointer-events: none;
         cursor: pointer;
         transition: .7s ease;
@@ -122,6 +121,7 @@
     height: 100%;
     z-index: 10;
     border-radius: 12px;
+    outline: 4px solid #FFF;
     object-fit: cover;
   }
 
