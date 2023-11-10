@@ -4762,7 +4762,6 @@ section.section-home-contacts {
 }
 
 .contact-info__contact a:not(.wrap) {
-  white-space: nowrap;
   color: var(--green-dark);
 }
 
@@ -4986,6 +4985,7 @@ section.section-home-contacts {
 }
 
 .show-toggle svg {
+  width: 14px;
   margin-left: 0.7em;
   transition: transform 0.3s ease;
 }
