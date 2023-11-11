@@ -4874,6 +4874,10 @@ section.section-home-contacts {
   width: 100%;
 }
 
+.section-form-callback--no-mt {
+  padding-bottom: 0;
+}
+
 .left-block__details {
   background: var(--gradient-gray);
   color: #fff;
@@ -4974,7 +4978,7 @@ section.section-home-contacts {
 .show-toggle {
   font-size: 16px;
   font-weight: 600;
-  color: var(--green);
+  color: #1EBC61;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -5020,12 +5024,23 @@ section.section-home-contacts {
   cursor: pointer;
 }
 
+.pricelist__main {
+  margin-bottom: 50px;
+}
+
 .pricelist__group {
   padding-bottom: 32px;
 }
 
 .pricelist__group.is-hide {
   display: none;
+}
+
+.pricelist .show-more svg {
+  width: 14px;
+  height: 100%;
+  filter: grayscale(0) brightness(255);
+  margin-left: 8px;
 }
 
 .pricelist__head {
@@ -5188,6 +5203,7 @@ section.section-home-contacts {
   bottom: 0;
   background: var(--gradient-gray, linear-gradient(270deg, rgba(91, 91, 91, 0.99) 0%, #333 100%));
   z-index: -1;
+  border-radius: 12px 12px 0 0;
 }
 
 .top-products__video-wrapper {
@@ -5538,7 +5554,7 @@ section.section-home-contacts {
 }
 
 .basaltum-catalog__number a {
-  display: block;
+  display: inline-block;
   font-family: Montserrat;
   font-size: 28px;
   font-weight: 800;
@@ -5558,7 +5574,7 @@ section.section-home-contacts {
 
 .basaltum-catalog__btns button:nth-of-type(2) {
   width: 100%;
-  background: #EBEBEB;
+  background: #F7F7F7;
 }
 
 .basaltum-catalog__btns button:nth-of-type(2) span {
@@ -5576,15 +5592,11 @@ section.section-home-contacts {
 
 .basaltum-catalog__btns button:nth-of-type(2):hover {
   transition: .3s ease;
-  background: #333;
+  background: #EBEBEB;
 }
 
 .basaltum-catalog__btns button:nth-of-type(2):hover span {
-  color: #fff;
-}
-
-.basaltum-catalog__btns button:nth-of-type(2):hover svg {
-  filter: brightness(255) grayscale(0);
+  color: #333;
 }
 
 .basaltum-catalog__characteristic {
@@ -6581,6 +6593,7 @@ a[data-tooltip]:hover::before {
   .pricelist__main {
     width: calc(100% - 360px);
     padding-right: 32px;
+    margin-bottom: 100px;
   }
 
   .pricelist__aside {
@@ -6612,6 +6625,14 @@ a[data-tooltip]:hover::before {
   .top-products__video-wrapper {
     flex: 0 0 40%;
     margin-left: -6%;
+  }
+
+  .top-products__video:hover:before {
+    width: 101%;
+  }
+
+  .top-products__video-control {
+    width: 101%;
   }
 
   .top-products__content {

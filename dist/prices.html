@@ -1137,6 +1137,11 @@
                                 </div>
                               </div>
                             </div>
+                      <button class="btn show-more"><span>Показать ещё</span>
+                        <svg width="25" height="25">
+                          <use xlink:href="/img/sprites/sprite.svg#ic_arrow-down"></use>
+                        </svg>
+                      </button>
                     </div>
                     <div class="pricelist__aside">
                       <div class="price-filter">
@@ -1147,6 +1152,37 @@
                       </div>
                     </div>
                   </div>
+                  <section class="section-form-callback section-form-callback--no-mt">
+                    <div class="form-callback">
+                      <div class="form-callback__title">Есть вопросы – обращайтесь!</div>
+                      <div class="form-callback__desc">Отправьте свои контактные данные, мы свяжемся с вами в самое ближайшее время.</div>
+                      <div class="form-callback__fields">
+                        <form action="#" method="POST">
+                          <div class="form">
+                            <div class="form__item">
+                              <div class="form__subitem">
+                                <input type="text" placeholder="Ваше имя">
+                              </div>
+                              <div class="form__subitem">
+                                <input type="text" placeholder="Номер телефона *" required data-maska="+# (###) ###-##-##">
+                              </div>
+                              <div class="form__subitem">
+                                <input type="text" placeholder="Текст вопроса">
+                              </div>
+                            </div>
+                            <div class="form__item">
+                              <div class="form__subitem form__subitem--button">
+                                <button class="btn" type="submit">Оставить заявку</button>
+                              </div>
+                              <div class="form__subitem">
+                                <div class="form__note">Нажимая на кнопку, вы даёте согласие на обработку персональных данных согласно нашей<br><a href="/policy.html">политике обработки данных</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </section>
           </div>
         </div>
       </div>
@@ -1218,7 +1254,7 @@
               </div>
             </div>
     </footer>
-    <script src="/js/vendor.js"> </script>
-    <script src="/js/common.js"> </script>
+    <script src="/js/vendor.js"></script>
+    <script src="/js/common.js"></script>
   </body>
 </html>

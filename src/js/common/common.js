@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     } = Maska
 
     function initMaska() {
-        //new MaskInput("[data-maska]")
+        new MaskInput("[data-maska]")
     }
 
     initMaska();
@@ -530,42 +530,44 @@ if (document.querySelector('.top-products')) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    let lightbox = new FsLightbox();
-    let watchButton = document.querySelector('.btn-watch');
-    let videoSource = document.querySelector('.top-products__video-control source').getAttribute('src');
+if (document.querySelector('.top-products__video-wrapper')) {
+    document.addEventListener("DOMContentLoaded", function () {
+        let lightbox = new FsLightbox();
+        let watchButton = document.querySelector('.btn-watch');
+        let videoSource = document.querySelector('.top-products__video-control source').getAttribute('src');
 
-    watchButton.addEventListener('click', function () {
-        lightbox.props.sources = [videoSource];
-        lightbox.open();
+        watchButton.addEventListener('click', function () {
+            lightbox.props.sources = [videoSource];
+            lightbox.open();
+        });
     });
-});
 
-document.addEventListener('DOMContentLoaded', function () {
-    let video = document.querySelector('.top-products__video-control');
-    let playButton = document.querySelector('.top-products__video-play');
+    document.addEventListener('DOMContentLoaded', function () {
+        let video = document.querySelector('.top-products__video-control');
+        let playButton = document.querySelector('.top-products__video-play');
 
-    playButton.addEventListener('click', function () {
-        if (video.paused) {
+        playButton.addEventListener('click', function () {
+            if (video.paused) {
+                video.play();
+                hidePlayButton();
+            }
+        });
+
+        video.addEventListener('click', function () {
+            video.setAttribute('controls', '')
+            video.setAttribute('autoplay', '')
             video.play();
             hidePlayButton();
+        });
+
+        function hidePlayButton() {
+            playButton.style.opacity = 0;
+            setTimeout(function () {
+                playButton.style.display = 'none';
+            }, 500);
         }
     });
-
-    video.addEventListener('click', function () {
-        video.setAttribute('controls', '')
-        video.setAttribute('autoplay', '')
-        video.play();
-        hidePlayButton();
-    });
-
-    function hidePlayButton() {
-        playButton.style.opacity = 0;
-        setTimeout(function () {
-            playButton.style.display = 'none';
-        }, 500);
-    }
-});
+}
 
 
 if (document.querySelector('[data-slider="certificates"]')) {
@@ -617,4 +619,17 @@ if (document.querySelector('.basaltum-catalog')) {
             });
         });
     });
+}
+
+
+if (document.querySelector('.pricelist__main')) {
+    const btnShowMore = document.querySelector('.show-more');
+    btnShowMore.addEventListener('click', ()=>{
+        document.querySelectorAll('.pricelist__group').forEach(item=>{
+            if(item.classList.contains('is-hide')){
+                item.classList.remove('is-hide')
+                btnShowMore.remove()
+            }
+        })
+    })
 }

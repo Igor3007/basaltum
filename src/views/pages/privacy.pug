@@ -8,7 +8,9 @@ block variables
 block main
 
   include ../../blocks/components/breadcrumb/breadcrumb.pug
- 
+  include ../../blocks/modules/politics/politics.pug
+
+
 
   .container
     .page
@@ -23,8 +25,8 @@ block main
         
 
       .page__content
-        .formated-text  
-          p Персональные данные
+        .formated-text
+          +politics-new
          
 
    

@@ -1,57 +1,61 @@
 .section-form-callback {
-    padding-top: 0px;
-    padding-bottom: 30px;
+  padding-top: 0px;
+  padding-bottom: 30px;
 }
 
 .form-callback {
-    background-color: var(--gray-97);
-    padding: 32px 16px;
-    border-radius: 10px;
+  background-color: var(--gray-97);
+  padding: 32px 16px;
+  border-radius: 10px;
 
-    @media screen and (min-width: $w576) {
-        padding: 32px;
-        border-radius: 20px;
+  @media screen and (min-width: $w576) {
+    padding: 32px;
+    border-radius: 20px;
+  }
+
+  &__title {
+    @include font-h3;
+    padding-bottom: 0.3em;
+  }
+
+  &__desc {
+    font-size: 16px;
+    padding-bottom: 1em;
+    line-height: 140%;
+  }
+
+  &__fields {
+
+    & .btn {
+      width: 100%;
     }
 
-    &__title {
-        @include font-h3;
-        padding-bottom: 0.3em;
+    & .form__subitem--button {
+      @media screen and (min-width: $w760) {
+        max-width: 422px;
+      }
     }
 
-    &__desc {
-        font-size: 16px;
-        padding-bottom: 1em;
-        line-height: 140%;
-    }
+    & .form {
 
-    &__fields {
-
-        & .btn {
-            width: 100%;
+      &__item {
+        @media screen and (min-width: $w760) and (max-width: $w992) {
+          flex-wrap: wrap;
         }
+      }
 
-        & .form__subitem--button {
-            @media screen and (min-width: $w760) {
-                max-width: 422px;
-            }
+      &__subitem {
+        @media screen and (min-width: $w760) and (max-width: $w992) {
+          width: 50%;
+          padding-top: 10px;
+          padding-bottom: 10px;
         }
-
-        & .form {
-
-            &__item {
-                @media screen and (min-width: $w760) and (max-width: $w992) {
-                    flex-wrap: wrap;
-                }
-            }
-
-            &__subitem {
-                @media screen and (min-width: $w760) and (max-width: $w992) {
-                    width: 50%;
-                    padding-top: 10px;
-                    padding-bottom: 10px;
-                }
-            }
-        }
-
+      }
     }
+
+  }
+}
+
+.section-form-callback--no-mt {
+  padding-bottom: 0;
 }
