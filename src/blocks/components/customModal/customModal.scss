@@ -1,0 +1,349 @@
+/* popup */
+
+@keyframes zoomInUp {
+    from {
+        transform: scale(0.97) translate3d(0, 16px, 0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes zoomInUp {
+    from {
+        transform: scale(0.97) translate3d(0, 16px, 0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+
+
+.af-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    overflow-x: auto;
+    z-index: 100;
+    opacity: 0;
+    transition: 0.25s ease;
+
+    background: rgba(51, 51, 51, 0.9);
+
+    &__bg {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 101;
+
+
+        transition: 0.3s ease;
+        opacity: 0.9;
+    }
+
+    &__wrp {
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        -ms-flex-direction: column;
+        -ms-flex-align: center;
+        -ms-flex-pack: center;
+        z-index: 102;
+        position: relative;
+        min-height: 100%;
+    }
+}
+
+.af-popup--visible {
+    opacity: 1;
+}
+
+.af-popup--mobile {
+    & .af-popup {
+        &__container {
+            @media screen and (max-width: 480px) {
+                padding-bottom: 0;
+                margin-bottom: 0;
+                width: 100%;
+                animation: 0.2s ease 0.2s both fade-drop-filter;
+            }
+        }
+
+        &__content {
+            border-radius: 15px 15px 0 0;
+        }
+
+    }
+}
+
+.af-popup__content {
+    border-radius: 12px;
+    background: #fff;
+    padding: 10px;
+}
+
+.af-popup__container {
+    width: auto;
+    max-width: 100%;
+    margin: auto;
+    padding: 50px 0;
+    position: relative;
+    animation: 0.2s ease 0.2s both zoomInUp;
+    opacity: 0;
+
+    @media screen and (min-width: $w480) {
+        max-width: 90%;
+    }
+
+}
+
+.af-popup__close {
+    height: 24px;
+    text-align: right;
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    z-index: 101;
+    top: 65px;
+
+    @media screen and (max-width: $w480) {
+        right: 10px;
+    }
+}
+
+.af-popup__close svg {
+    fill: #eee;
+    width: 24px;
+    height: 24px;
+    stroke: #ccc;
+    stroke-width: 2px;
+
+    &:hover {
+        stroke: var(--main);
+    }
+}
+
+.af-spiner {
+
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 105;
+    background-color: #fff;
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        border: 3px solid $accent-2-1;
+        border-radius: 50%;
+        border-left-color: transparent !important;
+        transition: transform 0.5s linear;
+        animation: 0.5s linear load infinite;
+        display: inline-block;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        position: relative;
+    }
+}
+
+.dark-mode {
+    & .af-popup {
+        background: rgba(17, 17, 17, 0.97);
+
+        &__content {
+            background-color: transparent;
+            padding: 10px 20px;
+        }
+
+        &__close {
+            top: 20px;
+            right: 20px;
+
+            @media screen and (min-width: $w760) {
+                top: 25px;
+                right: 15px;
+            }
+        }
+    }
+}
+
+
+/* ========================== */
+
+.af-dialog {
+    width: 100%;
+    border-radius: 12px;
+    background: var(--white, #FFF);
+    padding: 24px 12px;
+    max-width: 100%;
+
+    @media screen and (min-width: $w480) {
+        width: 440px;
+        padding: 24px;
+    }
+
+    &__title {
+        font-size: 24px;
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 8px;
+        padding-bottom: 12px;
+    }
+
+    &__desc {
+        color: var(--text-02);
+        text-align: center;
+        padding-bottom: 16px;
+        line-height: 130%;
+    }
+
+    &__action {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 -8px;
+
+
+        &>div {
+            height: 48px;
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            width: 100%;
+            text-align: center;
+            margin: 0 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+
+        & .af-dialog {
+            &__apply {
+                border-radius: 8px;
+                background: var(--red, #F94258);
+                color: #fff;
+
+                &[disabled] {
+                    pointer-events: none;
+                    opacity: 0.4;
+                }
+            }
+
+            &__cancel {
+                background-color: transparent;
+                border: 1px solid var(--blue-dark, #253678);
+                color: var(--blue-dark);
+
+
+                &:hover {
+                    background-color: var(--bg-02);
+                    border-color: var(--bg-02);
+                }
+            }
+        }
+    }
+
+
+}
+
+/* status revert */
+
+.af-dialog-revert {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: var(--blue-dark);
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 15px;
+    margin-left: 15px;
+
+    &__msg {
+        margin-right: 10px;
+    }
+
+    &__btn {
+        font-weight: 600;
+        color: #CDD5F5;
+        cursor: pointer;
+        border-radius: 6px;
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        padding-left: 13px;
+        padding-right: 13px;
+
+
+        &:hover {
+            color: #fff;
+            background-color: var(--blue-medium);
+        }
+    }
+
+    &__close {
+        width: 32px;
+        height: 32px;
+        position: relative;
+        left: 7px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+
+        &:hover {
+            color: #fff;
+            background-color: var(--blue-medium);
+        }
+
+        &::before {
+            content: '+';
+            transform: rotate(45deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 26px;
+            line-height: 100%;
+        }
+    }
+}
+
+@keyframes fadeOutTopStatus {
+    to {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+}
+
+.af-dialog-revert--hide .af-dialog-revert {
+
+    animation: fadeOutTopStatus 0.3s ease forwards;
+
+}

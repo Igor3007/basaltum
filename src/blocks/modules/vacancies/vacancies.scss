@@ -1,0 +1,236 @@
+.left-block {
+
+
+
+    &__details {
+        background: var(--gradient-gray);
+        color: #fff;
+        padding: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        border-bottom-right-radius: 20px;
+        flex-direction: column;
+        margin-left: -16px;
+        padding-left: 16px;
+
+        @media screen and (min-width: $w1200) {
+            font-size: 20px;
+            margin-top: 10px;
+
+        }
+
+        @media screen and (min-width: 700px) {
+            margin-left: -40%;
+            border-bottom-left-radius: 0;
+
+        }
+
+        @media screen and (min-width: $w576) {
+            flex-direction: row;
+            padding: 32px;
+        }
+
+        &-text {
+            max-width: 360px;
+            line-height: 150%;
+            padding: 12px 0;
+            padding-top: 0;
+            font-size: 20px;
+
+            @media screen and (min-width: $w1200) {
+                max-width: 970px;
+            }
+
+            @media screen and (min-width: $w576) {
+                padding-right: 18px;
+                text-align: right;
+
+                padding-bottom: 0;
+            }
+
+        }
+
+
+    }
+
+    &__text {
+        padding-bottom: 24px;
+        line-height: 160%;
+
+
+        @media screen and (min-width: $w1440) {
+            padding-top: 36px;
+
+            & strong {
+                font-size: 20px;
+                line-height: 160%;
+            }
+
+            & p {
+                margin: 1.6em 0;
+            }
+        }
+    }
+}
+
+.section-vacancies {
+
+    overflow: visible;
+    padding-top: 14px;
+}
+
+.vacancies {
+
+    padding: 40px 0;
+
+    @media screen and (min-width: $w1440) {
+        padding: 80px 0;
+    }
+
+    @media screen and (min-width: $w992) {
+        padding: 60px 0;
+    }
+
+    &__head {
+        @include font-h2;
+        padding-bottom: 0.8em;
+    }
+
+    &__item {
+        padding-bottom: 32px;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.card-vacancy {
+    padding: 16px;
+    border-radius: 20px;
+    background: var(--gray-97, #F7F7F7);
+
+    @media screen and (min-width: $w576) {
+        padding: 32px;
+    }
+
+    &__title {
+        @include font-h4;
+
+        @media screen and (max-width: $w480) {
+            font-size: 20px;
+        }
+
+        padding-bottom: 0.8em;
+    }
+
+    &__pre {
+        font-size: 16px;
+        line-height: 140%;
+        padding-bottom: 12px;
+
+
+
+        @media screen and (min-width: $w992) {
+            font-size: 18px;
+            padding-bottom: 24px;
+        }
+    }
+
+    &__details {
+        font-size: 16px;
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.3s ease;
+
+        @media screen and (min-width: $w992) {
+            padding-bottom: 12px;
+        }
+    }
+
+    &__toggle {
+        padding-bottom: 16px;
+
+
+    }
+
+    &__reply {
+        & .btn {
+            width: 100%;
+
+            @media screen and (min-width: $w375) {
+                width: auto;
+            }
+        }
+    }
+
+    &.is-open {
+        & .card-vacancy {
+            &__details {
+                max-height: 500px;
+            }
+        }
+    }
+}
+
+.is-open {
+    & .show-toggle {
+        & svg {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.show-toggle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1EBC61;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        & span {
+            text-decoration: underline;
+        }
+    }
+
+    & svg {
+        width: 14px;
+        margin-left: 0.7em;
+        transition: transform 0.3s ease;
+    }
+}
+
+.attach-cv {
+    & input {
+        display: none;
+    }
+
+    & div {
+        padding-left: 40px;
+        position: relative;
+    }
+
+    & span {
+        color: var(--green);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            display: inline-block;
+        }
+    }
+
+    & svg {
+        fill: var(--green);
+        position: absolute;
+        left: 0;
+        right: 0;
+        cursor: pointer;
+    }
+}

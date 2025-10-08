@@ -1,0 +1,15 @@
+mixin select(placeholder, data)
+    select( placeholder=''+(placeholder ? placeholder: '')+'' )
+      each item, index in data
+        option(value=index)= item
+
+mixin select-edit(placeholder, data)
+    select( placeholder=''+(placeholder ? placeholder: '')+'' )
+      each item, index in data
+        option(value=index selected=(!index ? true : false))= item
+
+mixin select-fill(data)
+  .select.select-fill
+    select
+      each item in data
+        option= item

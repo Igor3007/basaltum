@@ -1,0 +1,44 @@
+mixin form-callback
+    section.section-form-callback
+        .form-callback
+            .form-callback__title Есть вопросы – обращайтесь!
+            .form-callback__desc Отправьте свои контактные данные, мы свяжемся с вами в самое ближайшее время.
+            .form-callback__fields
+                form(action='#' method='POST')
+                    .form
+                        .form__item
+                            .form__subitem: input(type="text" placeholder="Ваше имя")
+                            .form__subitem: input(type="text" placeholder="Номер телефона *" required data-maska="+# (###) ###-##-##")
+                            .form__subitem: input(type="text" placeholder="Текст вопроса")
+
+                        .form__item
+                            .form__subitem.form__subitem--button
+                                button.btn(type="submit") Оставить заявку
+                            .form__subitem
+                                .form__note 
+                                    | Нажимая на кнопку, вы даёте согласие на обработку персональных данных согласно нашей
+                                    br
+                                    a(href='/policy.html') политике обработки данных 
+
+
+mixin form-callback-no-mt
+    section.section-form-callback.section-form-callback--no-mt
+        .form-callback
+            .form-callback__title Есть вопросы – обращайтесь!
+            .form-callback__desc Отправьте свои контактные данные, мы свяжемся с вами в самое ближайшее время.
+            .form-callback__fields
+                form(action='#' method='POST')
+                    .form
+                        .form__item
+                            .form__subitem: input(type="text" placeholder="Ваше имя")
+                            .form__subitem: input(type="text" placeholder="Номер телефона *" required data-maska="+# (###) ###-##-##")
+                            .form__subitem: input(type="text" placeholder="Текст вопроса")
+
+                        .form__item
+                            .form__subitem.form__subitem--button
+                                button.btn(type="submit") Оставить заявку
+                            .form__subitem
+                                .form__note
+                                    | Нажимая на кнопку, вы даёте согласие на обработку персональных данных согласно нашей
+                                    br
+                                    a(href='/policy.html') политике обработки данных

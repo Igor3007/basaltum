@@ -1,0 +1,23 @@
+include ../../modules/minicard/minicard.pug
+
+mixin slider-products
+    section.section-slider-products
+        .container
+            .slider-products 
+                .slider-products__top
+                    .slider-products__head
+                        .slider-products__title.section-title Наша продукция
+                        .slider-products__desc Утеплители для фасадов под любые форматы
+                    .slider-products__button: a(href='/products.html'): button.btn Смотреть весь каталог
+                .slider-products__list
+                    .splide(data-slider="product")
+                        .splide__track
+                            .splide__list
+                                each item in [1,1,1,1]
+                                    .splide__slide: +minicard()
+                        .slider-products__nav
+                            .slider-products__dots: ul.splide__pagination
+                            .slider-products__arrow
+                                .slider-products__arrow-prev(data-slider-prev="product"): +icons('#ic_prev-slider', 40)
+                                .slider-products__arrow-next(data-slider-next="product"): +icons('#ic_next-slider', 40)
+

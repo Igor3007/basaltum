@@ -1,0 +1,107 @@
+.popup-form {
+    padding: 20px 15px;
+    max-width: 490px;
+
+
+    @media screen and (min-width: $w576) {
+        padding: 24px;
+    }
+
+    &__title {
+        @include font-h4;
+        padding-bottom: 12px;
+        color: var(--gray-20);
+    }
+
+    &__desc {
+        line-height: 150%;
+        padding-bottom: 25px;
+        font-size: 16px;
+
+        color: var(--gray-36);
+    }
+
+    &__name {
+        font-weight: bold;
+        color: var(--green);
+        font-size: 18px;
+        padding-bottom: 12px;
+        line-height: 130%;
+    }
+
+    & .form {
+
+        &__subitem {
+            &>label {
+                background-color: #fff;
+            }
+
+            & .btn {
+                margin-top: 15px;
+            }
+        }
+
+        & .checkbox__text {
+            @media screen and (max-width: 400px) {
+                text-align: left;
+                width: auto;
+                max-width: 172px;
+            }
+        }
+
+
+
+        &__note {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        & input[type=date],
+        & input[type=tel],
+        & input[type=password],
+        & input[type=text],
+        & input[type=email] {
+            @media screen and (min-width: $w1440) {
+                height: 58px;
+            }
+        }
+    }
+}
+
+.popup-success {
+    padding: 20px 15px;
+    max-width: 490px;
+
+    @media screen and (min-width: $w576) {
+        padding: 24px;
+    }
+
+    &__title {
+        @include font-h4;
+        padding-bottom: 12px;
+        color: var(--gray-20);
+        text-align: center;
+    }
+
+    &__desc {
+        line-height: 150%;
+        padding-bottom: 25px;
+        font-size: 18px;
+        text-align: center;
+
+        @media screen and (min-width: $w480) {
+            font-size: 20px;
+        }
+
+        color: var(--gray-36);
+    }
+
+
+
+    &__btn {
+        & .btn {
+            width: 100%;
+        }
+    }
+
+}

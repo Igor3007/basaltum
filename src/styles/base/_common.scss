@@ -1,0 +1,233 @@
+/* common styles */
+
+
+
+
+.ic_24 {
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+
+
+span[data-tooltip],
+a[data-tooltip] {
+    position: relative;
+}
+
+span[data-tooltip],
+a[data-tooltip] {
+
+    &::before {
+        content: attr(data-tooltip);
+        position: absolute;
+        background-color: #fff;
+        top: 120%;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
+        border-radius: 6px;
+        padding: 10px;
+        background-color: #fff;
+        z-index: 2;
+        font-size: 14px;
+        left: 0;
+        transform: translateX(calc(-50% - -20px));
+        min-width: 150px;
+        opacity: 0;
+        transition: 0.3s ease;
+        pointer-events: none;
+        font-weight: normal;
+        width: 50vw;
+        max-width: 430px;
+        line-height: 136%;
+
+        z-index: 3;
+    }
+
+    &.tooltip--top {
+        &::before {
+            top: auto;
+            bottom: 120%;
+        }
+    }
+
+    &.tooltip--right {
+        &::before {
+            right: 0;
+            left: auto;
+            transform: none;
+            border-bottom-right-radius: 0;
+        }
+    }
+
+
+
+}
+
+span[data-tooltip]:hover::before,
+a[data-tooltip]:hover::before {
+    opacity: 1;
+}
+
+.splide__pagination {
+    &__page {
+
+        @media screen and (max-width: $w480) {
+            width: 4px;
+            height: 4px;
+        }
+
+
+        &.is-active {
+            background: $accent-2-1;
+        }
+    }
+}
+
+.i-tooltip {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGZpbGw9IiM4RjhGOEYiIGhlaWdodD0iMjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMC41IDRhNi41IDYuNSAwIDEwMCAxMyA2LjUgNi41IDAgMDAwLTEzek0zIDEwLjVhNy41IDcuNSAwIDExMTUgMCA3LjUgNy41IDAgMDEtMTUgMHptNy43MTQtMi45OGExLjYgMS42IDAgMDAtMS43OCAxLjA0Ni41LjUgMCAwMS0uOTQzLS4zMzIgMi42IDIuNiAwIDAxNS4wNTMuODY3YzAgLjk2NS0uNzE4IDEuNjItMS4yNzMgMS45OWE1LjQzOCA1LjQzOCAwIDAxLTEuMTM2LjU3MmwtLjAyMi4wMDgtLjAwNy4wMDJoLS4wMDJsLS4wMDIuMDAxLS4xNTgtLjQ3NC4xNTguNDc0YS41LjUgMCAwMS0uMzE3LS45NDhsLjE1LjQ0OC0uMTUtLjQ0OGguMDAybC4wMTMtLjAwNS4wNTYtLjAyMWMuMDUtLjAyLjEyNC0uMDQ4LjIxMy0uMDg4LjE4LS4wOC40MTUtLjE5OC42NDgtLjM1My40OTQtLjMzLjgyNy0uNzI0LjgyNy0xLjE1OWExLjYwMSAxLjYwMSAwIDAwLTEuMzMtMS41OHpNMTAgMTRhLjUuNSAwIDAxLjUtLjVoLjAwN2EuNS41IDAgMDEwIDFIMTAuNWEuNS41IDAgMDEtLjUtLjV6Ii8+PC9zdmc+);
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-position: center;
+    background-size: contain;
+    vertical-align: middle;
+
+}
+
+#status {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 14px 10px 14px;
+    background: transparent;
+    font-size: 13px;
+    min-width: 300px;
+    transform: translateY(-50%);
+    transition: 0.3s ease;
+    color: #fff;
+    z-index: 100000;
+    max-width: 450px;
+    visibility: hidden;
+    display: flex;
+    border-radius: 8px;
+    flex-wrap: wrap;
+    opacity: 0;
+
+}
+
+#status_header {
+    font-weight: 600;
+    font-size: 14px;
+    padding: 2px 4px;
+}
+
+#status_msg {
+    line-height: 140%;
+    padding: 2px 4px;
+}
+
+#status.error {
+
+    transform: translateY(0);
+    height: auto;
+    visibility: visible;
+    background-color: $red;
+    opacity: 1;
+
+}
+
+#status.warning {
+    transform: translateY(0);
+    height: auto;
+    visibility: visible;
+    background-color: $orange;
+    opacity: 1;
+}
+
+#status.complete {
+    transform: translateY(0);
+    height: auto;
+    visibility: visible;
+    background-color: $green;
+    opacity: 1;
+}
+
+
+
+#status.error #status_header {
+    color: #fff;
+}
+
+#status.warning #status_header {
+    color: #fff
+}
+
+#status.complete #status_header {
+    color: #fff
+}
+
+
+
+
+
+
+#status_btn {
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.681818 0L15 14.3182L14.3182 15L1.62748e-08 0.681818L0.681818 0Z' fill='%23FFFFFF'/%3E%3Cpath d='M15 0.681818L0.681818 15L0 14.3182L14.3182 6.09593e-07L15 0.681818Z' fill='%23FFFFFF'/%3E%3C/svg%3E%0A");
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    right: 12px;
+    top: 13px;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+#status_btn {
+    opacity: 1;
+}
+
+.page {
+
+    padding: 38px 0;
+
+    &__breadcrumb {
+        padding-bottom: 12px;
+    }
+
+    &__title {
+
+        padding-bottom: 12px;
+
+        & h1 {
+            margin: 0;
+        }
+
+        & .section-title {
+            padding-bottom: 2px;
+
+            @media screen and (min-width: $w1440) {
+                font-size: 56px;
+            }
+        }
+
+        & .section-desc {
+            color: var(--gray-64);
+            padding-left: 36px;
+            font-size: 16px;
+            padding-bottom: 20px;
+
+            @media screen and (min-width: $w760) {
+                font-size: 20px;
+                padding-left: 60px;
+            }
+        }
+    }
+
+
+}

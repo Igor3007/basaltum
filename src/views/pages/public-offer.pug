@@ -1,0 +1,35 @@
+extends ../layouts/main
+ 
+block variables
+  include ../../data/data.pug
+  - const title = "БАЗАЛЬТУМ - Публичная офферта"
+ 
+
+block main
+
+  include ../../blocks/components/breadcrumb/breadcrumb.pug
+ 
+
+  .container
+    .page
+      .page__breadcrumb
+        +breadcrumb([
+          'Главная',
+          'Публичная офферта',
+        ])
+
+      .page__title
+        h1 Публичная офферта
+        
+
+      .page__content
+        .formated-text  
+          p Публичная офферта
+         
+
+   
+       
+ 
+block scripts
+  script(src="/js/vendor.js") 
+  script(src="/js/common.js") 

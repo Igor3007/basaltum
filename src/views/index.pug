@@ -1,0 +1,25 @@
+extends layouts/main
+ 
+block variables
+  include ../data/data.pug
+  - const title = "БАЗАЛЬТУМ"
+ 
+
+block main
+
+  include ../blocks/modules/main-block/main-block.pug
+  include ../blocks/modules/advantages/advantages.pug
+  include ../blocks/modules/slider-products/slider-products.pug
+  include ../blocks/modules/about-home/about-home.pug
+  include ../blocks/modules/home-contacts/home-contacts.pug
+
+  +main-block()
+  +advantages()
+  +slider-products()
+  +about-home()
+  +home-contacts()
+       
+ 
+block scripts
+  script(src="/js/vendor.js") 
+  script(src="/js/common.js") 

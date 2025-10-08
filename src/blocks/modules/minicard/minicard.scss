@@ -1,0 +1,117 @@
+.minicard {
+
+    padding: 8px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+
+    &::before {
+        content: '';
+        background-color: var(--gray-97);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        border-radius: 8px;
+        transition: background 0.3s ease;
+
+        @media screen and (max-width: $w992) {
+            height: calc(100% + 70px);
+        }
+    }
+
+
+
+    &__image {
+        padding-bottom: 24px;
+
+        & picture {
+
+            background-color: #fff;
+
+            @include picture(90%, contain)
+        }
+    }
+
+    &__title {
+        padding-bottom: 8px;
+
+        color: var(--gray-20, #333);
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 160%;
+
+    }
+
+    &__desc {
+        padding-bottom: 12px;
+        color: var(--gray-36, #5B5B5B);
+        font-size: 15px;
+        line-height: 160%;
+        flex-grow: 1;
+    }
+
+    &__cost {
+        & span {
+            color: var(--green-dark, #1EBC61);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 160%
+        }
+    }
+
+    &__main {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    &__details {
+        position: absolute;
+        top: 100%;
+        left: 16px;
+        right: 16px;
+
+
+        @media screen and (min-width: $w992) {
+            display: none;
+        }
+
+        & .btn {
+            width: 100%;
+        }
+    }
+
+    &:hover {
+
+        &::before {
+            background-color: var(--gray-20);
+
+            @media screen and (min-width: $w992) {
+                height: calc(100% + 77px);
+            }
+        }
+
+
+
+        & .minicard {
+            &__title {
+                color: #fff;
+            }
+
+            &__desc {
+                color: #fff;
+            }
+
+            &__details {
+                display: block;
+            }
+        }
+    }
+}

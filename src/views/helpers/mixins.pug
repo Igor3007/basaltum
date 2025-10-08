@@ -1,0 +1,165 @@
+include ../../blocks/components/headers/headers 
+include ../../blocks/components/select/select
+
+ 
+
+mixin picture2(url)
+  picture
+    source(srcset='/img/'+url+'.webp' type="image/webp" media='(min-width: 1200px)')
+    source(srcset='/img/crop/w1200/'+url+'.webp' type="image/webp" media='(min-width: 767px)')
+    source(srcset='/img/crop/w760/'+url+'.webp' type="image/webp" media='(min-width: 480px)')
+
+    source(srcset='/img/'+url+'.jpg' type="image/jpeg" media='(min-width: 1200px)')
+    source(srcset='/img/crop/w1200/'+url+'.jpg' type="image/jpeg" media='(min-width: 767px)')
+    source(srcset='/img/crop/w760/'+url+'.jpg' type="image/jpeg" media='(min-width: 480px)')
+    img(src='/img/crop/w480/'+url+'.jpg ' loading='lazy' alt='Image')
+
+mixin picture(url)
+  picture
+    source(srcset=''+url+'.webp' type="image/webp" )
+    img(src=''+url+'.jpg' loading='lazy' alt='image')
+mixin picturePng(url)
+  picture
+    source(srcset=''+url+'.webp' type="image/webp" )
+    img(src=''+url+'.png' loading='lazy' alt='image')
+mixin pictureResp(url)
+  picture
+
+    if(url.w1200)
+      source(srcset=''+url.w1200+'.webp' type="image/webp" media='(min-width: 1200px)')
+      source(srcset=''+url.w1200+'.jpg' type="image/jpeg" media='(min-width: 1200px)')
+
+    if(url.w760)
+      source(srcset=''+url.w760+'.webp' type="image/webp" media='(min-width: 767px)')
+      source(srcset=''+url.w760+'.jpg' type="image/jpeg" media='(min-width: 767px)')
+
+    if(url.w480)
+      source(srcset=''+url.w480+'.webp' type="image/webp" media='(min-width: 480px)')
+      source(srcset=''+url.w480+'.jpg' type="image/jpeg" media='(min-width: 480px)')
+
+    if(url.def)
+      source(srcset=''+url.def+'.webp' type="image/webp"  )
+      if(!url.lazy)
+        img(src=''+url.def+'.jpg' loading='lazy' alt='Image')
+      else
+        img(src=''+url.def+'.jpg' alt='Image')
+
+
+mixin icons(id, size)
+  if size
+    svg(width=''+size+'' height=''+size+'')
+      use(xlink:href="/img/sprites/sprite.svg"+id)
+  else
+    svg(width="25" height="25")
+      use(xlink:href="/img/sprites/sprite.svg"+id)
+
+mixin bgimage(url)
+  span.bgimage.lazyload(data-bg=""+url+"")
+
+mixin bgimage--nolazy(url)
+  span.bgimage(style="background-image: url("+url+")")
+
+mixin checkbox(label, name,  check)
+  label.checkbox
+    if check
+      input(type="checkbox" name=""+name+"" checked="" )
+    else
+      input(type="checkbox" name=""+name+"" )
+    span.checkbox__elem
+    span.checkbox__text!= label
+
+mixin checkbox-card(label, count, name, check)
+  label.checkbox-card
+    if check
+      input(type="checkbox" name=""+name+"" checked="" )
+    else
+      input(type="checkbox" name=""+name+"" )
+    span.checkbox-card__text(data-count=""+label[1]+"")!= label[0]
+
+mixin radio(label, name, val, check)
+  label.radio
+    if check
+      input(type="radio" name=""+name+"" checked="" value=""+val+"")
+    else
+      input(type="radio" name=""+name+"" value=""+val+"")
+    span.radio__elem
+    span.radio__text= label
+
+mixin radio-desc(label, desc, name, val, check)
+  label.radio
+    if check
+      input(type="radio" name=""+name+"" checked="" value=""+val+"")
+    else
+      input(type="radio" name=""+name+"" value=""+val+"")
+    span.radio__elem
+    span.radio__text  
+      span.radio__title!= label
+      span.radio__desc!= desc
+
+mixin input-material(type, placeholder, value)
+  .input-material
+    input(type=''+type+'' value=(value?value:''))
+    label= placeholder 
+
+mixin input-material-date(type, placeholder, value)
+  .input-material.input-material--date
+    input(type=''+type+'' value=(value?value:'') class="input-datepicker" data-datepicker-lang="ru")
+    label= placeholder 
+
+mixin input-material-suggest(type, placeholder, value)
+  .input-material.input-material--suggest
+    input(type=''+type+'' value=(value?value:'') class="input-suggest" data-url="/js/select.json")
+    label= placeholder 
+     
+
+mixin input(type, placeholder, valid, required)
+  .input-primary
+    if required
+      input(type=''+type+'', placeholder=placeholder data-valid-type=''+(valid ? valid : '')+''  required='')
+    else
+      input(type=''+type+'', placeholder=placeholder data-valid-type=''+(valid ? valid : '')+''  )
+    if type == 'password'
+      span.tooltip-showpass
+    else
+      span.tooltip
+
+mixin input-icon(type, placeholder, valid, icon)
+  .input-primary.input-icon
+    if icon
+      +icons(''+icon+'', 16)
+    input(type=''+type+'', placeholder=placeholder data-valid-type=''+(valid ? valid : '')+'' )
+    if type == 'password'
+      span.tooltip-showpass
+    else
+      span.tooltip
+
+mixin textarea(placeholder, tooltip, rows, cols)
+  .input-material
+    textarea(rows=''+rows+'', cols=''+cols+'')
+    span.bar
+    label= placeholder
+    if tooltip
+      span.tooltip= tooltip
+
+mixin toggle(textOn, textOff)
+  label.toggle
+    input(type='checkbox', name='' value='1')
+    div
+      span.toggle-slide
+      span.toggle-active= textOn
+      span.toggle-deactive= (textOff ? textOff : textOn)
+
+mixin attach(id, text)
+  .input-attach
+    label(for=""+id+"")
+      input(type='file',  name=''+id+'',  id=''+id+'' )
+      if text
+        span.file-name
+        span.file-btn= text
+
+
+
+
+
+
+

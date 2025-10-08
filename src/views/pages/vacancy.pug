@@ -1,0 +1,33 @@
+extends ../layouts/main
+ 
+block variables
+  include ../../data/data.pug
+  - const title = "БАЗАЛЬТУМ - Вакансии"
+ 
+
+block main
+
+  include ../../blocks/components/breadcrumb/breadcrumb.pug
+  include ../../blocks/modules/vacancies/vacancies.pug
+
+  .container
+    .page
+      .page__breadcrumb
+        +breadcrumb([
+          'Главная',
+          'Вакансии',
+        ])
+
+      .page__title
+        h1.section-title Станьте частью нашей команды
+        div.section-desc Вакансии для специалистов
+
+      .page__content
+        +vacancies
+
+   
+       
+ 
+block scripts
+  script(src="/js/vendor.js") 
+  script(src="/js/common.js") 

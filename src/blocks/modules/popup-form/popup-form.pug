@@ -1,0 +1,25 @@
+mixin popup-form(data)
+   .popup-form
+        .popup-form__wrp
+            .popup-form__title= data.title
+            .popup-form__desc= data.desc
+            .popup-form__form
+                form(action="/action.php")
+                    .form
+                        .form__item
+                            .form__subitem
+                                input(type="text" placeholder="Ваше имя")
+                        .form__item
+                            .form__subitem
+                                input(type="text" placeholder="Контактный телефон *" data-maska="+7(###)###-##-##" required)
+                        .form__item
+                            .form__subitem
+                                textarea(placeholder="Текст вопроса или сообщения")
+                        .form__item
+                            .form__subitem.form__subitem--free
+                                button.btn.btn-full Отправить
+                        .form__item
+                            .form__subitem.form__subitem--free
+                                .form__note Нажимая на кнопку, вы даёте согласие на обработку персональных данных согласно нашей <a href="policy.html" >Политикой конфиденциальности</a>
+                                    
+                                    

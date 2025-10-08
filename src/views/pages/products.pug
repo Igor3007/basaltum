@@ -1,0 +1,33 @@
+extends ../layouts/main
+
+block variables
+    include ../../data/data.pug
+    - const title = "БАЗАЛЬТУМ - Продукция"
+
+
+block main
+
+    include ../../blocks/components/breadcrumb/breadcrumb.pug
+    include ../../blocks/modules/products/products.pug
+
+    .container
+        .page
+            .page__breadcrumb
+                +breadcrumb([
+                    'Главная',
+                    'Продукция',
+                ])
+
+            .page__title
+                h1.section-title Продукция «Базальтум»
+                div.section-desc Утеплители для фасадов под любые форматы
+
+            .page__content
+                +products
+
+
+
+
+block scripts
+    script(src="/js/vendor.js")
+    script(src="/js/common.js")

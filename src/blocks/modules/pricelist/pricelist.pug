@@ -1,0 +1,89 @@
+mixin group-price(data)
+    .pricelist__group(data-filter=data.title)
+        .pricelist__head= 'Толщина плиты – '+data.title
+        .pricelist__links
+            ul 
+                li
+                    a(href='#' download)
+                        +icons('#ic_dl')
+                        span Прайс юр.лица РБ 
+                li
+                    a(href='#' download)
+                        +icons('#ic_dl')
+                        span Прайс юр.лица РФ 
+                li
+                    a(href='#' download)
+                        +icons('#ic_dl')
+                        span Прайс физ. лица
+        .pricelist__table
+            .formated-text
+                .table-responsive
+                    table
+                        tr
+                            th Размер рулона
+                            th Толщина плиты
+                            th Плотность плиты
+                        tr
+                            td 20 м2
+                            td 30 мм
+                            td 30кг/м³ и 3 кг/м²
+                        tr
+                            td 30 м2
+                            td 30 мм
+                            td 40 кг/м³ и 4 кг/м²
+                        tr
+                            td 40 м2 
+                            td 30 мм
+                            td 50 кг/м³ и 5 кг/м²
+                        tr
+                            td 50 м2
+                            td 30 мм
+                            td 60 кг/м³ и 6 кг/м²
+                        tr
+                            td 60 м2
+                            td 30 мм
+                            td 70 кг/м³ и 7 кг/м²
+
+mixin pricelist
+    .pricelist
+        .pricelist__main
+
+            -
+                const items = [
+                    '30 мм',
+                    '40 мм',
+                    '50 мм',
+                    '60 мм',
+                    '70 мм',
+                    '80 мм',
+                    '90 мм',
+                    '100 мм',
+                    '110 мм',
+                    '120 мм',
+                    '130 мм',
+                    '140 мм',
+                    '150 мм',
+                    '160 мм',
+                    '170 мм',
+                    '180 мм',
+                    '190 мм',
+                    '200 мм',
+                ]
+
+            each item in items
+                +group-price({
+                    title: item
+                })
+            button.btn.show-more
+                span Показать ещё
+                +icons('#ic_arrow-down')
+
+        .pricelist__aside
+            .price-filter
+                .price-filter__title Выберите толщину плиты для быстрого перехода:
+                .price-filter__list(data-list="filter")
+                    ul
+                        
+
+                         
+                        

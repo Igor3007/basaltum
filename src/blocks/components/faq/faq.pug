@@ -1,0 +1,13 @@
+mixin faq(data)
+  .faq
+    .faq__item
+      each item, index in data
+        .faq-item(class=(index == 0 ? 'open' : ''))
+          .faq-item__question
+
+            .faq-item__title= item.title
+            .faq-item__arrow
+              .icon-cross
+          .faq-item__answer
+            each text in item.answer 
+              p!= text

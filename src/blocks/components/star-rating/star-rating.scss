@@ -1,0 +1,65 @@
+
+.star-rating {
+	overflow: hidden;
+    margin: 0 auto;
+    display: flex; 
+
+    & :not(:checked) > input {
+        display: none;
+    }
+
+    & label {
+
+        padding-right: rem(5);
+        cursor: pointer;
+
+        &:nth-child(2){
+            order: 5;
+        }
+        &:nth-child(4){
+            order: 4
+        }
+        &:nth-child(6){
+            order: 3;
+        }
+        &:nth-child(8){
+            order: 2;
+        }
+        &:nth-child(10){
+            order: 1;
+        }
+    }
+
+    &:not(:checked) > label svg {
+        fill: #fff
+    }
+
+    & > input{
+
+        display: none;
+
+        &:checked ~ label svg {
+            fill: $red
+        }
+
+        &:checked + label:hover svg,
+        &:checked + label:hover ~ label svg,
+        &:checked ~ label:hover svg,
+        &:checked ~ label:hover ~ label svg{
+            fill: $red;
+        }
+    }
+
+    &:not(:checked) > label:hover svg,
+    &:not(:checked) > label:hover ~ label svg {
+        fill: $red;
+    }
+
+}
+ 
+
+
+
+.rate-area > label:active {
+	position: relative;
+}
