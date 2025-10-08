@@ -1,0 +1,48 @@
+extends ../layouts/main
+
+block variables
+    include ../../data/data.pug
+    - const title = "БАЗАЛЬТУМ - Лендинг"
+
+
+block main
+
+    include ../../blocks/components/breadcrumb/breadcrumb.pug
+    include ../../blocks/modules/banner-slider/banner-slider
+    include ../../blocks/modules/digits-adv/digits-adv
+    include ../../blocks/modules/products-line/products-line
+    include ../../blocks/modules/form-personal/form-personal
+
+
+    .container
+        .page
+            .page__breadcrumb
+                +breadcrumb([
+                    'Главная',
+                    'Продукция',
+                    'Базальтовый утеплитель для сэндвич панели',
+                ])
+
+            .page__title
+                .page__title-col2
+                    .page__title-left
+                        h1.section-title Базальтовый утеплитель для сэндвич панели
+                        div.section-desc Утеплители для фасадов под любые форматы
+                    .page__title-right
+                        p
+                            strong «Базальтум»
+                            | — утепление с умом. От расплава до готовой плиты — каждый этап автоматизирован и прозрачен. Полный цикл, чистые технологии, стабильное качество.
+                        
+            .page__content
+                +banner-slider
+                +digits-adv
+                +products-line
+                +form-personal
+
+
+
+
+
+block scripts
+    script(src="/js/vendor.js")
+    script(src="/js/common.js")

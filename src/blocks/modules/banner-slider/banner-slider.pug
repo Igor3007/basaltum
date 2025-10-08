@@ -1,0 +1,22 @@
+mixin banner-slider
+    section.section-banner-slider
+        .container
+            .banner-slider
+                .banner-slider__slider
+                    .splide
+                        .splide-track
+                            .splide-list
+                                each item in [1,1]
+                                    .splide-slide
+                                        +picture('/img/common/product/1')
+                .banner-slider__action
+                    .banner-slider__btns
+                        .banner-slider__btn
+                            a(href='#'): button.btn.btn-white Назначение
+                            a(href='#'): button.btn.btn-white Преимущества
+                            a(href='#'): button.btn Получить персональное предложение
+                    .banner-slider__nav
+                        .splide-nav
+                            .splide-nav__prev: +icons('#ic_prev-slider', 40)
+                            .splide-nav__next: +icons('#ic_next-slider', 40)
+

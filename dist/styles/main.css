@@ -2064,6 +2064,7 @@ select {
   background-color: #A8AFC9;
   color: #fff;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 .btn:disabled:hover {
@@ -2084,33 +2085,12 @@ select {
 
 .btn.btn-white {
   background-color: #fff;
-  color: #1EBC61;
-  border: 2px solid var(--blue-dark, #253678);
+  color: var(--gray-20);
 }
 
 .btn.btn-white:hover {
-  color: #F2F2F2;
-}
-
-.btn.btn-white:disabled {
-  color: var(--blue-medium, #A8AFC9);
-  border-color: var(--blue-medium, #A8AFC9);
-}
-
-.btn.btn-line {
-  background-color: transparent;
-  color: #1EBC61;
-  border: 1px solid var(--blue-dark, #253678);
-}
-
-.btn.btn-line:disabled {
-  color: var(--blue-light, #A8AFC9);
-  border-color: var(--blue-light, #A8AFC9);
-}
-
-.btn.btn-line:hover {
-  border-color: var(--blue-medium);
-  color: var(--blue-medium);
+  background-color: #F2F2F2;
+  color: var(--green-dark);
 }
 
 .btn.btn-full {

@@ -35,6 +35,7 @@
         background-color: #A8AFC9;
         color: #fff;
         cursor: not-allowed;
+        pointer-events: none;
 
         &:hover {
             opacity: 0.9;
@@ -43,7 +44,6 @@
 
     & svg {
         fill: #fff;
-
 
         &:first-child {
             margin-right: 1em;
@@ -58,33 +58,11 @@
 
     &.btn-white {
         background-color: #fff;
-        color: $main;
-        border: 2px solid var(--blue-dark, #253678);
-
+        color: var(--gray-20);
 
         &:hover {
-            color: #F2F2F2;
-        }
-
-        &:disabled {
-            color: var(--blue-medium, #A8AFC9);
-            border-color: var(--blue-medium, #A8AFC9);
-        }
-    }
-
-    &.btn-line {
-        background-color: transparent;
-        color: $main;
-        border: 1px solid var(--blue-dark, #253678);
-
-        &:disabled {
-            color: var(--blue-light, #A8AFC9);
-            border-color: var(--blue-light, #A8AFC9);
-        }
-
-        &:hover {
-            border-color: var(--blue-medium);
-            color: var(--blue-medium);
+            background-color: #F2F2F2;
+            color: var(--green-dark);
         }
     }
 
@@ -147,8 +125,6 @@
             left: 5px;
         }
     }
-
-
 
 }
 
