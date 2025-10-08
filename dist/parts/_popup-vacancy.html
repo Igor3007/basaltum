@@ -1,0 +1,51 @@
+
+<div class="popup-form">
+  <div class="popup-form__wrp">
+    <div class="popup-form__title">Напишите нам</div>
+    <div class="popup-form__name">Заместитель начальника производственно-технического отдела</div>
+    <div class="popup-form__desc">Отправьте свои контактные данные, мы свяжемся с вами в самое ближайшее время.</div>
+    <div class="popup-form__form">
+      <form action="/action.php">
+        <div class="form">
+          <div class="form__item">
+            <div class="form__subitem">
+              <input type="text" placeholder="Ваше имя"/>
+            </div>
+          </div>
+          <div class="form__item">
+            <div class="form__subitem">
+              <input type="text" placeholder="Контактный телефон *" data-maska="+7(###)###-##-##" required="required"/>
+            </div>
+          </div>
+          <div class="form__item">
+            <div class="form__subitem">
+              <textarea placeholder="Комментарий"></textarea>
+            </div>
+          </div>
+          <div class="form__item">
+            <div class="form__subitem">
+              <label class="attach-cv">
+                <input type="file" name="cv"/>
+                <div>
+                  <svg width="25" height="25">
+                    <use xlink:href="/img/sprites/sprite.svg#ic_upload"></use>
+                  </svg><span>Прикрепить резюме (формат .doc, docx, .pdf; размер не более 5 МБ)</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="form__item">
+            <div class="form__subitem form__subitem--free">
+              <button class="btn btn-full">Отправить</button>
+            </div>
+          </div>
+          <div class="form__item">
+            <div class="form__subitem form__subitem--free">
+              <div class="form__note">Нажимая на кнопку, вы даёте согласие на обработку персональных данных согласно нашей <a href="policy.html" >Политикой конфиденциальности</a></div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
