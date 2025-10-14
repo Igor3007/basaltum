@@ -5659,6 +5659,161 @@ section.section-home-contacts {
   left: 50%;
 }
 
+.banner-slider__action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner-slider__btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  background-color: #1ebc613d;
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 16px;
+}
+
+.banner-slider__btns .btn {
+  border-radius: 12px;
+  width: 100%;
+}
+
+.banner-slider__btn {
+  width: calc(50% - 6px);
+}
+
+.banner-slider__btn:last-child {
+  width: 100%;
+}
+
+.banner-slider__nav {
+  display: none;
+}
+
+.banner-slider .splide__slide picture {
+  position: relative;
+  display: block;
+  padding-top: 65%;
+}
+
+.banner-slider .splide__slide picture img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-slider .splide__slide img {
+  border-radius: 16px;
+}
+
+.splide-nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.splide-nav__next,
+.splide-nav__prev {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.splide-nav__next:hover,
+.splide-nav__prev:hover {
+  opacity: 0.8;
+}
+
+.section-digits-adv {
+  padding: 24px 0;
+}
+
+.digits-adv__wrp {
+  gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.digits-adv__item {
+  background: var(--gray-97);
+  padding: 14px;
+  border-radius: 8px;
+  flex-basis: 180px;
+  flex-grow: 1;
+  color: var(--gray-20);
+  display: flex;
+  flex-direction: column;
+}
+
+.digits-adv__head {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+  margin-bottom: 12px;
+}
+
+.digits-adv__title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.digits-adv__num {
+  background-image: var(--gradient-green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.digits-adv__desc {
+  line-height: 132%;
+  color: var(--gray-20);
+  margin-top: auto;
+}
+
+.digits-adv__desc strong {
+  font-weight: 800;
+}
+
+.section-products-line {
+  padding: 60px 0;
+}
+
+.products-line__title {
+  color: var(--gray-20, #333);
+  font-family: Montserrat;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 130%;
+  color: var(--gray-20);
+  padding-bottom: 10px;
+}
+
+.products-line__subtitle {
+  color: var(--gray-36);
+}
+
+.products-line__wrp {
+  padding-top: 36px;
+}
+
+.products-line__list ul li {
+  background-color: var(--gray-97);
+  padding: 12px 24px;
+  margin: 8px 0;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 160%;
+  color: var(--gray-20);
+  border-radius: 8px;
+}
+
 /* common styles */
 
 .ic_24 {
@@ -5838,10 +5993,19 @@ a[data-tooltip]:hover::before {
 }
 
 .page__title .section-desc {
-  color: var(--gray-64);
+  color: var(--gray-36);
   padding-left: 36px;
   font-size: 16px;
   padding-bottom: 20px;
+}
+
+.page__title-right {
+  font-size: 16px;
+  line-height: 143%;
+}
+
+.page__title-right strong {
+  font-weight: 600;
 }
 
 @media screen and (min-width: 360.98px) {
@@ -6044,6 +6208,14 @@ a[data-tooltip]:hover::before {
   .card-vacancy {
     padding: 32px;
   }
+
+  .banner-slider__action {
+    border-radius: 24px;
+  }
+
+  .section-digits-adv {
+    padding: 32px 0;
+  }
 }
 
 @media screen and (min-width: 700px) {
@@ -6240,6 +6412,10 @@ a[data-tooltip]:hover::before {
 
   .pricelist__head {
     font-size: 28px;
+  }
+
+  .products-line__title {
+    font-size: 36px;
   }
 
   .page__title .section-desc {
@@ -6796,6 +6972,85 @@ a[data-tooltip]:hover::before {
     font-size: 20px;
     line-height: 160%;
   }
+
+  .banner-slider {
+    position: relative;
+  }
+
+  .banner-slider__action {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+  }
+
+  .banner-slider__btns {
+    flex-direction: row;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
+    margin-top: 0;
+  }
+
+  .banner-slider__btns .btn {
+    width: auto;
+  }
+
+  .banner-slider__btn:last-child {
+    width: auto;
+    margin-left: auto;
+  }
+
+  .banner-slider__btn {
+    width: auto;
+  }
+
+  .banner-slider .splide__slide picture {
+    padding-top: 39%;
+  }
+
+  .digits-adv__item {
+    aspect-ratio: 1/1;
+  }
+
+  .digits-adv__head {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  .products-line__wrp {
+    display: flex;
+    gap: 16px;
+  }
+
+  .products-line__image {
+    width: calc(360px);
+  }
+
+  .products-line__list {
+    width: calc(100% - 360px);
+  }
+
+  .page__title-col2 {
+    display: flex;
+    gap: 36px;
+  }
+
+  .page__title-left {
+    width: calc(100% - 400px);
+  }
+
+  .page__title-left h1 {
+    color: #222;
+    line-height: 114%;
+  }
+
+  .page__title-right {
+    width: 400px;
+    min-width: 400px;
+    font-size: 18px;
+    line-height: 133%;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -6892,6 +7147,51 @@ a[data-tooltip]:hover::before {
   .left-block__details-text {
     max-width: 970px;
   }
+
+  .banner-slider__btns {
+    width: auto;
+  }
+
+  .banner-slider__btn:last-child {
+    margin-left: 0;
+  }
+
+  .banner-slider__nav {
+    display: block;
+    padding: 12px;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.25);
+    align-self: flex-end;
+    margin-left: auto;
+  }
+
+  .digits-adv__wrp {
+    gap: 8px;
+  }
+
+  .digits-adv__item {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .digits-adv__head {
+    align-items: flex-start;
+  }
+
+  .digits-adv__title {
+    font-size: 24px;
+  }
+
+  .digits-adv__num {
+    line-height: 100%;
+    margin-top: -8px;
+    text-align: right;
+  }
+
+  .digits-adv__desc {
+    font-size: 16px;
+    line-height: 150%;
+  }
 }
 
 @media screen and (min-width: 1200px) and (min-width: 767px) {
@@ -6948,6 +7248,12 @@ a[data-tooltip]:hover::before {
 
   .header-contact__more {
     font-size: 15px;
+  }
+
+  .banner-slider__action {
+    bottom: 32px;
+    left: 32px;
+    right: 32px;
   }
 }
 
@@ -7103,6 +7409,10 @@ a[data-tooltip]:hover::before {
     font-size: 20px;
   }
 
+  .products-line__title {
+    font-size: 44px;
+  }
+
   .page__title .section-title {
     font-size: 56px;
   }
@@ -7146,6 +7456,11 @@ a[data-tooltip]:hover::before {
 @media screen and (max-width: 576px) {
   .header-contact--email {
     display: none;
+  }
+
+  .banner-slider__btns .btn {
+    font-size: 16px;
+    padding-inline: 0.8em;
   }
 }
 

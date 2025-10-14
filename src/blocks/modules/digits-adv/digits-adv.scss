@@ -1,0 +1,96 @@
+.section-digits-adv {
+    padding: 24px 0;
+
+    @media screen and (min-width: $w576) {
+        padding: 32px 0;
+    }
+}
+
+.digits-adv {
+
+    &__wrp {
+        gap: 12px;
+        display: flex;
+        flex-wrap: wrap;
+
+        @media screen and (min-width: $w1200) {
+            gap: 8px;
+        }
+    }
+
+    &__item {
+        background: var(--gray-97);
+        padding: 14px;
+        border-radius: 8px;
+        flex-basis: 180px;
+        flex-grow: 1;
+        color: var(--gray-20);
+        display: flex;
+        flex-direction: column;
+
+
+        @media screen and (min-width: $w1200) {
+            padding: 20px;
+            border-radius: 16px;
+        }
+
+        @media screen and (min-width: $w992) {
+            aspect-ratio: 1/1;
+        }
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+        margin-bottom: 12px;
+
+        @media screen and (min-width: $w992) {
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 0;
+        }
+
+        @media screen and (min-width: $w1200) {
+            align-items: flex-start;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+
+        @media screen and (min-width: $w1200) {
+            font-size: 24px;
+        }
+    }
+
+    &__num {
+        background-image: var(--gradient-green);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 50px;
+        font-weight: 600;
+
+        @media screen and (min-width: $w1200) {
+            line-height: 100%;
+            margin-top: -8px;
+            text-align: right;
+        }
+    }
+
+    &__desc {
+        line-height: 132%;
+        color: var(--gray-20);
+        margin-top: auto;
+
+        @media screen and (min-width: $w1200) {
+            font-size: 16px;
+            line-height: 150%;
+        }
+
+        & strong {
+            font-weight: 800;
+        }
+    }
+}

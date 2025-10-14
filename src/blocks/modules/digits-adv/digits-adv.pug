@@ -1,4 +1,40 @@
 mixin digits-adv
+
+    -
+        const adv = [
+            {
+                title: 'Базальтум',
+                num: '1',
+                desc: 'Производитель <strong>теплоизоляции</strong>  <br> из каменной ваты',
+            },
+            {
+                title: 'Газосиликат',
+                num: '2',
+                desc: 'Входим в <strong>группу компаний</strong>, с 2008 года на рынке строительных материалов',
+            },
+            {
+                title: 'Могилёв',
+                num: '3',
+                desc: '<strong>Размещение</strong> <br> производства <br> в областном центре',
+            },
+            {
+                title: '400 000 м³',
+                num: '4',
+                desc: 'Совокупный <strong>объём</strong> выпускаемой <br> продукции в год',
+            },
+            {
+                title: 'Энергия',
+                num: '5',
+                desc: 'Возобновляемые источники: собственный <strong>ветропарк</strong>  в Могилёвской области',
+            },
+        ]
+
     section.section-digits-adv
-        .container
-            .digits-adv digits-adv
+        .digits-adv
+            .digits-adv__wrp
+                each item in adv
+                    .digits-adv__item
+                        .digits-adv__head
+                            .digits-adv__title= item.title
+                            .digits-adv__num= item.num
+                        .digits-adv__desc!= item.desc

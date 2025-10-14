@@ -510,6 +510,77 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
 
+    /* =======================================
+    splide banner
+    =======================================*/
+
+    document.querySelectorAll('[data-slider="banner"]').forEach(item => {
+
+        item['splide'] = new Splide(item, {
+            type: 'fade',
+            autoplay: true,
+            arrows: false,
+            pagination: true,
+            gap: 16,
+            start: 0,
+            mediaQuery: 'min',
+            perPage: 1
+
+        });
+
+        item['splide'].mount();
+
+
+        const prevButton = document.querySelector('[data-slider-prev="banner"]')
+        const nextButton = document.querySelector('[data-slider-next="banner"]')
+
+        prevButton.addEventListener('click', e => {
+            item['splide'].go('<')
+        })
+
+        nextButton.addEventListener('click', e => {
+            item['splide'].go('>')
+        })
+
+    })
+
+    /* =======================================
+    splide plist
+    =======================================*/
+
+    document.querySelectorAll('[data-slider="plist"]').forEach(item => {
+
+        item['splide'] = new Splide(item, {
+            type: 'fade',
+            autoplay: true,
+            arrows: false,
+            pagination: true,
+            gap: 16,
+            start: 0,
+            mediaQuery: 'min',
+            perPage: 1
+
+        });
+
+        item['splide'].mount();
+
+        const prevButton = document.querySelector('[data-slider-prev="plist"]')
+        const nextButton = document.querySelector('[data-slider-next="plist"]')
+
+        prevButton.addEventListener('click', e => {
+            item['splide'].go('<')
+        })
+
+        nextButton.addEventListener('click', e => {
+            item['splide'].go('>')
+        })
+
+    })
+
+
+
+
+
 }); //domContentLoaded
 
 if (document.querySelector('.top-products')) {
@@ -624,9 +695,9 @@ if (document.querySelector('.basaltum-catalog')) {
 
 if (document.querySelector('.pricelist__main')) {
     const btnShowMore = document.querySelector('.show-more');
-    btnShowMore.addEventListener('click', ()=>{
-        document.querySelectorAll('.pricelist__group').forEach(item=>{
-            if(item.classList.contains('is-hide')){
+    btnShowMore.addEventListener('click', () => {
+        document.querySelectorAll('.pricelist__group').forEach(item => {
+            if (item.classList.contains('is-hide')) {
                 item.classList.remove('is-hide')
                 btnShowMore.remove()
             }

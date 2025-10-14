@@ -1,22 +1,22 @@
 mixin banner-slider
     section.section-banner-slider
-        .container
-            .banner-slider
-                .banner-slider__slider
-                    .splide
-                        .splide-track
-                            .splide-list
-                                each item in [1,1]
-                                    .splide-slide
-                                        +picture('/img/common/product/1')
-                .banner-slider__action
-                    .banner-slider__btns
-                        .banner-slider__btn
-                            a(href='#'): button.btn.btn-white Назначение
-                            a(href='#'): button.btn.btn-white Преимущества
-                            a(href='#'): button.btn Получить персональное предложение
-                    .banner-slider__nav
-                        .splide-nav
-                            .splide-nav__prev: +icons('#ic_prev-slider', 40)
-                            .splide-nav__next: +icons('#ic_next-slider', 40)
-
+        .banner-slider
+            .banner-slider__slider
+                .splide(data-slider="banner")
+                    .splide__track
+                        .splide__list
+                            each item in [1,2]
+                                .splide__slide
+                                    +picture('/img/common/img'+item)
+            .banner-slider__action
+                .banner-slider__btns
+                    .banner-slider__btn
+                        a(href='#'): button.btn.btn-white Назначение
+                    .banner-slider__btn
+                        a(href='#'): button.btn.btn-white Преимущества
+                    .banner-slider__btn
+                        a(href='#'): button.btn Получить персональное предложение
+                .banner-slider__nav
+                    .splide-nav
+                        .splide-nav__prev(data-slider-prev="banner"): +icons('#ic_prev-slider', 40)
+                        .splide-nav__next(data-slider-next="banner"): +icons('#ic_next-slider', 40)

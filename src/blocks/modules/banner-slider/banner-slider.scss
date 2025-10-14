@@ -1,0 +1,133 @@
+.banner-slider {
+
+    @media screen and (min-width: $w992) {
+        position: relative;
+    }
+
+    &__action {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media screen and (min-width: $w576) {
+            border-radius: 24px;
+        }
+
+        @media screen and (min-width: $w992) {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            right: 12px;
+        }
+
+        @media screen and (min-width: $w1376) {
+            bottom: 32px;
+            left: 32px;
+            right: 32px;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        background-color: #1ebc613d;
+        margin-top: 16px;
+        padding: 12px;
+        border-radius: 16px;
+
+        @media screen and (min-width: $w992) {
+            flex-direction: row;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.25);
+            margin-top: 0;
+        }
+
+        @media screen and (min-width: $w1200) {
+            width: auto;
+        }
+
+
+
+        & .btn {
+            border-radius: 12px;
+            width: 100%;
+
+            @media screen and (min-width: $w992) {
+                width: auto;
+            }
+
+            @media screen and (max-width: $w576) {
+                font-size: 16px;
+                padding-inline: 0.8em;
+            }
+        }
+    }
+
+    &__btn {
+        width: calc(50% - 6px);
+
+        &:last-child {
+            width: 100%;
+
+            @media screen and (min-width: $w992) {
+                width: auto;
+                margin-left: auto;
+            }
+
+            @media screen and (min-width: $w1200) {
+                margin-left: 0;
+            }
+        }
+
+        @media screen and (min-width: $w992) {
+            width: auto;
+        }
+    }
+
+    &__nav {
+        display: none;
+
+        @media screen and (min-width: $w1200) {
+            display: block;
+            padding: 12px;
+            border-radius: 16px;
+            background-color: rgba(255, 255, 255, 0.25);
+            align-self: flex-end;
+            margin-left: auto;
+        }
+    }
+
+    & .splide {
+        &__slide {
+            & picture {
+                @include picture(65%, cover);
+
+                @media screen and (min-width: $w992) {
+                    padding-top: 39%;
+                }
+            }
+
+            & img {
+                border-radius: 16px;
+            }
+        }
+    }
+}
+
+.splide-nav {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+
+    &__next,
+    &__prev {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

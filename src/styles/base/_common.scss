@@ -217,7 +217,7 @@ a[data-tooltip]:hover::before {
         }
 
         & .section-desc {
-            color: var(--gray-64);
+            color: var(--gray-36);
             padding-left: 36px;
             font-size: 16px;
             padding-bottom: 20px;
@@ -226,6 +226,44 @@ a[data-tooltip]:hover::before {
                 font-size: 20px;
                 padding-left: 60px;
             }
+        }
+
+        &-col2 {
+            @media screen and (min-width: $w992) {
+                display: flex;
+                gap: 36px;
+            }
+        }
+
+        &-left {
+
+            @media screen and (min-width: $w992) {
+                width: calc(100% - 400px);
+
+                & h1 {
+                    color: #222;
+                    line-height: 114%;
+                }
+            }
+
+        }
+
+        &-right {
+
+            font-size: 16px;
+            line-height: 143%;
+
+            @media screen and (min-width: $w992) {
+                width: 400px;
+                min-width: 400px;
+                font-size: 18px;
+                line-height: 133%;
+            }
+
+            & strong {
+                font-weight: 600;
+            }
+
         }
     }
 
