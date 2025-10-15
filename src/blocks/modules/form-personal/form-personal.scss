@@ -1,0 +1,222 @@
+.section-form-personal {
+
+    @media screen and (max-width: $w480) {
+        margin: 0 -16px;
+    }
+
+}
+
+.form-personal {
+
+    background-color: var(--gray-96);
+    padding: 16px;
+    border-radius: 0;
+    color: var(--gray-20);
+
+    @media screen and (min-width: $w480) {
+        border-radius: 16px;
+    }
+
+    @media screen and (min-width: $w576) {
+        padding: 24px;
+    }
+
+    @media screen and (min-width: $w992) {
+        padding: 48px;
+        border-radius: 24px;
+    }
+
+    &__title {
+        @include font-h2;
+        color: var(--gray-20);
+        padding-bottom: 10px;
+    }
+
+    &__subtitle {
+        color: var(--gray-36);
+        padding-bottom: 32px;
+
+        @media screen and (min-width: $w992) {
+            font-size: 16px;
+
+            padding-bottom: 40px;
+        }
+    }
+
+    &__label {
+        @include font-h4;
+        padding-bottom: 27px;
+    }
+
+    &__row {
+        @media screen and (min-width: $w992) {
+            display: flex;
+            gap: 32px;
+        }
+    }
+
+    &__col {
+        @media screen and (min-width: $w992) {
+            width: 50%;
+            width: 50%;
+        }
+    }
+
+    &__white-layout {
+        background-color: #fff;
+        padding: 16px;
+        border-radius: 16px;
+
+        @media screen and (min-width: $w576) {
+            padding: 32px;
+            border-radius: 24px;
+        }
+    }
+
+    &__info {
+        padding: 24px 0 6px;
+        border-top: 1px solid var(--gray-88);
+
+        & h3 {
+            font-size: 24px;
+        }
+
+        & p {
+            color: var(--gray-36);
+            font-size: 15px;
+            line-height: 160%;
+            margin-top: 10px;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    & fieldset {
+        border: none;
+        padding: 24px 0 34px;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+    & legend {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    & .form {
+        &__subitem {
+            @media screen and (min-width: $w760) {
+                padding-block: 12px;
+            }
+        }
+
+        &__note {
+
+            padding: 16px 0 26px;
+
+            & a {
+                font-weight: bold;
+            }
+        }
+
+        & .btn {
+            width: 100%;
+            margin-top: 14px;
+        }
+    }
+
+    & .fieldset-variation ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        &.variation-radio {
+            gap: 24px;
+            margin-bottom: -4px;
+        }
+    }
+}
+
+.check-button {
+
+    & input {
+        display: none;
+
+        &:checked {
+            &+span {
+                background-color: var(--green-dark);
+                color: #fff;
+            }
+        }
+    }
+
+    & span {
+        background-color: #fff;
+        padding: 5px 12px;
+        display: inline-flex;
+        align-items: center;
+        border-radius: 6px;
+        font-size: 15px;
+
+        &:hover {
+            background-color: var(--gray-88);
+            cursor: pointer;
+        }
+    }
+
+
+}
+
+.item-contact {
+    &__label {
+        font-weight: 600;
+        font-size: 16px;
+        padding-bottom: 8px;
+    }
+
+    &__link {
+
+        display: inline-flex;
+        gap: 12px;
+        align-items: center;
+
+
+        & a {
+            color: var(--green);
+            font-size: 18px;
+            font-weight: 600;
+
+            @media screen and (min-width: $w375) {
+                font-size: 20px;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        & ul {
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            & .bgimage {
+                width: 24px;
+                height: 24px;
+                display: inline-block;
+                @include bgimage-contain;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}

@@ -42,5 +42,37 @@ mixin products-line
                                         +picture(item.image)
                 .products-line__list
                     ul
-                        each item in plist
-                            li= item.text
+                        each item,i in plist
+                            li(class=(!i?'is-active':''))
+                                span= item.text
+
+
+    
+mixin product-price
+    section.section-product-price
+        .product-price
+            .product-price__title Прайс-листы продукции
+            .product-price__subtitle Утеплители для фасадов под любые форматы
+            .product-price__wrp
+                .pricelist__group
+                    .pricelist__head Прайс-листы Республика Беларусь
+                    .pricelist__links
+                        ul 
+                            li
+                                a(href='#' download)
+                                    +icons('#ic_dl')
+                                    span Прайс-лист РБ для юр. лиц 
+                            li
+                                a(href='#' download)
+                                    +icons('#ic_dl')
+                                    span Прайс-лист РБ для юр. лиц 
+
+                .pricelist__group
+                    .pricelist__head Прайс-листы Российская Федерация
+                    .pricelist__links
+                        ul 
+                            li
+                                a(href='#' download)
+                                    +icons('#ic_dl')
+                                    span Прайс-лист РФ для юр. лиц                                                      
+                

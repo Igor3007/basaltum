@@ -1,4 +1,81 @@
+mixin check-button(data)
+    label.check-button
+        input(type="checkbox" name=data.name)
+        span= data.text
+
 mixin form-personal
     section.section-form-personal
-        .container
-            .form-personal form-personal
+            .form-personal
+                .form-personal__title Получите персональное предложение
+                .form-personal__subtitle Чтобы подготовить персональное предложение с ценами и сроками производства, пожалуйста, направьте краткий бриф:
+                .form-personal__form
+                    form(action='#' method='POST')
+                        .form-personal__row
+                            .form-personal__col
+                                
+                                fieldset
+                                    legend 1. Области применения:
+                                    .fieldset-variation
+                                        ul
+                                            li: +check-button({ name: 'space', text: 'Фасад'})
+                                            li: +check-button({ name: 'space', text: 'Вентфасад'})
+                                            li: +check-button({ name: 'space', text: 'Кровля плоская'})
+                                            li: +check-button({ name: 'space', text: 'Кровля скатная'})
+                                            li: +check-button({ name: 'space', text: 'Пол'})
+                                            li: +check-button({ name: 'space', text: 'Перегородка'})
+                                            li: +check-button({ name: 'space', text: 'Что-то ещё'})
+
+                                fieldset
+                                    legend 2. Требуемые характеристики:
+                                    .fieldset-variation
+                                        .form
+                                            .form__item: .form__subitem: input(type="text" name="weight" placeholder="Толщина")
+                                            .form__item: .form__subitem: input(type="text" name="plot" placeholder="Ориентир по плотности")
+                                            .form__item: .form__subitem: input(type="text" name="sys_class" placeholder="Класс системы")
+
+
+                                fieldset
+                                    legend 3. Объём и график поставок:
+                                    .fieldset-variation
+                                        ul.variation-radio
+                                            li: +radio('Разовый')
+                                            li: +radio('Ежемесячный')
+
+                                fieldset
+                                    legend 4. Локация и желаемые сроки:
+                                    .fieldset-variation
+                                        .form
+                                            .form__item: .form__subitem: input(type="text" name="address" placeholder="Расположение объекта")
+                                            .form__item: .form__subitem: input(type="text" name="delivery" placeholder="Сроки доставки")
+
+                            .form-personal__col
+                                .form-personal__white-layout
+                                    .form-personal__label Ваши контактные данные:
+                                    .form-personal__userdata
+                                        .form
+                                            .form__item
+                                                .form__subitem: input(type="text" name="user-name" placeholder="ФИО")
+                                            .form__item
+                                                .form__subitem: input(type="text" name="user-phone" placeholder="Номер телефона *")
+                                            .form__item
+                                                .form__subitem: input(type="text" name="user-comment" placeholder="Дополнительная информация")
+                                            .form__item
+                                                .form__subitem
+                                                    button.btn(type="submit") Оставить заявку
+                                            .form__note: +checkbox('Даю согласие на обработку персональных данных согласно нашей  <a href="/policy/">Политике обработки данных</a>')
+                                    .form-personal__info
+                                        h3 Свяжитесь с нами
+                                        p Готовы стать вашим надёжным партнёром в энергоэффективном и безопасном строительстве.
+                                    .form-personal__contacts
+                                        .item-contact
+                                            .item-contact__label Телефон:
+                                            .item-contact__link
+                                                a(href='tel:+375 (29) 320-20-74') +375 (29) 320-20-74
+                                                ul
+                                                    li: a(href='#'): +bgimage('/img/icons/icon-telegram.svg')
+                                                    li: a(href='#'): +bgimage('/img/icons/icon-whatsapp.svg')
+                                                    li: a(href='#'): +bgimage('/img/icons/icon-max.svg')
+                                        .item-contact
+                                            .item-contact__label Email:
+                                            .item-contact__link
+                                                a(href='mailto:Sales@basaltum.by') Sales@basaltum.by 

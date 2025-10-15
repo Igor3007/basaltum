@@ -1,3 +1,7 @@
+.section-banner-slider {
+    padding-top: 22px;
+}
+
 .banner-slider {
 
     @media screen and (min-width: $w992) {
@@ -45,6 +49,7 @@
 
         @media screen and (min-width: $w1200) {
             width: auto;
+
         }
 
 
@@ -55,6 +60,7 @@
 
             @media screen and (min-width: $w992) {
                 width: auto;
+                padding-inline: 1.8em;
             }
 
             @media screen and (max-width: $w576) {
@@ -104,12 +110,16 @@
                 @include picture(65%, cover);
 
                 @media screen and (min-width: $w992) {
-                    padding-top: 39%;
+                    padding-top: 39.5%;
                 }
             }
 
             & img {
                 border-radius: 16px;
+
+                @media screen and (min-width: $w1200) {
+                    border-radius: 36px;
+                }
             }
         }
     }

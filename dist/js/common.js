@@ -430,7 +430,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     data filter price
     ================================================*/
 
-    if (document.querySelector('.pricelist__group')) {
+    if (document.querySelector('.pricelist')) {
         const items = document.querySelectorAll('[data-filter]')
 
         items.forEach((item, index) => {
@@ -550,30 +550,64 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     document.querySelectorAll('[data-slider="plist"]').forEach(item => {
 
+        const textElems = item.closest('section').querySelectorAll('.products-line__list li')
+        const containerElems = item.closest('section').querySelector('.products-line__list ul')
+
+        const scrollToElem = (elem, container) => {
+            var rect = elem.getBoundingClientRect();
+            var rectContainer = container.getBoundingClientRect();
+
+            let elemOffset = {
+                top: rect.top + document.body.scrollTop,
+                left: rect.left + document.body.scrollLeft
+            }
+
+            let containerOffset = {
+                top: rectContainer.top + document.body.scrollTop,
+                left: rectContainer.left + document.body.scrollLeft
+            }
+
+            let leftPX = elemOffset.left - containerOffset.left + container.scrollLeft - (container.offsetWidth / 2) + ((elem.offsetWidth + 0) / 2)
+
+            container.scrollTo({
+                left: leftPX,
+                behavior: 'smooth'
+            });
+        }
+
         item['splide'] = new Splide(item, {
-            type: 'fade',
+            type: 'loop',
             autoplay: true,
             arrows: false,
             pagination: true,
             gap: 16,
             start: 0,
             mediaQuery: 'min',
-            perPage: 1
+            perPage: 1,
 
+            breakpoints: {
+                576: {
+                    pagination: false,
+                },
+            },
+
+        });
+
+        item['splide'].on('move', function (index) {
+            textElems.forEach((item, i) => {
+                item.classList.toggle('is-active', i == index)
+            })
+
+            scrollToElem(textElems[index], containerElems)
         });
 
         item['splide'].mount();
 
-        const prevButton = document.querySelector('[data-slider-prev="plist"]')
-        const nextButton = document.querySelector('[data-slider-next="plist"]')
-
-        prevButton.addEventListener('click', e => {
-            item['splide'].go('<')
+        textElems.forEach((li, i) => {
+            li.addEventListener('click', e => item['splide'].go(i))
         })
 
-        nextButton.addEventListener('click', e => {
-            item['splide'].go('>')
-        })
+
 
     })
 

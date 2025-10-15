@@ -213,6 +213,7 @@ a[data-tooltip]:hover::before {
 
             @media screen and (min-width: $w1440) {
                 font-size: 56px;
+                padding-bottom: 10px;
             }
         }
 
@@ -229,6 +230,9 @@ a[data-tooltip]:hover::before {
         }
 
         &-col2 {
+
+            padding-top: 30px;
+
             @media screen and (min-width: $w992) {
                 display: flex;
                 gap: 36px;
@@ -257,7 +261,9 @@ a[data-tooltip]:hover::before {
                 width: 400px;
                 min-width: 400px;
                 font-size: 18px;
-                line-height: 133%;
+                line-height: 150%;
+                margin-top: -20px;
+                font-size: 16px;
             }
 
             & strong {
