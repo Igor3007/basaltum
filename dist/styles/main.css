@@ -5829,6 +5829,8 @@ section.section-home-contacts {
   position: relative;
   display: block;
   padding-top: 100%;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .products-line__image picture img {
@@ -7367,6 +7369,10 @@ a[data-tooltip]:hover::before {
 
   .products-line__image {
     width: calc(360px);
+  }
+
+  .products-line__image picture {
+    padding-top: 132.5%;
   }
 
   .products-line__list {

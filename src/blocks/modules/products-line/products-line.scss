@@ -41,6 +41,12 @@
 
         & picture {
             @include picture(100%, cover);
+            border-radius: 16px;
+            overflow: hidden;
+
+            @media screen and (min-width: $w992) {
+                padding-top: 132.5%;
+            }
 
             & img {
                 border-radius: 16px;
