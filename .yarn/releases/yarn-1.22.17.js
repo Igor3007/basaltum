@@ -36006,29 +36006,17 @@ class HostedGitResolver extends (_exoticResolver || _load_exoticResolver()).defa
       const sshUrl = _this4.constructor.getGitSSHUrl(_this4.exploded);
 
       // If we can access the files over HTTP then we should as it's MUCH faster than git
-<<<<<<< HEAD
-      // helper-sidebar and tarball unarchiving. The HTTP API is only available for public repos
-=======
       // archive and tarball unarchiving. The HTTP API is only available for public repos
->>>>>>> main
       // though.
       if (yield _this4.hasHTTPCapability(httpBaseUrl)) {
         return _this4.resolveOverHTTP(httpUrl);
       }
 
-<<<<<<< HEAD
-      // If the url is accessible over git helper-sidebar then we should immediately delegate to
-      // the git resolver.
-      //
-      // NOTE: Here we use a different url than when we delegate to the git resolver later on.
-      // This is because `git helper-sidebar` requires access over ssh and github only allows that
-=======
       // If the url is accessible over git archive then we should immediately delegate to
       // the git resolver.
       //
       // NOTE: Here we use a different url than when we delegate to the git resolver later on.
       // This is because `git archive` requires access over ssh and github only allows that
->>>>>>> main
       // if you have write permissions
       const sshGitUrl = (_git || _load_git()).default.npmUrlToGitUrl(sshUrl);
       if (yield (_git || _load_git()).default.hasArchiveCapability(sshGitUrl)) {
@@ -38707,11 +38695,7 @@ class GitResolver extends (_exoticResolver || _load_exoticResolver()).default {
 
     if (hostname && path && GIT_HOSTS.indexOf(hostname) >= 0) {
       // only if dependency is pointing to a git repo,
-<<<<<<< HEAD
-      // e.g. facebook/flow and not file in a git repo facebook/flow/helper-sidebar/v1.0.0.tar.gz
-=======
       // e.g. facebook/flow and not file in a git repo facebook/flow/archive/v1.0.0.tar.gz
->>>>>>> main
       return path.split('/').filter(p => !!p).length === 2;
     }
 
@@ -44732,11 +44716,7 @@ function packWithIgnoreAndHeaders(cwd, ignoreFunction, { mapHeader } = {}) {
 }
 
 function setFlags(commander) {
-<<<<<<< HEAD
-  commander.description('Creates a compressed gzip helper-sidebar of package dependencies.');
-=======
   commander.description('Creates a compressed gzip archive of package dependencies.');
->>>>>>> main
   commander.option('-f, --filename <filename>', 'filename');
 }
 
@@ -51708,11 +51688,7 @@ class Git {
   }
 
   /**
-<<<<<<< HEAD
-   * Check if the host specified in the input `gitUrl` has helper-sidebar capability.
-=======
    * Check if the host specified in the input `gitUrl` has archive capability.
->>>>>>> main
    */
 
   static hasArchiveCapability(ref) {
@@ -51856,11 +51832,7 @@ class Git {
   }
 
   /**
-<<<<<<< HEAD
-   * Clone a repo to the input `dest`. Use `git helper-sidebar` if it's available, otherwise fall
-=======
    * Clone a repo to the input `dest`. Use `git archive` if it's available, otherwise fall
->>>>>>> main
    * back to `git clone`.
    */
 
@@ -52131,11 +52103,7 @@ class Git {
 
   /**
    * Resolves the input hash / ref / semver range to a valid commit sha
-<<<<<<< HEAD
-   * If possible also resolves the sha to a valid ref in order to use "git helper-sidebar"
-=======
    * If possible also resolves the sha to a valid ref in order to use "git archive"
->>>>>>> main
    */
 
   setRef(refs) {
@@ -101325,11 +101293,7 @@ class GitFetcher extends (_baseFetcher || _load_baseFetcher()).default {
           savedPackedHeader = true;
           header.pax = header.pax || {};
           // add a custom data on the first header
-<<<<<<< HEAD
-          // in order to distinguish a tar from "git helper-sidebar" and a tar from "pack" command
-=======
           // in order to distinguish a tar from "git archive" and a tar from "pack" command
->>>>>>> main
           header.pax.packed = PACKED_FLAG;
         }
         return header;
