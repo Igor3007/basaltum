@@ -1,0 +1,78 @@
+mixin products-line
+
+    - 
+        const plist = [
+            {
+                image: '/img/common/product/pl3',
+                text: 'Ламели для производства сэндвич-панелей',
+            },
+            {
+                image: '/img/common/product/pl2',
+                text: 'Фасады и вентфасады ',
+            },
+            {
+                image: '/img/common/product/pl2',
+                text: 'Кровли — скатные и плоские (в том числе эксплуатируемые), совместимость с современными кровельными системами',
+            },
+            {
+                image: '/img/common/product/pl3',
+                text: 'Полы и перекрытия',
+            },
+            {
+                image: '/img/common/product/pl2',
+                text: 'Перегородки и внутренние стены: звукоизоляция, пожарная безопасность, простота раскроя и монтажа',
+            },
+            {
+                image: '/img/common/product/pl3',
+                text: 'Противопожарные решения: пожарные рассечки, узлы огнезащиты в ограждающих конструкциях',
+            },
+        ]
+
+    section.section-products-line(id="product-line")
+        .products-line
+            .products-line__title Продуктовая линейка
+            .products-line__subtitle Плиты Базальтум для ключевых задач строительства
+            .products-line__wrp
+                .products-line__image
+                    .splide(data-slider="plist")
+                        .splide__track
+                            .splide__list
+                                each item in plist
+                                    .splide__slide
+                                        +picture(item.image)
+                .products-line__list
+                    ul
+                        each item,i in plist
+                            li(class=(!i?'is-active':''))
+                                span= item.text
+
+
+    
+mixin product-price
+    section.section-product-price
+        .product-price
+            .product-price__title Прайс-листы продукции
+            .product-price__subtitle Утеплители для фасадов под любые форматы
+            .product-price__wrp
+                .pricelist__group
+                    .pricelist__head Прайс-листы Республика Беларусь
+                    .pricelist__links
+                        ul 
+                            li
+                                a(href='#' download)
+                                    +icons('#ic_dl')
+                                    span Прайс-лист РБ для юр. лиц 
+                            li
+                                a(href='#' download)
+                                    +icons('#ic_dl')
+                                    span Прайс-лист РБ для юр. лиц 
+
+                .pricelist__group
+                    .pricelist__head Прайс-листы Российская Федерация
+                    .pricelist__links
+                        ul 
+                            li
+                                a(href='#' download)
+                                    +icons('#ic_dl')
+                                    span Прайс-лист РФ для юр. лиц                                                      
+                

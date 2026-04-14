@@ -1,0 +1,22 @@
+mixin banner-slider
+    section.section-banner-slider
+        .banner-slider
+            .banner-slider__slider
+                .splide(data-slider="banner")
+                    .splide__track
+                        .splide__list
+                            each item in [1,2]
+                                .splide__slide
+                                    +picture('/img/common/img'+item)
+            .banner-slider__action
+                .banner-slider__btns
+                    .banner-slider__btn
+                        a(data-scroll="#product-line"): button.btn.btn-white Назначение
+                    .banner-slider__btn
+                        a(data-scroll="#adv"): button.btn.btn-white Преимущества
+                    .banner-slider__btn
+                        a(data-scroll="#form-personal"): button.btn Получить персональное предложение
+                .banner-slider__nav
+                    .splide-nav
+                        .splide-nav__prev(data-slider-prev="banner"): +icons('#ic_prev-slider', 40)
+                        .splide-nav__next(data-slider-next="banner"): +icons('#ic_next-slider', 40)

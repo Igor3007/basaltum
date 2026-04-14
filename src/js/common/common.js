@@ -430,7 +430,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     data filter price
     ================================================*/
 
-    if (document.querySelector('.pricelist__group')) {
+    if (document.querySelector('.pricelist')) {
         const items = document.querySelectorAll('[data-filter]')
 
         items.forEach((item, index) => {
@@ -508,6 +508,325 @@ document.addEventListener("DOMContentLoaded", function (event) {
         new filterPrice()
 
     }
+
+
+    /* =======================================
+    splide banner
+    =======================================*/
+
+    document.querySelectorAll('[data-slider="banner"]').forEach(item => {
+
+        item['splide'] = new Splide(item, {
+            type: 'fade',
+            autoplay: true,
+            arrows: false,
+            pagination: true,
+            gap: 16,
+            start: 0,
+            mediaQuery: 'min',
+            perPage: 1
+
+        });
+
+        item['splide'].mount();
+
+        const prevButton = document.querySelector('[data-slider-prev="banner"]')
+        const nextButton = document.querySelector('[data-slider-next="banner"]')
+
+        prevButton.addEventListener('click', e => {
+            item['splide'].go('<')
+        })
+
+        nextButton.addEventListener('click', e => {
+            item['splide'].go('>')
+        })
+
+    })
+
+    /* =======================================
+    splide plist
+    =======================================*/
+
+    document.querySelectorAll('[data-slider="plist"]').forEach(item => {
+
+        const textElems = item.closest('section').querySelectorAll('.products-line__list li')
+        const containerElems = item.closest('section').querySelector('.products-line__list ul')
+
+        const scrollToElem = (elem, container) => {
+            var rect = elem.getBoundingClientRect();
+            var rectContainer = container.getBoundingClientRect();
+
+            let elemOffset = {
+                top: rect.top + document.body.scrollTop,
+                left: rect.left + document.body.scrollLeft
+            }
+
+            let containerOffset = {
+                top: rectContainer.top + document.body.scrollTop,
+                left: rectContainer.left + document.body.scrollLeft
+            }
+
+            let leftPX = elemOffset.left - containerOffset.left + container.scrollLeft - (container.offsetWidth / 2) + ((elem.offsetWidth + 0) / 2)
+
+            container.scrollTo({
+                left: leftPX,
+                behavior: 'smooth'
+            });
+        }
+
+        item['splide'] = new Splide(item, {
+            type: 'loop',
+            autoplay: true,
+            arrows: false,
+            pagination: true,
+            gap: 16,
+            start: 0,
+            mediaQuery: 'min',
+            perPage: 1,
+
+            breakpoints: {
+                576: {
+                    pagination: false,
+                },
+            },
+
+        });
+
+        item['splide'].on('move', function (index) {
+            textElems.forEach((item, i) => {
+                item.classList.toggle('is-active', i == index)
+            })
+
+            scrollToElem(textElems[index], containerElems)
+        });
+
+        item['splide'].mount();
+
+        textElems.forEach((li, i) => {
+            li.addEventListener('click', e => item['splide'].go(i))
+        })
+
+
+
+    })
+
+    /* =======================================
+    form personal offer
+    =======================================*/
+
+    class FormValidator {
+        constructor(formElement) {
+            this.form = formElement;
+            this.errorContainer = null;
+            this.init();
+        }
+
+        init() {
+            // Создаем контейнер для ошибок
+            this.createErrorContainer();
+
+            // Назначаем обработчик отправки формы
+            this.form.addEventListener('submit', (e) => {
+                if (!this.validateForm()) {
+                    e.preventDefault();
+                }
+            });
+        }
+
+        createErrorContainer() {
+            this.errorContainer = document.createElement('div');
+            this.errorContainer.className = 'form-errors';
+            this.form.appendChild(this.errorContainer);
+        }
+
+        validateForm() {
+            const errors = [];
+
+            // Очищаем предыдущие ошибки
+            this.clearErrors();
+
+            // 1. Проверка областей применения
+            if (!this.validateApplicationAreas()) {
+                errors.push('Выберите хотя бы одну область применения');
+            }
+
+            // 2. Проверка характеристик
+            const characteristicsErrors = this.validateCharacteristics();
+            errors.push(...characteristicsErrors);
+
+            // 3. Проверка графика поставок
+            if (!this.validateDeliverySchedule()) {
+                errors.push('Выберите график поставок');
+            }
+
+            // 4. Проверка локации и сроков
+            const locationErrors = this.validateLocation();
+            errors.push(...locationErrors);
+
+            // 5. Проверка контактных данных
+            const contactErrors = this.validateContactData();
+            errors.push(...contactErrors);
+
+            // 6. Проверка согласия на обработку данных
+            if (!this.validateConsent()) {
+                errors.push('Необходимо согласие на обработку персональных данных');
+            }
+
+            // Если есть ошибки - показываем их
+            if (errors.length > 0) {
+                this.showErrors(errors);
+                return false;
+            }
+
+            return true;
+        }
+
+        validateApplicationAreas() {
+            const checkboxes = this.form.querySelectorAll('input[name="space"]');
+            return Array.from(checkboxes).some(checkbox => checkbox.checked);
+        }
+
+        validateCharacteristics() {
+            const errors = [];
+            const thickness = this.form.querySelector('input[name="weight"]');
+            const density = this.form.querySelector('input[name="plot"]');
+            const systemClass = this.form.querySelector('input[name="sys_class"]');
+
+            if (!thickness.value.trim()) {
+                errors.push('Укажите толщину');
+                this.highlightField(thickness);
+            }
+
+            if (!density.value.trim()) {
+                errors.push('Укажите ориентир по плотности');
+                this.highlightField(density);
+            }
+
+            if (!systemClass.value.trim()) {
+                errors.push('Укажите класс системы');
+                this.highlightField(systemClass);
+            }
+
+            return errors;
+        }
+
+        validateDeliverySchedule() {
+            const radios = this.form.querySelectorAll('input[name="graph-delivery"][type="radio"]');
+            return Array.from(radios).some(radio => radio.checked);
+        }
+
+        validateLocation() {
+            const errors = [];
+            const address = this.form.querySelector('input[name="address"]');
+            const delivery = this.form.querySelector('input[name="delivery"]');
+
+            if (!address.value.trim()) {
+                errors.push('Укажите расположение объекта');
+                this.highlightField(address);
+            }
+
+            if (!delivery.value.trim()) {
+                errors.push('Укажите сроки доставки');
+                this.highlightField(delivery);
+            }
+
+            return errors;
+        }
+
+        validateContactData() {
+            const errors = [];
+            const name = this.form.querySelector('input[name="user-name"]');
+            const phone = this.form.querySelector('input[name="user-phone"]');
+
+            if (!name.value.trim()) {
+                errors.push('Укажите ФИО');
+                this.highlightField(name);
+            }
+
+            if (!phone.value.trim()) {
+                errors.push('Укажите номер телефона');
+                this.highlightField(phone);
+            } else if (!this.validatePhone(phone.value)) {
+                errors.push('Укажите корректный номер телефона');
+                this.highlightField(phone);
+            }
+
+            return errors;
+        }
+
+        validateConsent() {
+            const consentCheckbox = this.form.querySelector('input[name="undefined"][type="checkbox"]');
+            return consentCheckbox && consentCheckbox.checked;
+        }
+
+        validatePhone(phone) {
+            // Простая валидация телефона - можно усложнить при необходимости
+            const phoneRegex = /^[\+]?[0-9\s\-\(\)]+$/;
+            return phoneRegex.test(phone.trim());
+        }
+
+        highlightField(field) {
+            field.classList.toggle('err', true)
+
+            // Убираем подсветку при исправлении
+            field.addEventListener('input', () => {
+                field.classList.toggle('err', false)
+            }, { once: true });
+        }
+
+        showErrors(errors) {
+            this.errorContainer.innerHTML = '';
+
+            const title = document.createElement('div');
+            title.textContent = 'Для отправки формы необходимо исправить следующие ошибки:';
+            title.style.cssText = 'font-weight: bold; margin-bottom: 10px;';
+            this.errorContainer.appendChild(title);
+
+            const list = document.createElement('ul');
+            list.style.cssText = 'margin: 0; padding-left: 20px;';
+
+            errors.forEach(error => {
+                const item = document.createElement('li');
+                item.textContent = '- ' + error;
+                list.appendChild(item);
+            });
+
+            this.errorContainer.appendChild(list);
+            this.errorContainer.style.display = 'block';
+
+            // Прокрутка к ошибкам
+            this.errorContainer.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+
+        clearErrors() {
+            this.errorContainer.style.display = 'none';
+            this.errorContainer.innerHTML = '';
+
+            // Сбрасываем подсветку полей
+            const highlightedFields = this.form.querySelectorAll('input[style*="border-color"]');
+            highlightedFields.forEach(field => {
+                field.classList.toggle('err', false)
+            });
+        }
+    }
+
+    const form = document.querySelector('.form-personal__form form');
+    if (form) {
+        new FormValidator(form);
+    }
+
+    /* ========================================
+    scroll smooth
+    ========================================*/
+
+    document.querySelectorAll('[data-scroll]').forEach(item => {
+        item.addEventListener('click', e => {
+            window.scrollToTargetAdjusted(document.querySelector(item.dataset.scroll))
+        })
+    })
 
 
 }); //domContentLoaded
@@ -624,9 +943,9 @@ if (document.querySelector('.basaltum-catalog')) {
 
 if (document.querySelector('.pricelist__main')) {
     const btnShowMore = document.querySelector('.show-more');
-    btnShowMore.addEventListener('click', ()=>{
-        document.querySelectorAll('.pricelist__group').forEach(item=>{
-            if(item.classList.contains('is-hide')){
+    btnShowMore.addEventListener('click', () => {
+        document.querySelectorAll('.pricelist__group').forEach(item => {
+            if (item.classList.contains('is-hide')) {
                 item.classList.remove('is-hide')
                 btnShowMore.remove()
             }

@@ -35,9 +35,10 @@
         background-color: #fff;
         display: inline-block;
         margin-right: rem(10);
-        border: 1px solid var(--bg-02);
+        border: 2px solid var(--gray-88);
         border-radius: 6px;
-        background-color: var(--bg-02);
+        background-color: #fff;
+        transition: 0.3s ease;
 
 
 
@@ -45,8 +46,8 @@
             content: "";
             position: absolute;
 
-            left: 5px;
-            top: 6px;
+            left: 4px;
+            top: 5px;
             width: 12px;
             height: 9px;
 
@@ -79,6 +80,11 @@
             background-color: $main;
             border-color: $main;
             z-index: 2;
+
+            &:hover {
+                background-color: var(--gray-20);
+                border-color: var(--gray-20);
+            }
         }
 
         // &:checked~.checkbox__text {
@@ -95,7 +101,7 @@
     &:hover {
         & .checkbox {
             &__elem {
-                border-color: #C6D3E2;
+                border-color: var(--green-dark);
             }
         }
     }
@@ -162,27 +168,41 @@
         margin-right: 10px;
         border-radius: 50%;
         transition: 0.15s linear;
-        border: 1px solid var(--bg-02);
-        background-color: var(--bg-02);
+        border: 2px solid var(--gray-88);
+        background-color: #fff;
 
 
 
     }
 
     & input {
-        &:hover~.radio__elem {
-            border: 1px solid $accent-1-1;
+        &:hover{
+            &~.radio__elem {
+                border-color: var(--green-dark);
+            }
+            &~.radio__text {
+                color: var(--green-dark);
+            }
         }
 
-        &:checked~.radio__elem {
-            border: 7px solid $accent-1-1;
-            background-color: #fff;
+        &:checked{
+            &~.radio{
+                &__elem {
+                    border: 7px solid $accent-1-1;
+                    background-color: #fff;
+                    
+                    &:hover {
+                        border-color: var(--gray-20);
+                    }
+                }
 
+                 
+            }
         }
 
         &:checked~.radio__text {
 
-            color: #525166;
+            color: var(--gray-20);
 
         }
     }
