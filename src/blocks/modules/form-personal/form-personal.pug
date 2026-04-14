@@ -1,10 +1,10 @@
 mixin check-button(data)
     label.check-button
-        input(type="checkbox" name=data.name)
+        input(type="checkbox" name=data.name value=data.text)
         span= data.text
 
 mixin form-personal
-    section.section-form-personal
+    section.section-form-personal(id="form-personal")
             .form-personal
                 .form-personal__title Получите персональное предложение
                 .form-personal__subtitle Чтобы подготовить персональное предложение с ценами и сроками производства, пожалуйста, направьте краткий бриф:
@@ -38,8 +38,8 @@ mixin form-personal
                                     legend 3. Объём и график поставок:
                                     .fieldset-variation
                                         ul.variation-radio
-                                            li: +radio('Разовый')
-                                            li: +radio('Ежемесячный')
+                                            li: +radio('Разовый', 'graph-delivery', 'Разовый')
+                                            li: +radio('Ежемесячный', 'graph-delivery', 'Ежемесячный')
 
                                 fieldset
                                     legend 4. Локация и желаемые сроки:

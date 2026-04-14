@@ -37,6 +37,10 @@ body {
             box-shadow: 0 0 0px 1px var(--green);
             outline: none;
         }
+
+        &:hover {
+            border-color: var(--gray-36) ;
+        }
     }
 
     & input[disabled] {
@@ -63,21 +67,21 @@ body {
 
     }
 
-    & input[type="date"][aria-valid="false"],
-    & input[type="text"][aria-valid="false"],
-    & input[type="number"][aria-valid="false"],
-    & input[type="tel"][aria-valid="false"],
-    & input[type="password"][aria-valid="false"],
-    & input[type="email"][aria-valid="false"] {
-        border-color: #f00;
+    & input[type="date"].err,
+    & input[type="text"].err,
+    & input[type="number"].err,
+    & input[type="tel"].err,
+    & input[type="password"].err,
+    & input[type="email"].err {
         background-color: rgba(249, 66, 88, 0.12);
-
+        box-shadow: 0 0 0px 1px var(--red);
+        border-color: transparent;
     }
 
     & .af-select[aria-valid="false"] {
-        border-color: #f00;
+        border-color: var(--red);
         background-color: rgba(249, 66, 88, 0.12);
-        ;
+
     }
 
     & input[type="password"][aria-valid="true"],

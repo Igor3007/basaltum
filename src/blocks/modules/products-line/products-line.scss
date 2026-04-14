@@ -10,6 +10,7 @@
 
 .products-line {
 
+  
     &__title {
         @include font-h2;
         color: var(--gray-20);
@@ -117,6 +118,11 @@
                     min-width: calc(100vw - 48px);
                     font-size: 18px;
                     font-size: 16px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                
                 }
 
                 &::before {

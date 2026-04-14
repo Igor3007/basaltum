@@ -11,11 +11,11 @@ mixin banner-slider
             .banner-slider__action
                 .banner-slider__btns
                     .banner-slider__btn
-                        a(href='#'): button.btn.btn-white Назначение
+                        a(data-scroll="#product-line"): button.btn.btn-white Назначение
                     .banner-slider__btn
-                        a(href='#'): button.btn.btn-white Преимущества
+                        a(data-scroll="#adv"): button.btn.btn-white Преимущества
                     .banner-slider__btn
-                        a(href='#'): button.btn Получить персональное предложение
+                        a(data-scroll="#form-personal"): button.btn Получить персональное предложение
                 .banner-slider__nav
                     .splide-nav
                         .splide-nav__prev(data-slider-prev="banner"): +icons('#ic_prev-slider', 40)

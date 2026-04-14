@@ -139,11 +139,11 @@
                       </div>
                       <div class="banner-slider__action">
                         <div class="banner-slider__btns">
-                          <div class="banner-slider__btn"><a href="#">
+                          <div class="banner-slider__btn"><a data-scroll="#product-line">
                               <button class="btn btn-white">Назначение</button></a></div>
-                          <div class="banner-slider__btn"><a href="#">
+                          <div class="banner-slider__btn"><a data-scroll="#adv">
                               <button class="btn btn-white">Преимущества</button></a></div>
-                          <div class="banner-slider__btn"><a href="#">
+                          <div class="banner-slider__btn"><a data-scroll="#form-personal">
                               <button class="btn">Получить персональное предложение</button></a></div>
                         </div>
                         <div class="banner-slider__nav">
@@ -204,7 +204,7 @@
                       </div>
                     </div>
                   </section>
-                  <section class="section-products-line">
+                  <section class="section-products-line" id="product-line">
                     <div class="products-line">
                       <div class="products-line__title">Продуктовая линейка</div>
                       <div class="products-line__subtitle">Плиты Базальтум для ключевых задач строительства</div>
@@ -260,7 +260,7 @@
                       </div>
                     </div>
                   </section>
-                  <section class="section-advantages advantages--min">
+                  <section class="section-advantages advantages--min" id="adv">
                     <div class="advantages">
                       <div class="advantages__title">Ключевые преимущества</div>
                       <div class="advantages__desc">Что делает, содержит и не содержит наша продукция</div>
@@ -269,7 +269,7 @@
                           <div class="advantages-card">
                             <div class="advantages-card__icon"><span class="bgimage lazyload" data-bg="/img/common/border.svg">
                                 <svg width="48" height="48">
-                                  <use xlink:href="/img/sprites/sprite.svg#ic_01"></use>
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_04"></use>
                                 </svg></span></div>
                             <div class="advantages-card__text">Каменная вата на основе природного базальта. Надёжная огнезащита конструкций, негорючая и безопасная.</div>
                           </div>
@@ -278,7 +278,7 @@
                           <div class="advantages-card">
                             <div class="advantages-card__icon"><span class="bgimage lazyload" data-bg="/img/common/border.svg">
                                 <svg width="48" height="48">
-                                  <use xlink:href="/img/sprites/sprite.svg#ic_02"></use>
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_scales"></use>
                                 </svg></span></div>
                             <div class="advantages-card__text">Энергоэффективность. Низкая теплопроводность и стабильность характеристик на весь срок службы.</div>
                           </div>
@@ -287,7 +287,7 @@
                           <div class="advantages-card">
                             <div class="advantages-card__icon"><span class="bgimage lazyload" data-bg="/img/common/border.svg">
                                 <svg width="48" height="48">
-                                  <use xlink:href="/img/sprites/sprite.svg#ic_03"></use>
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_ear"></use>
                                 </svg></span></div>
                             <div class="advantages-card__text">Акустический комфорт. Высокое звукопоглощение в перегородках, перекрытиях и фасадных системах.</div>
                           </div>
@@ -296,7 +296,7 @@
                           <div class="advantages-card">
                             <div class="advantages-card__icon"><span class="bgimage lazyload" data-bg="/img/common/border-cross.svg">
                                 <svg width="48" height="48">
-                                  <use xlink:href="/img/sprites/sprite.svg#ic_04"></use>
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_mic"></use>
                                 </svg></span></div>
                             <div class="advantages-card__text">Современная лаборатория и контроль качества продукции 24/7.</div>
                           </div>
@@ -305,7 +305,7 @@
                           <div class="advantages-card">
                             <div class="advantages-card__icon"><span class="bgimage lazyload" data-bg="/img/common/border-cross.svg">
                                 <svg width="48" height="48">
-                                  <use xlink:href="/img/sprites/sprite.svg#ic_05"></use>
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_box"></use>
                                 </svg></span></div>
                             <div class="advantages-card__text">Геометрическая стабильность. Точная геометрия и плотность — предсказуемый результат на объекте, ровные плоскости.</div>
                           </div>
@@ -314,7 +314,7 @@
                           <div class="advantages-card">
                             <div class="advantages-card__icon"><span class="bgimage lazyload" data-bg="/img/common/border-cross.svg">
                                 <svg width="48" height="48">
-                                  <use xlink:href="/img/sprites/sprite.svg#ic_06"></use>
+                                  <use xlink:href="/img/sprites/sprite.svg#ic_bag"></use>
                                 </svg></span></div>
                             <div class="advantages-card__text">Надёжная упаковка, маркировка и комплект.</div>
                           </div>
@@ -356,7 +356,7 @@
                       </div>
                     </div>
                   </section>
-                  <section class="section-form-personal">
+                  <section class="section-form-personal" id="form-personal">
                     <div class="form-personal">
                       <div class="form-personal__title">Получите персональное предложение</div>
                       <div class="form-personal__subtitle">Чтобы подготовить персональное предложение с ценами и сроками производства, пожалуйста, направьте краткий бриф:</div>
@@ -370,37 +370,37 @@
                                   <ul>
                                     <li>
                                             <label class="check-button">
-                                              <input type="checkbox" name="space"><span>Фасад</span>
+                                              <input type="checkbox" name="space" value="Фасад"><span>Фасад</span>
                                             </label>
                                     </li>
                                     <li>
                                             <label class="check-button">
-                                              <input type="checkbox" name="space"><span>Вентфасад</span>
+                                              <input type="checkbox" name="space" value="Вентфасад"><span>Вентфасад</span>
                                             </label>
                                     </li>
                                     <li>
                                             <label class="check-button">
-                                              <input type="checkbox" name="space"><span>Кровля плоская</span>
+                                              <input type="checkbox" name="space" value="Кровля плоская"><span>Кровля плоская</span>
                                             </label>
                                     </li>
                                     <li>
                                             <label class="check-button">
-                                              <input type="checkbox" name="space"><span>Кровля скатная</span>
+                                              <input type="checkbox" name="space" value="Кровля скатная"><span>Кровля скатная</span>
                                             </label>
                                     </li>
                                     <li>
                                             <label class="check-button">
-                                              <input type="checkbox" name="space"><span>Пол</span>
+                                              <input type="checkbox" name="space" value="Пол"><span>Пол</span>
                                             </label>
                                     </li>
                                     <li>
                                             <label class="check-button">
-                                              <input type="checkbox" name="space"><span>Перегородка</span>
+                                              <input type="checkbox" name="space" value="Перегородка"><span>Перегородка</span>
                                             </label>
                                     </li>
                                     <li>
                                             <label class="check-button">
-                                              <input type="checkbox" name="space"><span>Что-то ещё</span>
+                                              <input type="checkbox" name="space" value="Что-то ещё"><span>Что-то ещё</span>
                                             </label>
                                     </li>
                                   </ul>
@@ -434,12 +434,12 @@
                                   <ul class="variation-radio">
                                     <li>
                                       <label class="radio">
-                                        <input type="radio" name="undefined" value="undefined"/><span class="radio__elem"></span><span class="radio__text">Разовый</span>
+                                        <input type="radio" name="graph-delivery" value="Разовый"/><span class="radio__elem"></span><span class="radio__text">Разовый</span>
                                       </label>
                                     </li>
                                     <li>
                                       <label class="radio">
-                                        <input type="radio" name="undefined" value="undefined"/><span class="radio__elem"></span><span class="radio__text">Ежемесячный</span>
+                                        <input type="radio" name="graph-delivery" value="Ежемесячный"/><span class="radio__elem"></span><span class="radio__text">Ежемесячный</span>
                                       </label>
                                     </li>
                                   </ul>
