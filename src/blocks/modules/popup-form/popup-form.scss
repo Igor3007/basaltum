@@ -105,3 +105,91 @@
     }
 
 }
+
+
+.popup-product {
+    padding: 16px;
+    max-width: 1200px;
+    background: var(--gray-97);
+    margin: -10px;
+    border-radius: 10px;
+
+    @media screen and (min-width: $w576) {
+        padding: 32px;
+    }
+
+    &__title {
+        @include font-h4;
+        padding-bottom: 12px;
+        color: var(--gray-20);
+    }
+
+    &__desc {
+        line-height: 150%;
+        padding-bottom: 25px;
+        font-size: 16px;
+
+        color: var(--gray-36);
+    }
+
+
+    .basaltum-catalog__item{
+        margin-bottom: 2px!important;
+        .basaltum-catalog__price,.basaltum-catalog__img{
+            margin-bottom: 0!important;
+        }
+        .basaltum-catalog__text {
+            p {
+                &:first-child{
+                    padding-top: 0;
+                    margin-top: 0;
+                }
+                strong {
+                    font-size: 16px;
+                    line-height: 160%;
+                }
+            }
+        }
+        .basaltum-catalog__price span {
+            font-size: 24px;
+            font-family: 'Gilroy';
+        }
+
+    }
+    .basaltum-catalog__characteristic-title h4 {
+        font-size: 20px;
+    }
+    .basaltum-catalog__characteristic-content-title h5 {
+        font-size: 18px;
+    }
+    .basaltum-catalog__characteristic-content-values .box span {
+        font-size: 14px;
+    }
+    .basaltum-catalog__characteristic-content-values .box span strong {
+        font-size: 16px;
+    }
+
+
+    @media screen and (min-width: 992.98px) {
+        .basaltum-catalog__content {
+            flex: 0 0 61%;
+        }
+        .basaltum-catalog__img {
+            flex: 0 0 36%;
+        }
+    }
+    .basaltum-catalog__characteristic.visible-characteristic{
+        margin-top: 2px;
+        height: 100%;
+        opacity: 1;
+        visibility: visible;
+        transition: .7s ease;
+        background: #ffffff;
+        border-radius: 16px;
+
+        @media screen and (min-width: 992.98px) {
+            padding: 32px;
+
+        }
+    }
+}

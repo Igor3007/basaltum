@@ -430,11 +430,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     data filter price
     ================================================*/
 
-<<<<<<< HEAD
-    if (document.querySelector('.pricelist__group')) {
-=======
     if (document.querySelector('.pricelist')) {
->>>>>>> main
         const items = document.querySelectorAll('[data-filter]')
 
         items.forEach((item, index) => {
@@ -514,8 +510,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
 
-<<<<<<< HEAD
-=======
     /* =======================================
     splide banner
     =======================================*/
@@ -835,7 +829,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     })
 
 
->>>>>>> main
 }); //domContentLoaded
 
 if (document.querySelector('.top-products')) {
@@ -947,18 +940,80 @@ if (document.querySelector('.basaltum-catalog')) {
     });
 }
 
+if (document.querySelector('.addMoreContent')) {
+    document.addEventListener('DOMContentLoaded', function() {
+        const addMoreContentBtn = document.querySelector('.addMoreContent');
+        const moreContent = document.querySelector('.moreContent');
+
+        if (addMoreContentBtn && moreContent) {
+            addMoreContentBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Add class
+                moreContent.classList.add('open');
+
+                // Optional: Toggle between add/remove
+                // moreContent.classList.toggle('open');
+            });
+        }
+    });
+}
+
+if (document.querySelector('.additionalCheckbox')) {
+    document.addEventListener('DOMContentLoaded', function() {
+        const radioInputs = document.querySelectorAll('.additionalCheckbox input[type="radio"]');
+
+        // Hide all additional content initially
+        document.querySelectorAll('.additionalContend li').forEach(content => {
+            content.style.display = 'none';
+        });
+
+        function showTabContent(tabIndex) {
+            // Remove openAdd from all li
+            document.querySelectorAll('.additionalCheckbox li').forEach(li => {
+                li.classList.remove('openAdd');
+            });
+
+            // Add openAdd to selected li
+            const selectedLi = document.querySelector(`.additionalCheckbox li[data-tab="${tabIndex}"]`);
+            if (selectedLi) {
+                selectedLi.classList.add('openAdd');
+            }
+
+            // Hide all content and show selected
+            document.querySelectorAll('.additionalContend li').forEach(content => {
+                content.style.display = 'none';
+            });
+
+            const selectedContent = document.querySelector(`.additionalContend li[data-content="${tabIndex}"]`);
+            if (selectedContent) {
+                selectedContent.style.display = 'block';
+            }
+        }
+
+        radioInputs.forEach((radio, index) => {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    showTabContent(index);
+                }
+            });
+        });
+
+        // Check for pre-selected radio
+        const checkedRadio = Array.from(radioInputs).find(radio => radio.checked);
+        if (checkedRadio) {
+            const checkedIndex = Array.from(radioInputs).indexOf(checkedRadio);
+            showTabContent(checkedIndex);
+        }
+    });
+}
+
 
 if (document.querySelector('.pricelist__main')) {
     const btnShowMore = document.querySelector('.show-more');
-<<<<<<< HEAD
-    btnShowMore.addEventListener('click', ()=>{
-        document.querySelectorAll('.pricelist__group').forEach(item=>{
-            if(item.classList.contains('is-hide')){
-=======
     btnShowMore.addEventListener('click', () => {
         document.querySelectorAll('.pricelist__group').forEach(item => {
             if (item.classList.contains('is-hide')) {
->>>>>>> main
                 item.classList.remove('is-hide')
                 btnShowMore.remove()
             }

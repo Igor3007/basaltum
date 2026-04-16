@@ -51,6 +51,7 @@ html {
     --orange: #EB7D00;
     --green-dark: #1EBC61;
     --green-light: #A5E427;
+    --green-links: #37A735;
 
     --gradient-green-inverted: linear-gradient(270deg, #1EBC61 0%, #A5E427 100%);
     --gradient-green: linear-gradient(270deg, #A5E427 0%, #1EBC61 100%);
@@ -660,7 +661,7 @@ input[type="date"] {
 @mixin font-h3 {
 
 
-    font-family: Montserrat;
+    font-family: Gilroy;
     font-size: 24px;
     font-weight: 800;
     line-height: 133.333%;
@@ -671,6 +672,7 @@ input[type="date"] {
 
     @media screen and (min-width: $w576) {
         font-size: 30px;
+        font-family: Montserrat;
     }
 
 
@@ -679,13 +681,14 @@ input[type="date"] {
 @mixin font-h4 {
 
     /* H4 */
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 133%;
-    font-family: montserrat;
+    font-family: Gilroy;
 
     @media screen and (min-width: $w760) {
         font-size: 28px;
+        font-family: montserrat;
     }
 
 }
