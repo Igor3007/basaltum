@@ -125,61 +125,6 @@ body {
 }
 
 .form {
-    //.circle-checkbox {
-    //    display: flex;
-    //    align-items: center;
-    //    cursor: pointer;
-    //    @media screen and (min-width: 767.98px) {
-    //        &:hover {
-    //            .circle-indicator {
-    //                border-color:  var(--green-dark);
-    //            }
-    //
-    //            input[type="checkbox"], input[type="radio"] {
-    //                &:checked + .circle-indicator {
-    //                    border-color:  var(--green-dark);
-    //                }
-    //            }
-    //
-    //            .circle-label {
-    //                font-size: 15px;
-    //                font-weight: 400;
-    //                color: #3D3D3D;
-    //            }
-    //        }
-    //    }
-    //
-    //    input[type="checkbox"], input[type="radio"] {
-    //        position: absolute;
-    //        opacity: 0;
-    //        cursor: pointer;
-    //        height: 0;
-    //        width: 0;
-    //
-    //        &:checked + .circle-indicator {
-    //            border-width: 7px;
-    //            border-color: var(--green-dark);
-    //
-    //        }
-    //    }
-    //
-    //    .circle-indicator {
-    //        width: 24px;
-    //        height: 24px;
-    //        border-radius: 50%;
-    //        border: 2px solid #ccc;
-    //        transition: all 0.2s ease;
-    //        //outline: 1px solid var(--white);
-    //    }
-    //
-    //    .circle-label {
-    //        font-size: 15px;
-    //        font-weight: 400;
-    //        padding-left: 12px;
-    //    }
-    //}
-
-
     &.is-validate {
         & input:invalid {
             background-color: rgba(249, 66, 88, 0.12);

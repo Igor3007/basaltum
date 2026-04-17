@@ -333,6 +333,12 @@
       }
 
     }
+    .form-personal__contacts {
+      gap: 22px;
+      @media screen and (min-width: $w1440) {
+        gap: 32px;
+      }
+    }
   }
   @media screen and (max-width: $w576) {
     .btn{

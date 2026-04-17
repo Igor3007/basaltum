@@ -193,7 +193,7 @@
                               </ul>
                               <div class="form__item">
                                 <label class="additional__label">Количество требуемых квадратных метров:</label>
-                                <input type="text" placeholder="Введите м2">
+                                <input type="text" placeholder="Введите м²">
                               </div>
                             </div>
                           </div>
@@ -285,16 +285,16 @@
                           <div class="form-personal__white-layout">
                             <div class="form-personal__label">Получите персональное предложение</div>
                             <div class="form-personal__userdata">
-                              <div class="form">
+                              <form class="form" action="#" method="POST">
                                 <div class="form__line">
                                   <div class="form__item">
                                     <div class="form__subitem">
-                                      <input type="text" name="user-name" placeholder="ФИО">
+                                      <input type="text" name="user-name" placeholder="ФИО" oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-Я -]/g, '')">
                                     </div>
                                   </div>
                                   <div class="form__item">
                                     <div class="form__subitem">
-                                      <input type="text" name="user-phone" placeholder="Номер телефона *">
+                                      <input type="text" name="user-phone" maxlength="25" data-maska="+375(##)###-##-##" placeholder="Номер телефона *" required>
                                     </div>
                                   </div>
                                   <div class="form__item">
@@ -311,11 +311,11 @@
                                   </div>
                                   <div class="form__note">
                                     <label class="checkbox">
-                                      <input type="checkbox" name="[object Object]"/><span class="checkbox__elem"></span><span class="checkbox__text">Даю согласие на обработку персональных данных согласно нашей  <a href="/policy/">Политике обработки данных</a></span>
+                                      <input type="checkbox" name="agreement" required="required"/><span class="checkbox__elem"></span><span class="checkbox__text">Даю согласие на обработку персональных данных согласно нашей  <a href="/policy/">Политике обработки данных</a></span>
                                     </label>
                                   </div>
                                 </div>
-                              </div>
+                              </form>
                             </div>
                             <div class="form-personal__info">
                               <h3>Свяжитесь с нами</h3>

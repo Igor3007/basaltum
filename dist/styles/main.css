@@ -56,6 +56,7 @@ html,
 body {
   scrollbar-color: var(--main) #fff;
   scrollbar-width: thin !important;
+  scrollbar-gutter: stable;
 }
 
 html * {
@@ -2174,9 +2175,6 @@ select {
   position: absolute;
   opacity: 0;
   cursor: pointer;
-  height: 0;
-  width: 0;
-  display: none;
 }
 
 .checkbox__text {
@@ -5499,6 +5497,10 @@ section.section-home-contacts {
   min-height: 104px;
 }
 
+.calculator .moreContent .form-personal__contacts {
+  gap: 22px;
+}
+
 .top-products {
   overflow: visible;
 }
@@ -8366,6 +8368,10 @@ a[data-tooltip]:hover::before {
 
   .calculator .moreContent .form-personal__white-layout .form .btn {
     min-width: 381px;
+  }
+
+  .calculator .moreContent .form-personal__contacts {
+    gap: 32px;
   }
 
   .products-line__title {

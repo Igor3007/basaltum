@@ -59,12 +59,12 @@ mixin bgimage(url)
 mixin bgimage--nolazy(url)
   span.bgimage(style="background-image: url("+url+")")
 
-mixin checkbox(label, name,  check)
+mixin checkbox(label, name, check, requiredAttr)
   label.checkbox
     if check
-      input(type="checkbox" name=""+name+"" checked="" )
+      input(type="checkbox" name=name checked=check required=requiredAttr)
     else
-      input(type="checkbox" name=""+name+"" )
+      input(type="checkbox" name=name required=requiredAttr)
     span.checkbox__elem
     span.checkbox__text!= label
 

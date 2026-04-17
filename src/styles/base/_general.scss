@@ -62,7 +62,7 @@ html,
 body {
     scrollbar-color: var(--main) #fff;
     scrollbar-width: thin !important;
-
+    scrollbar-gutter: stable;
 
     @media screen and (min-width: $w992) {
         &::-webkit-scrollbar {
