@@ -5323,7 +5323,7 @@ section.section-home-contacts {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .calculator .additionalCheckbox li.openAdd .addCheckbox {
@@ -5338,6 +5338,7 @@ section.section-home-contacts {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  flex-wrap: wrap;
   gap: 8px;
   flex-direction: column;
 }
@@ -5470,6 +5471,20 @@ section.section-home-contacts {
   font-weight: 700 !important;
 }
 
+.calculator .moreContent__item.noResults {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 74px;
+  font-size: 18px;
+  border: 2px solid #ffffff;
+}
+
 .calculator .moreContent__AddText {
   font-weight: 400;
   padding-top: 14px;
@@ -5490,15 +5505,57 @@ section.section-home-contacts {
   padding-bottom: 22px;
 }
 
+.calculator .moreContent .form-personal__white-layout .form .form__item .form__subitem input {
+  height: 52px;
+  min-height: 52px;
+}
+
 .calculator .moreContent .form-personal__white-layout .form .form__item textarea {
   resize: none;
-  padding-top: 12px;
+  padding-top: 14px;
+  padding-bottom: 8px;
   height: 104px;
   min-height: 104px;
 }
 
 .calculator .moreContent .form-personal__contacts {
   gap: 22px;
+}
+
+.calculator .errorText {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+  width: 100%;
+}
+
+.calculator .errorText:not(:empty) {
+  display: block;
+}
+
+.calculator .errorText {
+  animation: fadeInUp 0.2s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.thickness-30-only {
+  display: none;
+}
+
+body.insulating-selected .thickness-30-only {
+  display: block;
 }
 
 .top-products {
@@ -7176,16 +7233,16 @@ a[data-tooltip]:hover::before {
     padding: 20px 24px;
   }
 
-  .calculator .moreContent__item:hover {
+  .calculator .moreContent__item:not(.noResults):hover {
     border: 2px solid var(--green-dark);
     cursor: pointer;
   }
 
-  .calculator .moreContent__item:hover .moreContent__item_product-name {
+  .calculator .moreContent__item:not(.noResults):hover .moreContent__item_product-name {
     color: var(--green-links);
   }
 
-  .calculator .moreContent__item:hover > div:last-child .moreContent__item_line-info {
+  .calculator .moreContent__item:not(.noResults):hover > div:last-child .moreContent__item_line-info {
     color: var(--green-links);
   }
 
@@ -7587,7 +7644,7 @@ a[data-tooltip]:hover::before {
   .calculator .additional ul {
     flex-direction: row;
     align-items: center;
-    gap: 24px;
+    gap: 12px 24px;
   }
 
   .calculator .additional__label {
@@ -7647,8 +7704,8 @@ a[data-tooltip]:hover::before {
   }
 
   .calculator .moreContent .form-personal__white-layout .form .form__item textarea {
-    height: 48px;
-    min-height: 48px;
+    height: 52px;
+    min-height: 52px;
   }
 
   .calculator .moreContent .form-personal__white-layout .form .form__line {
@@ -8367,7 +8424,7 @@ a[data-tooltip]:hover::before {
   }
 
   .calculator .moreContent .form-personal__white-layout .form .btn {
-    min-width: 381px;
+    min-width: 377px;
   }
 
   .calculator .moreContent .form-personal__contacts {

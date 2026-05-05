@@ -67,7 +67,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 24px;
+    flex-wrap: wrap;
+
 
     li{
       &.openAdd{
@@ -87,12 +88,13 @@
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
+      flex-wrap: wrap;
       gap: 8px;
       flex-direction: column;
       @media screen and (min-width: $w992) {
         flex-direction: row;
         align-items: center;
-        gap: 24px;
+        gap: 12px 24px;
       }
     }
     .radio {
@@ -179,7 +181,7 @@
       border: 2px solid #ffffff;
       @media screen and (min-width: $w760) {
         padding: 20px 24px;
-        &:hover{
+        &:not(.noResults):hover{
           border: 2px solid var(--green-dark);
           cursor: pointer;
 
@@ -270,7 +272,19 @@
           }
         }
       }
-
+      &.noResults{
+        background: #FFFFFF;
+        border-radius: 16px;
+        padding: 16px;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        min-height: 74px;
+        font-size: 18px;
+        border: 2px solid #ffffff;
+}
     }
     &__AddText{
       font-weight: 400;
@@ -293,9 +307,16 @@
       }
       .form{
         .form__item {
+          .form__subitem{
+            input {
+              height: 52px;
+              min-height: 52px;
+            }
+          }
           textarea{
             resize: none;
-            padding-top: 12px;
+            padding-top: 14px;
+            padding-bottom: 8px;
             height: 104px;
             min-height: 104px;
           }
@@ -309,8 +330,8 @@
             flex: 1;
             textarea{
 
-              height: 48px;
-              min-height: 48px;
+              height: 52px;
+              min-height: 52px;
             }
           }
           .form__line{
@@ -326,7 +347,7 @@
         }
         @media screen and (min-width: $w1440) {
           .btn{
-            min-width: 381px;
+            min-width: 377px;
           }
         }
 
@@ -346,5 +367,43 @@
       font-size: 16px;
     }
   }
+
+
+  .errorText {
+    color: #f44336;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+    width: 100%;
+    &:not(:empty) {
+      display: block;
+    }
+  }
+
+  .errorText {
+    animation: fadeInUp 0.2s ease;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+
+
+}
+.thickness-30-only {
+  display: none;
+}
+
+body.insulating-selected .thickness-30-only {
+  display: block;
 }
 

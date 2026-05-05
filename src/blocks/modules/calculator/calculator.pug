@@ -1,132 +1,17 @@
-
-
 mixin calculator
     section.section-calculator
-
         .calculator
             .calculator__card
                 form(action='#' method='POST').form
                     .calculator__card_title Выберите подходящие параметры
                     .calculator__card_pre Чтобы подготовить персональное предложение с ценами и сроками производства, пожалуйста, пройдите несколько простых шагов:
-                    .calculator__item
-                        .calculator__item_title 1: Назначение
-                        .additional
-
-                            ul.additionalCheckbox
-                                li(data-tab="0"): +radio('Фасад', 'radio', 'Фасад')
-
-                                li(data-tab="1"): +radio('Утепление', 'radio', 'Утепление')
-
-                                li(data-tab="2"): +radio('Шупомодавление', 'radio', 'Шупомодавление')
-
-                                li(data-tab="3"): +radio('Кровля', 'radio', 'Кровля')
-
-
-                            ul.additionalContend
-                                li(data-content="0")
-                                    .additionalContend__box
-                                        .additional__label Выберите тип фасада (для назначения «Фасады» требуется дополнительное уточнение):
-                                        .additionalContend__box_check
-                                            +radio('Вентилируемый', 'radio2', 'Вентилируемый')
-                                            +radio('Штукатурка', 'radio2', 'Штукатурка')
-
-                                li(data-content="1")
-                                    .additionalContend__box
-                                        .additional__label Выберите тип утепления (для назначения «Утепление» требуется дополнительное уточнение):
-                                        .additionalContend__box_check
-                                            +radio('Базальтум 1', 'radio3', 'Базальтум 1')
-                                            +radio('Базальтум 2', 'radio3', 'Базальтум 2')
-                                            +radio('Базальтум 3', 'radio3', 'Базальтум 3')
-
-                                li(data-content="2")
-                                li(data-content="3")
-
-
-                    .calculator__item
-                        .calculator__item_title 2. Дополнительные параметры
-                        .additional
-                            .additional__label Толщина плиты:
-                            ul
-                                li: +radio('50 мм', 'radioAdd', '50 мм')
-                                li: +radio('100 мм', 'radioAdd', '100 мм')
-
-
-                            .form__item
-                                label.additional__label Количество требуемых квадратных метров:
-                                input(type="text" placeholder="Введите м²")
-
-
-
-
+                    //generation params
                     button.btn.addMoreContent Подобрать утеплители
-
 
                 .moreContent
                     .moreContent__title Подходящие варианты
-                    .moreContent__item(data-modal="/parts/_popup-product.html")
-                        .moreContent__item_product
-                            .moreContent__item_product-img
-                                picture
-                                    img(src="/img/common/product/1.png" loading="lazy")
-                            .moreContent__item_product-name Базальтум Вент 75
-                        .moreContent__item_line
-                            .moreContent__item_line-text Упаковок нужно
-                            .moreContent__item_line-info 3 шт.
-                        .moreContent__item_line
-                            .moreContent__item_line-text Объём в упаковке
-                            .moreContent__item_line-info 0,648 м<sup>3</sup>
-                        .moreContent__item_line
-                            .moreContent__item_line-text Общая стоимость
-                            .moreContent__item_line-info: b 576 руб.<sup>*</sup>
-                    .moreContent__item(data-modal="/parts/_popup-product.html")
-                        .moreContent__item_product
-                            .moreContent__item_product-img
-                                picture
-                                    img(src="/img/common/product/1.png" loading="lazy")
-                            .moreContent__item_product-name Базальтум Вент 90
-                        .moreContent__item_line
-                            .moreContent__item_line-text Упаковок нужно
-                            .moreContent__item_line-info 3 шт.
-                        .moreContent__item_line
-                            .moreContent__item_line-text Объём в упаковке
-                            .moreContent__item_line-info 0,648 м<sup>3</sup>
-                        .moreContent__item_line
-                            .moreContent__item_line-text Общая стоимость
-                            .moreContent__item_line-info: b 684 руб.<sup>*</sup>
-                    .moreContent__item(data-modal="/parts/_popup-product.html")
-                        .moreContent__item_product
-                            .moreContent__item_product-img
-                                picture
-                                    img(src="/img/common/product/1.png" loading="lazy")
-                            .moreContent__item_product-name Базальтум Вент 95
-                        .moreContent__item_line
-                            .moreContent__item_line-text Упаковок нужно
-                            .moreContent__item_line-info 3 шт.
-                        .moreContent__item_line
-                            .moreContent__item_line-text Объём в упаковке
-                            .moreContent__item_line-info 0,648 м<sup>3</sup>
-                        .moreContent__item_line
-                            .moreContent__item_line-text Общая стоимость
-                            .moreContent__item_line-info: b 702 руб.<sup>*</sup>
-                    .moreContent__item(data-modal="/parts/_popup-product.html")
-                        .moreContent__item_product
-                            .moreContent__item_product-img
-                                picture
-                                    img(src="/img/common/product/1.png" loading="lazy")
-                            .moreContent__item_product-name Базальтум Вент 100
-                        .moreContent__item_line
-                            .moreContent__item_line-text Упаковок нужно
-                            .moreContent__item_line-info 3 шт.
-                        .moreContent__item_line
-                            .moreContent__item_line-text Объём в упаковке
-                            .moreContent__item_line-info 0,648 м<sup>3</sup>
-                        .moreContent__item_line
-                            .moreContent__item_line-text Общая стоимость
-                            .moreContent__item_line-info: b 738 руб.<sup>*</sup>
-
                     .moreContent__AddText <sup>*</sup> Стоимость справочная, итоговая будет рассчитана и названа нашими специалистами.
-
-
+                    //generation variants
                     .form-personal__white-layout
                         .form-personal__label Получите персональное предложение
                         .form-personal__userdata
@@ -142,10 +27,10 @@ mixin calculator
                                     .form__item
                                         .form__subitem
                                             button.btn(type="submit") Оставить заявку
-                                    .form__note: +checkbox('Даю согласие на обработку персональных данных согласно нашей  <a href="/policy/">Политике обработки данных</a>', 'agreement', false, 'required')
+                                    .form__note: +checkbox('Даю согласие на обработку персональных данных согласно нашей <a href="/policy/">Политике обработки данных</a>', 'agreement', false, 'required')
                         .form-personal__info
                             h3 Свяжитесь с нами
-                            p Готовы стать вашим надёжным партнёром в энергоэффективном и безопасном строительстве.
+                            p Готовы стать вашим надёжным партнёром в энергоэффективном и безопасном строительстве.
                         .form-personal__contacts
                             .item-contact
                                 .item-contact__label Телефон:
@@ -160,7 +45,3 @@ mixin calculator
                                 .item-contact__link
                                     a(href='mailto:Sales@basaltum.by') Sales@basaltum.by
 
-
-                    //button.btn(data-modal="/parts/_popup-vacancy.html") Подобрать утеплители
-
-                    

@@ -115,173 +115,13 @@
                         <form class="form" action="#" method="POST">
                           <div class="calculator__card_title">Выберите подходящие параметры</div>
                           <div class="calculator__card_pre">Чтобы подготовить персональное предложение с ценами и сроками производства, пожалуйста, пройдите несколько простых шагов:</div>
-                          <div class="calculator__item">
-                            <div class="calculator__item_title">1: Назначение</div>
-                            <div class="additional">
-                              <ul class="additionalCheckbox">
-                                <li data-tab="0">
-                                  <label class="radio">
-                                    <input type="radio" name="radio" value="Фасад"/><span class="radio__elem"></span><span class="radio__text">Фасад</span>
-                                  </label>
-                                </li>
-                                <li data-tab="1">
-                                  <label class="radio">
-                                    <input type="radio" name="radio" value="Утепление"/><span class="radio__elem"></span><span class="radio__text">Утепление</span>
-                                  </label>
-                                </li>
-                                <li data-tab="2">
-                                  <label class="radio">
-                                    <input type="radio" name="radio" value="Шупомодавление"/><span class="radio__elem"></span><span class="radio__text">Шупомодавление</span>
-                                  </label>
-                                </li>
-                                <li data-tab="3">
-                                  <label class="radio">
-                                    <input type="radio" name="radio" value="Кровля"/><span class="radio__elem"></span><span class="radio__text">Кровля</span>
-                                  </label>
-                                </li>
-                              </ul>
-                              <ul class="additionalContend">
-                                <li data-content="0">
-                                  <div class="additionalContend__box">
-                                    <div class="additional__label">Выберите тип фасада (для назначения «Фасады» требуется дополнительное уточнение):</div>
-                                    <div class="additionalContend__box_check">
-                                      <label class="radio">
-                                        <input type="radio" name="radio2" value="Вентилируемый"/><span class="radio__elem"></span><span class="radio__text">Вентилируемый</span>
-                                      </label>
-                                      <label class="radio">
-                                        <input type="radio" name="radio2" value="Штукатурка"/><span class="radio__elem"></span><span class="radio__text">Штукатурка</span>
-                                      </label>
-                                    </div>
-                                  </div>
-                                </li>
-                                <li data-content="1">
-                                  <div class="additionalContend__box">
-                                    <div class="additional__label">Выберите тип утепления (для назначения «Утепление» требуется дополнительное уточнение):</div>
-                                    <div class="additionalContend__box_check">
-                                      <label class="radio">
-                                        <input type="radio" name="radio3" value="Базальтум 1"/><span class="radio__elem"></span><span class="radio__text">Базальтум 1</span>
-                                      </label>
-                                      <label class="radio">
-                                        <input type="radio" name="radio3" value="Базальтум 2"/><span class="radio__elem"></span><span class="radio__text">Базальтум 2</span>
-                                      </label>
-                                      <label class="radio">
-                                        <input type="radio" name="radio3" value="Базальтум 3"/><span class="radio__elem"></span><span class="radio__text">Базальтум 3</span>
-                                      </label>
-                                    </div>
-                                  </div>
-                                </li>
-                                <li data-content="2"></li>
-                                <li data-content="3"></li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="calculator__item">
-                            <div class="calculator__item_title">2. Дополнительные параметры</div>
-                            <div class="additional">
-                              <div class="additional__label">Толщина плиты:</div>
-                              <ul>
-                                <li>
-                                  <label class="radio">
-                                    <input type="radio" name="radioAdd" value="50 мм"/><span class="radio__elem"></span><span class="radio__text">50 мм</span>
-                                  </label>
-                                </li>
-                                <li>
-                                  <label class="radio">
-                                    <input type="radio" name="radioAdd" value="100 мм"/><span class="radio__elem"></span><span class="radio__text">100 мм</span>
-                                  </label>
-                                </li>
-                              </ul>
-                              <div class="form__item">
-                                <label class="additional__label">Количество требуемых квадратных метров:</label>
-                                <input type="text" placeholder="Введите м²">
-                              </div>
-                            </div>
-                          </div>
+                          <!--generation params-->
                           <button class="btn addMoreContent">Подобрать утеплители</button>
                         </form>
                         <div class="moreContent">
                           <div class="moreContent__title">Подходящие варианты</div>
-                          <div class="moreContent__item" data-modal="/parts/_popup-product.html">
-                            <div class="moreContent__item_product">
-                              <div class="moreContent__item_product-img">
-                                <picture><img src="/img/common/product/1.png" loading="lazy"></picture>
-                              </div>
-                              <div class="moreContent__item_product-name">Базальтум Вент 75</div>
-                            </div>
-                            <div class="moreContent__item_line">
-                              <div class="moreContent__item_line-text">Упаковок нужно</div>
-                              <div class="moreContent__item_line-info">3 шт.</div>
-                            </div>
-                            <div class="moreContent__item_line">
-                              <div class="moreContent__item_line-text">Объём в упаковке</div>
-                              <div class="moreContent__item_line-info">0,648 м<sup>3</sup></div>
-                            </div>
-                            <div class="moreContent__item_line">
-                              <div class="moreContent__item_line-text">Общая стоимость</div>
-                              <div class="moreContent__item_line-info"><b>576 руб.<sup>*</sup></b></div>
-                            </div>
-                          </div>
-                          <div class="moreContent__item" data-modal="/parts/_popup-product.html">
-                            <div class="moreContent__item_product">
-                              <div class="moreContent__item_product-img">
-                                <picture><img src="/img/common/product/1.png" loading="lazy"></picture>
-                              </div>
-                              <div class="moreContent__item_product-name">Базальтум Вент 90</div>
-                            </div>
-                            <div class="moreContent__item_line">
-                              <div class="moreContent__item_line-text">Упаковок нужно</div>
-                              <div class="moreContent__item_line-info">3 шт.</div>
-                            </div>
-                            <div class="moreContent__item_line">
-                              <div class="moreContent__item_line-text">Объём в упаковке</div>
-                              <div class="moreContent__item_line-info">0,648 м<sup>3</sup></div>
-                            </div>
-                            <div class="moreContent__item_line">
-                              <div class="moreContent__item_line-text">Общая стоимость</div>
-                              <div class="moreContent__item_line-info"><b>684 руб.<sup>*</sup></b></div>
-                            </div>
-                          </div>
-                          <div class="moreContent__item" data-modal="/parts/_popup-product.html">
-                            <div class="moreContent__item_product">
-                              <div class="moreContent__item_product-img">
-                                <picture><img src="/img/common/product/1.png" loading="lazy"></picture>
-                              </div>
-                              <div class="moreContent__item_product-name">Базальтум Вент 95</div>
-                            </div>
-                            <div class="moreContent__item_line">
-                              <div class="moreContent__item_line-text">Упаковок нужно</div>
-                              <div class="moreContent__item_line-info">3 шт.</div>
-                            </div>
-                            <div class="moreContent__item_line">
-                              <div class="moreContent__item_line-text">Объём в упаковке</div>
-                              <div class="moreContent__item_line-info">0,648 м<sup>3</sup></div>
-                            </div>
-                            <div class="moreContent__item_line">
-                              <div class="moreContent__item_line-text">Общая стоимость</div>
-                              <div class="moreContent__item_line-info"><b>702 руб.<sup>*</sup></b></div>
-                            </div>
-                          </div>
-                          <div class="moreContent__item" data-modal="/parts/_popup-product.html">
-                            <div class="moreContent__item_product">
-                              <div class="moreContent__item_product-img">
-                                <picture><img src="/img/common/product/1.png" loading="lazy"></picture>
-                              </div>
-                              <div class="moreContent__item_product-name">Базальтум Вент 100</div>
-                            </div>
-                            <div class="moreContent__item_line">
-                              <div class="moreContent__item_line-text">Упаковок нужно</div>
-                              <div class="moreContent__item_line-info">3 шт.</div>
-                            </div>
-                            <div class="moreContent__item_line">
-                              <div class="moreContent__item_line-text">Объём в упаковке</div>
-                              <div class="moreContent__item_line-info">0,648 м<sup>3</sup></div>
-                            </div>
-                            <div class="moreContent__item_line">
-                              <div class="moreContent__item_line-text">Общая стоимость</div>
-                              <div class="moreContent__item_line-info"><b>738 руб.<sup>*</sup></b></div>
-                            </div>
-                          </div>
                           <div class="moreContent__AddText"><sup>*</sup> Стоимость справочная, итоговая будет рассчитана и названа нашими специалистами.</div>
+                          <!--generation variants-->
                           <div class="form-personal__white-layout">
                             <div class="form-personal__label">Получите персональное предложение</div>
                             <div class="form-personal__userdata">
@@ -311,7 +151,7 @@
                                   </div>
                                   <div class="form__note">
                                     <label class="checkbox">
-                                      <input type="checkbox" name="agreement" required="required"/><span class="checkbox__elem"></span><span class="checkbox__text">Даю согласие на обработку персональных данных согласно нашей  <a href="/policy/">Политике обработки данных</a></span>
+                                      <input type="checkbox" name="agreement" required="required"/><span class="checkbox__elem"></span><span class="checkbox__text">Даю согласие на обработку персональных данных согласно нашей <a href="/policy/">Политике обработки данных</a></span>
                                     </label>
                                   </div>
                                 </div>
@@ -319,7 +159,7 @@
                             </div>
                             <div class="form-personal__info">
                               <h3>Свяжитесь с нами</h3>
-                              <p>Готовы стать вашим надёжным партнёром в энергоэффективном и безопасном строительстве.</p>
+                              <p>Готовы стать вашим надёжным партнёром в энергоэффективном и безопасном строительстве.</p>
                             </div>
                             <div class="form-personal__contacts">
                               <div class="item-contact">
@@ -338,7 +178,6 @@
                               </div>
                             </div>
                           </div>
-                          <!--button.btn(data-modal="/parts/_popup-vacancy.html") Подобрать утеплители-->
                         </div>
                       </div>
                     </div>

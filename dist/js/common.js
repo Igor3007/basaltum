@@ -940,75 +940,6 @@ if (document.querySelector('.basaltum-catalog')) {
     });
 }
 
-if (document.querySelector('.addMoreContent')) {
-    document.addEventListener('DOMContentLoaded', function() {
-        const addMoreContentBtn = document.querySelector('.addMoreContent');
-        const moreContent = document.querySelector('.moreContent');
-
-        if (addMoreContentBtn && moreContent) {
-            addMoreContentBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                // Add class
-                moreContent.classList.add('open');
-
-                // Optional: Toggle between add/remove
-                // moreContent.classList.toggle('open');
-            });
-        }
-    });
-}
-
-if (document.querySelector('.additionalCheckbox')) {
-    document.addEventListener('DOMContentLoaded', function() {
-        const radioInputs = document.querySelectorAll('.additionalCheckbox input[type="radio"]');
-
-        // Hide all additional content initially
-        document.querySelectorAll('.additionalContend li').forEach(content => {
-            content.style.display = 'none';
-        });
-
-        function showTabContent(tabIndex) {
-            // Remove openAdd from all li
-            document.querySelectorAll('.additionalCheckbox li').forEach(li => {
-                li.classList.remove('openAdd');
-            });
-
-            // Add openAdd to selected li
-            const selectedLi = document.querySelector(`.additionalCheckbox li[data-tab="${tabIndex}"]`);
-            if (selectedLi) {
-                selectedLi.classList.add('openAdd');
-            }
-
-            // Hide all content and show selected
-            document.querySelectorAll('.additionalContend li').forEach(content => {
-                content.style.display = 'none';
-            });
-
-            const selectedContent = document.querySelector(`.additionalContend li[data-content="${tabIndex}"]`);
-            if (selectedContent) {
-                selectedContent.style.display = 'block';
-            }
-        }
-
-        radioInputs.forEach((radio, index) => {
-            radio.addEventListener('change', function() {
-                if (this.checked) {
-                    showTabContent(index);
-                }
-            });
-        });
-
-        // Check for pre-selected radio
-        const checkedRadio = Array.from(radioInputs).find(radio => radio.checked);
-        if (checkedRadio) {
-            const checkedIndex = Array.from(radioInputs).indexOf(checkedRadio);
-            showTabContent(checkedIndex);
-        }
-    });
-}
-
-
 if (document.querySelector('.pricelist__main')) {
     const btnShowMore = document.querySelector('.show-more');
     btnShowMore.addEventListener('click', () => {
@@ -1020,3 +951,516 @@ if (document.querySelector('.pricelist__main')) {
         })
     })
 }
+
+
+// ========== ДАННЫЕ ДЛЯ КАЛЬКУЛЯТОРА ==========
+const calculatorConfig = {
+    purposes: [
+        { value: 'facade', label: 'Фасад', tabIndex: '0', hasAdditional: true, additionalType: 'facade' },
+        { value: 'insulating', label: 'Изоляционные', tabIndex: '1', hasAdditional: false },
+        { value: 'load', label: 'Напольные', tabIndex: '2', hasAdditional: false },
+        { value: 'roof', label: 'Кровля', tabIndex: '3', hasAdditional: true, additionalType: 'roof' },
+        { value: 'universal', label: 'Универсальные', tabIndex: '4', hasAdditional: false },
+        { value: 'sandwich', label: 'Сэндвич панель', tabIndex: '5', hasAdditional: false }
+    ],
+
+    additionalFields: {
+        facade: {
+            title: 'Выберите тип фасада (для назначения «Фасады» требуется дополнительное уточнение):',
+            options: [
+                { value: 'Вентилируемый', label: 'Вентилируемый', name: 'radio2' },
+                { value: 'Штукатурка', label: 'Штукатурка', name: 'radio2' }
+            ],
+            contentIndex: '0'
+        },
+        roof: {
+            title: 'Выберите тип кровли (для назначения «Кровля» требуется дополнительное уточнение):',
+            options: [
+                { value: 'Плоская', label: 'Плоская', name: 'radio3' },
+                { value: 'Скатная', label: 'Скатная', name: 'radio3' }
+            ],
+            contentIndex: '3'
+        }
+    },
+
+    thicknessOptions: [
+        { value: '30', label: '30 мм', name: 'radioAdd', onlyFor: 'insulating' }, // только для insulating
+        { value: '50', label: '50 мм', name: 'radioAdd' },
+        { value: '100', label: '100 мм', name: 'radioAdd' }
+    ]
+};
+
+const basaltum_list = {
+    universal: [
+        {name: 'Базальтум 50', width: 50, boxm3: 0.216, price: 144},
+        {name: 'Базальтум 50', width: 100, boxm3: 0.216, price: 144},
+    ],
+    facade: [
+        {name: 'Базальтум вент 75', width: 50, boxm3: 0.216, price: 192, vent: true},
+        {name: 'Базальтум вент 75', width: 100, boxm3: 0.216, price: 192, vent: true},
+        {name: 'Базальтум вент 90', width: 50, boxm3: 0.216, price: 228, vent: true},
+        {name: 'Базальтум вент 90', width: 100, boxm3: 0.216, price: 288, vent: true},
+        {name: 'Базальтум вент 95', width: 50, boxm3: 0.216, price: 234, vent: true},
+        {name: 'Базальтум вент 95', width: 100, boxm3: 0.216, price: 234, vent: true},
+        {name: 'Базальтум вент 100', width: 50, boxm3: 0.216, price: 246, vent: true},
+        {name: 'Базальтум вент 100', width: 100, boxm3: 0.216, price: 246, vent: true},
+        {name: 'Базальтум фасад 80', width: 50, boxm3: 0.216, price: 204, vent: false},
+        {name: 'Базальтум фасад 80', width: 100, boxm3: 0.216, price: 204, vent: false},
+        {name: 'Базальтум фасад 90', width: 50, boxm3: 0.216, price: 228, vent: false},
+        {name: 'Базальтум фасад 90', width: 100, boxm3: 0.216, price: 228, vent: false},
+        {name: 'Базальтум фасад 95', width: 50, boxm3: 0.216, price: 234, vent: false},
+        {name: 'Базальтум фасад 95', width: 100, boxm3: 0.216, price: 234, vent: false},
+        {name: 'Базальтум фасад 100', width: 50, boxm3: 0.216, price: 246, vent: false},
+        {name: 'Базальтум фасад 100', width: 100, boxm3: 0.216, price: 246, vent: false},
+        {name: 'Базальтум фасад 110', width: 50, boxm3: 0.216, price: 264, vent: false},
+        {name: 'Базальтум фасад 110', width: 100, boxm3: 0.216, price: 264, vent: false},
+        {name: 'Базальтум фасад 120', width: 50, boxm3: 0.216, price: 282, vent: false},
+        {name: 'Базальтум фасад 120', width: 100, boxm3: 0.216, price: 282, vent: false},
+        {name: 'Базальтум фасад 135', width: 50, boxm3: 0.216, price: 306, vent: false},
+        {name: 'Базальтум фасад 135', width: 100, boxm3: 0.216, price: 306, vent: false},
+        {name: 'Базальтум фасад 150', width: 50, boxm3: 0.216, price: 336, vent: false},
+        {name: 'Базальтум фасад 150', width: 100, boxm3: 0.216, price: 336, vent: false},
+    ],
+    roof: [
+        {name: 'Базальтум РУФ 100', width: 50, boxm3: 0.216, price: 246},
+        {name: 'Базальтум РУФ 100', width: 100, boxm3: 0.216, price: 246},
+        {name: 'Базальтум РУФ 115', width: 50, boxm3: 0.216, price: 270},
+        {name: 'Базальтум РУФ 115', width: 100, boxm3: 0.216, price: 270},
+        {name: 'Базальтум РУФ 120', width: 50, boxm3: 0.216, price: 282},
+        {name: 'Базальтум РУФ 120', width: 100, boxm3: 0.216, price: 282},
+        {name: 'Базальтум РУФ 130', width: 50, boxm3: 0.216, price: 300},
+        {name: 'Базальтум РУФ 130', width: 100, boxm3: 0.216, price: 300},
+        {name: 'Базальтум РУФ 135', width: 50, boxm3: 0.216, price: 312},
+        {name: 'Базальтум РУФ 135', width: 100, boxm3: 0.216, price: 312},
+        {name: 'Базальтум РУФ 160', width: 50, boxm3: 0.216, price: 354},
+        {name: 'Базальтум РУФ 160', width: 100, boxm3: 0.216, price: 354},
+        {name: 'Базальтум РУФ 170', width: 50, boxm3: 0.216, price: 372},
+        {name: 'Базальтум РУФ 170', width: 100, boxm3: 0.216, price: 372},
+        {name: 'Базальтум РУФ 185', width: 50, boxm3: 0.216, price: 396},
+        {name: 'Базальтум РУФ 185', width: 100, boxm3: 0.216, price: 396},
+        {name: 'Базальтум РУФ 190', width: 50, boxm3: 0.144, price: 408},
+        {name: 'Базальтум РУФ 190', width: 100, boxm3: 0.144, price: 408},
+    ],
+    load: [
+        {name: 'Базальтум флор 125', width: 50, boxm3: 0.216, price: 288},
+        {name: 'Базальтум флор 125', width: 100, boxm3: 0.216, price: 288},
+        {name: 'Базальтум флор 155', width: 50, boxm3: 0.216, price: 342},
+        {name: 'Базальтум флор 155', width: 100, boxm3: 0.216, price: 342},
+        {name: 'Базальтум флор 180', width: 50, boxm3: 0.216, price: 390},
+        {name: 'Базальтум флор 180', width: 100, boxm3: 0.216, price: 390},
+    ],
+    sandwich: [
+        {name: 'Базальтум сэндвич 95', width: 100, boxm3: 0.226, price: 234},
+        {name: 'Базальтум сэндвич 100', width: 100, boxm3: 0.226, price: 246},
+        {name: 'Базальтум сэндвич C 110', width: 100, boxm3: 0.226, price: 264},
+        {name: 'Базальтум сэндвич K 125', width: 100, boxm3: 0.226, price: 288},
+    ],
+    insulating: [
+        {name: 'Базальтум 30', width: 100, boxm3: 0.288, price: 114},
+        {name: 'Базальтум 35', width: 50, boxm3: 0.226, price: 120},
+        {name: 'Базальтум 35', width: 100, boxm3: 0.288, price: 120},
+        {name: 'Базальтум 40', width: 100, boxm3: 0.288, price: 126},
+        {name: 'Базальтум Аккустик', width: 50, boxm3: 0.216, price: 138},
+        {name: 'Базальтум Аккустик', width: 100, boxm3: 0.288, price: 138},
+        {name: 'Базальтум 60', width: 50, boxm3: 0.226, price: 162},
+        {name: 'Базальтум 60', width: 100, boxm3: 0.216, price: 162},
+        {name: 'Базальтум 70', width: 50, boxm3: 0.216, price: 180},
+        {name: 'Базальтум 70', width: 100, boxm3: 0.216, price: 180},
+        {name: 'Базальтум 80', width: 50, boxm3: 0.216, price: 198},
+        {name: 'Базальтум 80', width: 100, boxm3: 0.216, price: 198},
+        {name: 'Базальтум 90', width: 50, boxm3: 0.216, price: 216},
+        {name: 'Базальтум 90', width: 100, boxm3: 0.216, price: 216},
+        {name: 'Базальтум 100', width: 50, boxm3: 0.216, price: 240},
+        {name: 'Базальтум 100', width: 100, boxm3: 0.216, price: 240},
+        {name: 'Базальтум 110', width: 50, boxm3: 0.216, price: 258},
+        {name: 'Базальтум 110', width: 100, boxm3: 0.216, price: 258},
+        {name: 'Базальтум 120', width: 50, boxm3: 0.216, price: 276},
+        {name: 'Базальтум 120', width: 100, boxm3: 0.216, price: 276},
+        {name: 'Базальтум 130', width: 50, boxm3: 0.216, price: 294},
+        {name: 'Базальтум 130', width: 100, boxm3: 0.216, price: 294},
+        {name: 'Базальтум 140', width: 50, boxm3: 0.216, price: 306},
+        {name: 'Базальтум 140', width: 100, boxm3: 0.216, price: 306},
+        {name: 'Базальтум 150', width: 50, boxm3: 0.216, price: 324},
+        {name: 'Базальтум 150', width: 30, boxm3: 0.216, price: 324},
+        {name: 'Базальтум 150', width: 100, boxm3: 0.216, price: 324},
+        {name: 'Базальтум 160', width: 50, boxm3: 0.216, price: 342},
+        {name: 'Базальтум 160', width: 100, boxm3: 0.216, price: 342},
+        {name: 'Базальтум 170', width: 50, boxm3: 0.216, price: 360},
+        {name: 'Базальтум 170', width: 100, boxm3: 0.216, price: 360},
+        {name: 'Базальтум 180', width: 50, boxm3: 0.216, price: 378},
+        {name: 'Базальтум 180', width: 100, boxm3: 0.216, price: 378},
+        {name: 'Базальтум 190', width: 50, boxm3: 0.144, price: 396},
+        {name: 'Базальтум 190', width: 100, boxm3: 0.144, price: 396},
+        {name: 'Базальтум 200', width: 50, boxm3: 0.144, price: 414},
+        {name: 'Базальтум 200', width: 100, boxm3: 0.144, price: 414},
+    ],
+};
+
+function generateRadio(label, name, value) {
+    return `
+        <label class="radio">
+            <input type="radio" name="${name}" value="${value}">
+            <span class="radio__elem"></span>
+            <span class="radio__text">${label}</span>
+        </label>
+    `;
+}
+
+function generateCalculatorHTML() {
+    return `
+        <div class="calculator__item">
+            <div class="calculator__item_title">1: Назначение</div>
+            <div class="additional">
+                <ul class="additionalCheckbox">
+                    ${calculatorConfig.purposes.map(purpose => `
+                        <li data-tab="${purpose.tabIndex}">
+                            ${generateRadio(purpose.label, 'radio', purpose.value)}
+                        </li>
+                    `).join('')}
+                </ul>
+                <ul class="additionalContend">
+                    ${Object.entries(calculatorConfig.additionalFields).map(([key, field]) => `
+                        <li data-content="${field.contentIndex}">
+                            <div class="additionalContend__box">
+                                <div class="additional__label">${field.title}</div>
+                                <div class="additionalContend__box_check">
+                                    ${field.options.map(option => generateRadio(option.label, option.name, option.value)).join('')}
+                                </div>
+                            </div>
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+        </div>
+        <div class="calculator__item">
+            <div class="calculator__item_title">2. Дополнительные параметры</div>
+            <div class="additional">
+                <div class="additional__label">Толщина плиты:</div>
+                <ul class="additionalParamsCheckbox">
+                    ${calculatorConfig.thicknessOptions.map(option => {
+                        const specialClass = option.value === '30' ? 'thickness-30-only' : '';
+                        return `<li class="${specialClass}">${generateRadio(option.label, option.name, option.value)}</li>`;
+                    }).join('')}
+                </ul>
+                <div class="form__item">
+                    <label class="additional__label">Количество требуемых квадратных метров:</label>
+                    <input type="text" placeholder="Введите м²">
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// ========== ОСНОВНОЙ КОД ==========
+document.addEventListener('DOMContentLoaded', function() {
+    // ========== ИНИЦИАЛИЗАЦИЯ LIGHTBOX ==========
+    const lightbox = new afLightbox({ mobileInBottom: true });
+
+    // ========== ДЕЛЕГИРОВАНИЕ СОБЫТИЙ ДЛЯ DATA-MODAL ==========
+    document.body.addEventListener('click', function(e) {
+        const modalTrigger = e.target.closest('[data-modal]');
+        if (modalTrigger) {
+            e.preventDefault();
+            const modalPath = modalTrigger.getAttribute('data-modal');
+            if (modalPath) {
+                fetch(modalPath)
+                    .then(response => response.text())
+                    .then(html => lightbox.open(html))
+                    .catch(error => {
+                        console.error('Ошибка загрузки модального окна:', error);
+                        lightbox.open('<div style="padding: 20px;">Ошибка загрузки содержимого</div>');
+                    });
+            }
+        }
+    });
+
+    // ========== ГЕНЕРАЦИЯ HTML КАЛЬКУЛЯТОРА ==========
+    const calculatorContainer = document.querySelector('.calculator__card .form');
+    if (calculatorContainer) {
+        const prep = calculatorContainer.querySelector('.calculator__card_pre');
+        if (prep) {
+            const generatedHTML = generateCalculatorHTML();
+            prep.insertAdjacentHTML('afterend', generatedHTML);
+        }
+    }
+
+    // ========== КЭШ ЭЛЕМЕНТОВ ==========
+    const moreContent = document.querySelector('.moreContent');
+    const addMoreContentBtn = document.querySelector('.addMoreContent');
+
+    // ========== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ==========
+    const getSelectedPurpose = () => {
+        const checked = document.querySelector('input[name="radio"]:checked');
+        return checked ? checked.value : null;
+    };
+
+    const getSelectedFacadeType = () => {
+        const checked = document.querySelector('input[name="radio2"]:checked');
+        return checked ? checked.value === 'Вентилируемый' : null;
+    };
+
+    const getSelectedRoofType = () => {
+        const checked = document.querySelector('input[name="radio3"]:checked');
+        return checked ? checked.value : null;
+    };
+
+    const getSelectedWidth = () => {
+        const checked = document.querySelector('input[name="radioAdd"]:checked');
+        return checked ? parseInt(checked.value) : null;
+    };
+
+    const getSquareMeters = () => {
+        const input = document.querySelector('.form__item input[type="text"]');
+        if (!input?.value) return 0;
+        const value = parseFloat(input.value);
+        return isNaN(value) ? 0 : value;
+    };
+
+    // ========== ФУНКЦИИ ДЛЯ ОТОБРАЖЕНИЯ ОШИБОК ==========
+    const clearAllErrors = () => {
+        const allErrors = document.querySelectorAll('.errorText');
+        allErrors.forEach(error => {
+            error.textContent = '';
+            error.style.display = 'none';
+        });
+    };
+
+    const showError = (selector, message) => {
+        const container = document.querySelector(selector);
+        if (!container) return;
+
+        let errorDiv = container.querySelector('.errorText:not(.global-error)');
+        if (!errorDiv) {
+            errorDiv = document.createElement('div');
+            errorDiv.className = 'errorText';
+            container.appendChild(errorDiv);
+        }
+        errorDiv.textContent = message;
+        errorDiv.style.display = 'block';
+    };
+
+    // ========== ОСНОВНЫЕ ФУНКЦИИ ==========
+    const filterProducts = (purpose, ventRequired, width) => {
+        if (!purpose || !basaltum_list[purpose]) return [];
+        let products = [...basaltum_list[purpose]];
+        if (purpose === 'facade' && ventRequired !== null) {
+            products = products.filter(p => p.vent === ventRequired);
+        }
+        if (width) {
+            products = products.filter(p => p.width === width);
+        }
+        return products;
+    };
+
+    const calculatePacks = (needm3, boxm3) => {
+        if (!needm3 || !boxm3 || boxm3 === 0) return 0;
+        return Math.ceil(needm3 / boxm3);
+    };
+
+    const escapeHtml = (str) => {
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    };
+
+    const renderResults = (products, squareMeters, widthInMeters) => {
+        if (!moreContent) return;
+
+        const itemsToRemove = moreContent.querySelectorAll('.moreContent__item');
+        itemsToRemove.forEach(item => item.remove());
+
+        if (!products?.length) {
+            const noResults = document.createElement('div');
+            noResults.className = 'moreContent__item noResults';
+            noResults.innerHTML = '<div>Нет подходящих вариантов</div>';
+            const addText = moreContent.querySelector('.moreContent__AddText');
+            addText ? moreContent.insertBefore(noResults, addText) : moreContent.appendChild(noResults);
+            return;
+        }
+
+        const needm3 = squareMeters * (widthInMeters / 1000);
+
+        products.forEach(product => {
+            const packsCount = calculatePacks(needm3, product.boxm3);
+            const totalPrice = packsCount * product.price;
+            const totalVolume = packsCount * product.boxm3;
+
+            const productCard = document.createElement('div');
+            productCard.className = 'moreContent__item';
+            productCard.setAttribute('data-modal', '/parts/_popup-product.html');
+            productCard.innerHTML = `
+                <div class="moreContent__item_product">
+                    <div class="moreContent__item_product-img">
+                        <picture>
+                            <img src="/img/common/product/1.png" loading="lazy" alt="${escapeHtml(product.name)}">
+                        </picture>
+                    </div>
+                    <div class="moreContent__item_product-name">${escapeHtml(product.name)}</div>
+                </div>
+                <div class="moreContent__item_line">
+                    <div class="moreContent__item_line-text">Упаковок нужно</div>
+                    <div class="moreContent__item_line-info">${packsCount} шт.</div>
+                </div>
+                <div class="moreContent__item_line">
+                    <div class="moreContent__item_line-text">Объём в упаковке</div>
+                    <div class="moreContent__item_line-info">${totalVolume.toFixed(3)} м<sup>3</sup></div>
+                </div>
+                <div class="moreContent__item_line">
+                    <div class="moreContent__item_line-text">Общая стоимость</div>
+                    <div class="moreContent__item_line-info"><b>${totalPrice} руб.</b><sup>*</sup></div>
+                </div>
+            `;
+            const addText = moreContent.querySelector('.moreContent__AddText');
+            addText ? moreContent.insertBefore(productCard, addText) : moreContent.appendChild(productCard);
+        });
+    };
+
+    // Функция валидации формы
+    const validateForm = () => {
+        const purpose = getSelectedPurpose();
+        const width = getSelectedWidth();
+        const squareMeters = getSquareMeters();
+
+        clearAllErrors();
+        let isValid = true;
+
+        if (!purpose) {
+            showError('.additionalCheckbox', 'Выберите тип назначения');
+            isValid = false;
+        }
+        if (!width) {
+            showError('.additionalParamsCheckbox', 'Выберите толщину плиты');
+            isValid = false;
+        }
+        if (squareMeters <= 0 || isNaN(squareMeters)) {
+            showError('.form__item', 'Введите корректное количество квадратных метров');
+            isValid = false;
+        }
+        if (purpose === 'facade') {
+            const ventRequired = getSelectedFacadeType();
+            if (ventRequired === null) {
+                showError('.additionalContend li[data-content="0"]', 'Выберите тип фасада');
+                isValid = false;
+            }
+        } else if (purpose === 'roof') {
+            const roofType = getSelectedRoofType();
+            if (!roofType) {
+                showError('.additionalContend li[data-content="3"]', 'Выберите тип кровли');
+                isValid = false;
+            }
+        }
+        return isValid;
+    };
+
+    const calculateAndDisplay = () => {
+        if (!validateForm()) {
+            if (moreContent) moreContent.classList.remove('open');
+            return;
+        }
+
+        const purpose = getSelectedPurpose();
+        const width = getSelectedWidth();
+        const squareMeters = getSquareMeters();
+
+        if (moreContent) moreContent.classList.add('open');
+
+        if (purpose === 'facade') {
+            const ventRequired = getSelectedFacadeType();
+            renderResults(filterProducts(purpose, ventRequired, width), squareMeters, width);
+        } else {
+            renderResults(filterProducts(purpose, null, width), squareMeters, width);
+        }
+    };
+
+    // ========== ИНИЦИАЛИЗАЦИЯ СОБЫТИЙ ==========
+    if (addMoreContentBtn) {
+        addMoreContentBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            calculateAndDisplay();
+        });
+    }
+
+    if (moreContent) {
+        moreContent.classList.remove('open');
+    }
+
+    // Управление дополнительными блоками
+    const purposeRadios = document.querySelectorAll('input[name="radio"]');
+    const additionalContents = document.querySelectorAll('.additionalContend li');
+
+    const setActiveContent = () => {
+        const selectedPurpose = getSelectedPurpose();
+        additionalContents.forEach(content => {
+            content.style.display = 'none';
+        });
+        if (selectedPurpose === 'facade') {
+            const content = document.querySelector('.additionalContend li[data-content="0"]');
+            if (content) content.style.display = 'block';
+        } else if (selectedPurpose === 'roof') {
+            const content = document.querySelector('.additionalContend li[data-content="3"]');
+            if (content) content.style.display = 'block';
+        }
+        // Удаляем все классы
+        document.body.classList.remove('facade-selected', 'insulating-selected', 'roof-selected');
+
+        // Добавляем класс для выбранного назначения
+        if (selectedPurpose) {
+            document.body.classList.add(`${selectedPurpose}-selected`);
+        }
+        clearAllErrors();
+    };
+
+    purposeRadios.forEach(radio => {
+        radio.addEventListener('change', setActiveContent);
+    });
+
+    // Очистка ошибок при изменении полей
+    const setupRealtimeErrorClearing = () => {
+        document.querySelectorAll('input[name="radioAdd"]').forEach(radio => {
+            radio.addEventListener('change', () => {
+                const errorDiv = document.querySelector('.calculator__item .additional ul .errorText');
+                if (errorDiv) {
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                }
+            });
+        });
+
+        const squareInput = document.querySelector('.form__item input[type="text"]');
+        if (squareInput) {
+            squareInput.addEventListener('input', () => {
+                const errorDiv = document.querySelector('.form__item .errorText');
+                if (errorDiv) {
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                }
+            });
+        }
+
+        document.querySelectorAll('input[name="radio2"]').forEach(radio => {
+            radio.addEventListener('change', () => {
+                const errorDiv = document.querySelector('.additionalContend li[data-content="0"] .errorText');
+                if (errorDiv) {
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                }
+            });
+        });
+
+        document.querySelectorAll('input[name="radio3"]').forEach(radio => {
+            radio.addEventListener('change', () => {
+                const errorDiv = document.querySelector('.additionalContend li[data-content="3"] .errorText');
+                if (errorDiv) {
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                }
+            });
+        });
+    };
+
+    setupRealtimeErrorClearing();
+    setActiveContent();
+});
