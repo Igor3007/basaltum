@@ -201,14 +201,60 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     /* ==================================================
-    maska
-    ==================================================*/
+     maska
+     ==================================================*/
     const {
         MaskInput,
     } = Maska
 
     function initMaska() {
-        new MaskInput("[data-maska]")
+
+        this.mask = {
+            'BY': '+375(##)###-##-##',
+            'RU': '+7(###)###-##-##',
+            'RU8': '#(###)###-##-##',
+        },
+
+            this.active = 'RU'
+
+        document.querySelectorAll('[data-mask]').forEach(input => {
+            input['maska'] = new MaskInput(input, {
+                mask: (value) => {
+                    switch (value.substring(0, 2)) {
+                        case '+3':
+                        case '3':
+                            this.active = 'BY';
+                            break;
+
+                        case '7':
+                        case '+7':
+                            this.active = 'RU';
+                            break;
+
+                        case '8':
+                            this.active = 'RU8';
+                            break;
+                    }
+
+                    input.setAttribute('data-mask', this.mask[this.active])
+                    return this.mask[this.active]
+                }
+            })
+
+
+
+
+            input.addEventListener('blur', (e) => {
+                if (input.hasAttribute('data-mask')) {
+                    const { length } = input.getAttribute('data-mask')
+                    if (input.value.length < length)
+                        input.value = ''
+                }
+            })
+
+        })
+
+
     }
 
     initMaska();
