@@ -5508,6 +5508,7 @@ section.section-home-contacts {
 .calculator .moreContent .form-personal__white-layout .form .form__item .form__subitem input {
   height: 52px;
   min-height: 52px;
+  cursor: pointer;
 }
 
 .calculator .moreContent .form-personal__white-layout .form .form__item textarea {
@@ -5516,6 +5517,11 @@ section.section-home-contacts {
   padding-bottom: 8px;
   height: 104px;
   min-height: 104px;
+  cursor: pointer;
+}
+
+.calculator .moreContent .form-personal__white-layout .form .form__item textarea:hover {
+  border-color: var(--gray-36);
 }
 
 .calculator .moreContent .form-personal__contacts {
@@ -7921,10 +7927,8 @@ a[data-tooltip]:hover::before {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-  }
-
-  .basaltum-catalog__characteristic-content-values .box {
-    flex: 0 0 50%;
+    gap: 12px;
+    flex-wrap: wrap;
   }
 
   .basaltum-catalog__characteristic-content-values .box span strong:not(:last-child) {

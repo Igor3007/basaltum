@@ -20,7 +20,7 @@ mixin calculator
                                     .form__item
                                         .form__subitem: input(type="text" name="user-name" placeholder="ФИО" oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-Я \-]/g, '')")
                                     .form__item
-                                        .form__subitem: input(type="text" name="user-phone" maxlength="25" data-maska="+375(##)###-##-##" placeholder="Номер телефона *" required)
+                                        .form__subitem: input(type="text" name="phone" maxlength="25" data-mask="" placeholder="Номер телефона *" required)
                                     .form__item
                                         .form__subitem: textarea(name="user-comment" placeholder="Дополнительная информация")
                                 .form__line
