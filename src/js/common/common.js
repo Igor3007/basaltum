@@ -1038,107 +1038,116 @@ const calculatorConfig = {
 
 const basaltum_list = {
     universal: [
-        {name: 'Базальтум 50', width: 50, boxm3: 0.216, price: 144},
-        {name: 'Базальтум 50', width: 100, boxm3: 0.216, price: 144},
+        {name: 'Базальтум 50', size: '1200*600', width: 50, boxm3: 0.216, price: 144},
+        {name: 'Базальтум 50', size: '1200*600', width: 100, boxm3: 0.216, price: 144},
     ],
     facade: [
-        {name: 'Базальтум вент 75', width: 50, boxm3: 0.216, price: 192, vent: true},
-        {name: 'Базальтум вент 75', width: 100, boxm3: 0.216, price: 192, vent: true},
-        {name: 'Базальтум вент 90', width: 50, boxm3: 0.216, price: 228, vent: true},
-        {name: 'Базальтум вент 90', width: 100, boxm3: 0.216, price: 288, vent: true},
-        {name: 'Базальтум вент 95', width: 50, boxm3: 0.216, price: 234, vent: true},
-        {name: 'Базальтум вент 95', width: 100, boxm3: 0.216, price: 234, vent: true},
-        {name: 'Базальтум вент 100', width: 50, boxm3: 0.216, price: 246, vent: true},
-        {name: 'Базальтум вент 100', width: 100, boxm3: 0.216, price: 246, vent: true},
-        {name: 'Базальтум фасад 80', width: 50, boxm3: 0.216, price: 204, vent: false},
-        {name: 'Базальтум фасад 80', width: 100, boxm3: 0.216, price: 204, vent: false},
-        {name: 'Базальтум фасад 90', width: 50, boxm3: 0.216, price: 228, vent: false},
-        {name: 'Базальтум фасад 90', width: 100, boxm3: 0.216, price: 228, vent: false},
-        {name: 'Базальтум фасад 95', width: 50, boxm3: 0.216, price: 234, vent: false},
-        {name: 'Базальтум фасад 95', width: 100, boxm3: 0.216, price: 234, vent: false},
-        {name: 'Базальтум фасад 100', width: 50, boxm3: 0.216, price: 246, vent: false},
-        {name: 'Базальтум фасад 100', width: 100, boxm3: 0.216, price: 246, vent: false},
-        {name: 'Базальтум фасад 110', width: 50, boxm3: 0.216, price: 264, vent: false},
-        {name: 'Базальтум фасад 110', width: 100, boxm3: 0.216, price: 264, vent: false},
-        {name: 'Базальтум фасад 120', width: 50, boxm3: 0.216, price: 282, vent: false},
-        {name: 'Базальтум фасад 120', width: 100, boxm3: 0.216, price: 282, vent: false},
-        {name: 'Базальтум фасад 135', width: 50, boxm3: 0.216, price: 306, vent: false},
-        {name: 'Базальтум фасад 135', width: 100, boxm3: 0.216, price: 306, vent: false},
-        {name: 'Базальтум фасад 150', width: 50, boxm3: 0.216, price: 336, vent: false},
-        {name: 'Базальтум фасад 150', width: 100, boxm3: 0.216, price: 336, vent: false},
+        {name: 'Базальтум вент 75', size: '1200*600', width: 50, boxm3: 0.216, price: 192, vent: true},
+        {name: 'Базальтум вент 75', size: '1200*600', width: 100, boxm3: 0.216, price: 192, vent: true},
+        {name: 'Базальтум вент 90', size: '1200*600', width: 50, boxm3: 0.216, price: 228, vent: true},
+        {name: 'Базальтум вент 90', size: '1200*600', width: 100, boxm3: 0.216, price: 288, vent: true},
+        {name: 'Базальтум вент 95', size: '1200*600', width: 50, boxm3: 0.216, price: 234, vent: true},
+        {name: 'Базальтум вент 95', size: '1200*600', width: 100, boxm3: 0.216, price: 234, vent: true},
+        {name: 'Базальтум вент 100', size: '1200*600', width: 50, boxm3: 0.216, price: 246, vent: true},
+        {name: 'Базальтум вент 100', size: '1200*600', width: 100, boxm3: 0.216, price: 246, vent: true},
+        {name: 'Базальтум фасад 80', size: '1200*600', width: 50, boxm3: 0.216, price: 204, vent: false},
+        {name: 'Базальтум фасад 80', size: '1200*600', width: 100, boxm3: 0.216, price: 204, vent: false},
+        {name: 'Базальтум фасад 90', size: '1200*600', width: 50, boxm3: 0.216, price: 228, vent: false},
+        {name: 'Базальтум фасад 90', size: '1200*600', width: 100, boxm3: 0.216, price: 228, vent: false},
+        {name: 'Базальтум фасад 95', size: '1200*600', width: 50, boxm3: 0.216, price: 234, vent: false},
+        {name: 'Базальтум фасад 95', size: '1200*600', width: 100, boxm3: 0.216, price: 234, vent: false},
+        {name: 'Базальтум фасад 100', size: '1200*600', width: 50, boxm3: 0.216, price: 246, vent: false},
+        {name: 'Базальтум фасад 100', size: '1200*600', width: 100, boxm3: 0.216, price: 246, vent: false},
+        {name: 'Базальтум фасад 110', size: '1200*600', width: 50, boxm3: 0.216, price: 264, vent: false},
+        {name: 'Базальтум фасад 110', size: '1200*600', width: 100, boxm3: 0.216, price: 264, vent: false},
+        {name: 'Базальтум фасад 120', size: '1200*600', width: 50, boxm3: 0.216, price: 282, vent: false},
+        {name: 'Базальтум фасад 120', size: '1200*600', width: 100, boxm3: 0.216, price: 282, vent: false},
+        {name: 'Базальтум фасад 135', size: '1200*600', width: 50, boxm3: 0.216, price: 306, vent: false},
+        {name: 'Базальтум фасад 135', size: '1200*600', width: 100, boxm3: 0.216, price: 306, vent: false},
+        {name: 'Базальтум фасад 150', size: '1200*600', width: 50, boxm3: 0.216, price: 336, vent: false},
+        {name: 'Базальтум фасад 150', size: '1200*600', width: 100, boxm3: 0.216, price: 336, vent: false},
     ],
     roof: [
-        {name: 'Базальтум РУФ 100', width: 50, boxm3: 0.216, price: 246},
-        {name: 'Базальтум РУФ 100', width: 100, boxm3: 0.216, price: 246},
-        {name: 'Базальтум РУФ 115', width: 50, boxm3: 0.216, price: 270},
-        {name: 'Базальтум РУФ 115', width: 100, boxm3: 0.216, price: 270},
-        {name: 'Базальтум РУФ 120', width: 50, boxm3: 0.216, price: 282},
-        {name: 'Базальтум РУФ 120', width: 100, boxm3: 0.216, price: 282},
-        {name: 'Базальтум РУФ 130', width: 50, boxm3: 0.216, price: 300},
-        {name: 'Базальтум РУФ 130', width: 100, boxm3: 0.216, price: 300},
-        {name: 'Базальтум РУФ 135', width: 50, boxm3: 0.216, price: 312},
-        {name: 'Базальтум РУФ 135', width: 100, boxm3: 0.216, price: 312},
-        {name: 'Базальтум РУФ 160', width: 50, boxm3: 0.216, price: 354},
-        {name: 'Базальтум РУФ 160', width: 100, boxm3: 0.216, price: 354},
-        {name: 'Базальтум РУФ 170', width: 50, boxm3: 0.216, price: 372},
-        {name: 'Базальтум РУФ 170', width: 100, boxm3: 0.216, price: 372},
-        {name: 'Базальтум РУФ 185', width: 50, boxm3: 0.216, price: 396},
-        {name: 'Базальтум РУФ 185', width: 100, boxm3: 0.216, price: 396},
-        {name: 'Базальтум РУФ 190', width: 50, boxm3: 0.144, price: 408},
-        {name: 'Базальтум РУФ 190', width: 100, boxm3: 0.144, price: 408},
+        {name: 'Базальтум РУФ 100', size: '1200*600', width: 50, boxm3: 0.216, price: 246, slant: false},
+        {name: 'Базальтум РУФ 100', size: '1200*600', width: 100, boxm3: 0.216, price: 246, slant: false},
+        {name: 'Базальтум РУФ 115', size: '1200*600', width: 50, boxm3: 0.216, price: 270, slant: false},
+        {name: 'Базальтум РУФ 115', size: '1200*600', width: 100, boxm3: 0.216, price: 270, slant: false},
+        {name: 'Базальтум РУФ 120', size: '1200*600', width: 50, boxm3: 0.216, price: 282, slant: false},
+        {name: 'Базальтум РУФ 120', size: '1200*600', width: 100, boxm3: 0.216, price: 282, slant: false},
+        {name: 'Базальтум РУФ 130', size: '1200*600', width: 50, boxm3: 0.216, price: 300, slant: false},
+        {name: 'Базальтум РУФ 130', size: '1200*600', width: 100, boxm3: 0.216, price: 300, slant: false},
+        {name: 'Базальтум РУФ 135', size: '1200*600', width: 50, boxm3: 0.216, price: 312, slant: false},
+        {name: 'Базальтум РУФ 135', size: '1200*600', width: 100, boxm3: 0.216, price: 312, slant: false},
+        {name: 'Базальтум РУФ 160', size: '1200*600', width: 50, boxm3: 0.216, price: 354, slant: false},
+        {name: 'Базальтум РУФ 160', size: '1200*600', width: 100, boxm3: 0.216, price: 354, slant: false},
+        {name: 'Базальтум РУФ 170', size: '1200*600', width: 50, boxm3: 0.216, price: 372, slant: false},
+        {name: 'Базальтум РУФ 170', size: '1200*600', width: 100, boxm3: 0.216, price: 372, slant: false},
+        {name: 'Базальтум РУФ 185', size: '1200*600', width: 50, boxm3: 0.216, price: 396, slant: false},
+        {name: 'Базальтум РУФ 185', size: '1200*600', width: 100, boxm3: 0.216, price: 396, slant: false},
+        {name: 'Базальтум РУФ 190', size: '1200*600', width: 50, boxm3: 0.144, price: 408, slant: false},
+        {name: 'Базальтум РУФ 190', size: '1200*600', width: 100, boxm3: 0.144, price: 408, slant: false},
+
+        {name: 'Базальтум 30', size: '1200*600', width: 100, boxm3: 0.288, price: 114, slant: true},
+        {name: 'Базальтум 35', size: '1200*600', width: 50, boxm3: 0.226, price: 120, slant: true},
+        {name: 'Базальтум 35', size: '1200*600', width: 100, boxm3: 0.288, price: 120, slant: true},
+        {name: 'Базальтум 40', size: '1200*600', width: 100, boxm3: 0.288, price: 126, slant: true},
+        {name: 'Базальтум 50', size: '1200*600', width: 50, boxm3: 0.216, price: 144, slant: true},
+        {name: 'Базальтум 50', size: '1200*600', width: 100, boxm3: 0.216, price: 144, slant: true},
+        {name: 'Базальтум 60', size: '1200*600', width: 50, boxm3: 0.226, price: 162, slant: true},
+        {name: 'Базальтум 60', size: '1200*600', width: 100, boxm3: 0.216, price: 162, slant: true},
     ],
     load: [
-        {name: 'Базальтум флор 125', width: 50, boxm3: 0.216, price: 288},
-        {name: 'Базальтум флор 125', width: 100, boxm3: 0.216, price: 288},
-        {name: 'Базальтум флор 155', width: 50, boxm3: 0.216, price: 342},
-        {name: 'Базальтум флор 155', width: 100, boxm3: 0.216, price: 342},
-        {name: 'Базальтум флор 180', width: 50, boxm3: 0.216, price: 390},
-        {name: 'Базальтум флор 180', width: 100, boxm3: 0.216, price: 390},
+        {name: 'Базальтум флор 125', size: '1200*600', width: 50, boxm3: 0.216, price: 288},
+        {name: 'Базальтум флор 125', size: '1200*600', width: 100, boxm3: 0.216, price: 288},
+        {name: 'Базальтум флор 155', size: '1200*600', width: 50, boxm3: 0.216, price: 342},
+        {name: 'Базальтум флор 155', size: '1200*600', width: 100, boxm3: 0.216, price: 342},
+        {name: 'Базальтум флор 180', size: '1200*600', width: 50, boxm3: 0.216, price: 390},
+        {name: 'Базальтум флор 180', size: '1200*600', width: 100, boxm3: 0.216, price: 390},
     ],
     sandwich: [
-        {name: 'Базальтум сэндвич 95', width: 100, boxm3: 0.226, price: 234},
-        {name: 'Базальтум сэндвич 100', width: 100, boxm3: 0.226, price: 246},
-        {name: 'Базальтум сэндвич C 110', width: 100, boxm3: 0.226, price: 264},
-        {name: 'Базальтум сэндвич K 125', width: 100, boxm3: 0.226, price: 288},
+        {name: 'Базальтум сэндвич 95', size: '1200*627', width: 100, boxm3: 0.226, price: 234},
+        {name: 'Базальтум сэндвич 100', size: '1200*627', width: 100, boxm3: 0.226, price: 246},
+        {name: 'Базальтум сэндвич C 110', size: '1200*627', width: 100, boxm3: 0.226, price: 264},
+        {name: 'Базальтум сэндвич K 125', size: '1200*627', width: 100, boxm3: 0.226, price: 288},
     ],
     insulating: [
-        {name: 'Базальтум 30', width: 100, boxm3: 0.288, price: 114},
-        {name: 'Базальтум 35', width: 50, boxm3: 0.226, price: 120},
-        {name: 'Базальтум 35', width: 100, boxm3: 0.288, price: 120},
-        {name: 'Базальтум 40', width: 100, boxm3: 0.288, price: 126},
-        {name: 'Базальтум Аккустик', width: 50, boxm3: 0.216, price: 138},
-        {name: 'Базальтум Аккустик', width: 100, boxm3: 0.288, price: 138},
-        {name: 'Базальтум 60', width: 50, boxm3: 0.226, price: 162},
-        {name: 'Базальтум 60', width: 100, boxm3: 0.216, price: 162},
-        {name: 'Базальтум 70', width: 50, boxm3: 0.216, price: 180},
-        {name: 'Базальтум 70', width: 100, boxm3: 0.216, price: 180},
-        {name: 'Базальтум 80', width: 50, boxm3: 0.216, price: 198},
-        {name: 'Базальтум 80', width: 100, boxm3: 0.216, price: 198},
-        {name: 'Базальтум 90', width: 50, boxm3: 0.216, price: 216},
-        {name: 'Базальтум 90', width: 100, boxm3: 0.216, price: 216},
-        {name: 'Базальтум 100', width: 50, boxm3: 0.216, price: 240},
-        {name: 'Базальтум 100', width: 100, boxm3: 0.216, price: 240},
-        {name: 'Базальтум 110', width: 50, boxm3: 0.216, price: 258},
-        {name: 'Базальтум 110', width: 100, boxm3: 0.216, price: 258},
-        {name: 'Базальтум 120', width: 50, boxm3: 0.216, price: 276},
-        {name: 'Базальтум 120', width: 100, boxm3: 0.216, price: 276},
-        {name: 'Базальтум 130', width: 50, boxm3: 0.216, price: 294},
-        {name: 'Базальтум 130', width: 100, boxm3: 0.216, price: 294},
-        {name: 'Базальтум 140', width: 50, boxm3: 0.216, price: 306},
-        {name: 'Базальтум 140', width: 100, boxm3: 0.216, price: 306},
-        {name: 'Базальтум 150', width: 50, boxm3: 0.216, price: 324},
-        {name: 'Базальтум 150', width: 30, boxm3: 0.216, price: 324},
-        {name: 'Базальтум 150', width: 100, boxm3: 0.216, price: 324},
-        {name: 'Базальтум 160', width: 50, boxm3: 0.216, price: 342},
-        {name: 'Базальтум 160', width: 100, boxm3: 0.216, price: 342},
-        {name: 'Базальтум 170', width: 50, boxm3: 0.216, price: 360},
-        {name: 'Базальтум 170', width: 100, boxm3: 0.216, price: 360},
-        {name: 'Базальтум 180', width: 50, boxm3: 0.216, price: 378},
-        {name: 'Базальтум 180', width: 100, boxm3: 0.216, price: 378},
-        {name: 'Базальтум 190', width: 50, boxm3: 0.144, price: 396},
-        {name: 'Базальтум 190', width: 100, boxm3: 0.144, price: 396},
-        {name: 'Базальтум 200', width: 50, boxm3: 0.144, price: 414},
-        {name: 'Базальтум 200', width: 100, boxm3: 0.144, price: 414},
+        {name: 'Базальтум 30', size: '1200*600', width: 100, boxm3: 0.288, price: 114},
+        {name: 'Базальтум 35', size: '1200*600', width: 50, boxm3: 0.226, price: 120},
+        {name: 'Базальтум 35', size: '1200*600', width: 100, boxm3: 0.288, price: 120},
+        {name: 'Базальтум 40', size: '1200*600', width: 100, boxm3: 0.288, price: 126},
+        {name: 'Базальтум Аккустик', size: '1200*600', width: 50, boxm3: 0.216, price: 138},
+        {name: 'Базальтум Аккустик', size: '1200*600', width: 100, boxm3: 0.288, price: 138},
+        {name: 'Базальтум 60', size: '1200*600', width: 50, boxm3: 0.226, price: 162},
+        {name: 'Базальтум 60', size: '1200*600', width: 100, boxm3: 0.216, price: 162},
+        {name: 'Базальтум 70', size: '1200*600', width: 50, boxm3: 0.216, price: 180},
+        {name: 'Базальтум 70', size: '1200*600', width: 100, boxm3: 0.216, price: 180},
+        {name: 'Базальтум 80', size: '1200*600', width: 50, boxm3: 0.216, price: 198},
+        {name: 'Базальтум 80', size: '1200*600', width: 100, boxm3: 0.216, price: 198},
+        {name: 'Базальтум 90', size: '1200*600', width: 50, boxm3: 0.216, price: 216},
+        {name: 'Базальтум 90', size: '1200*600', width: 100, boxm3: 0.216, price: 216},
+        {name: 'Базальтум 100', size: '1200*600', width: 50, boxm3: 0.216, price: 240},
+        {name: 'Базальтум 100', size: '1200*600', width: 100, boxm3: 0.216, price: 240},
+        {name: 'Базальтум 110', size: '1200*600', width: 50, boxm3: 0.216, price: 258},
+        {name: 'Базальтум 110', size: '1200*600', width: 100, boxm3: 0.216, price: 258},
+        {name: 'Базальтум 120', size: '1200*600', width: 50, boxm3: 0.216, price: 276},
+        {name: 'Базальтум 120', size: '1200*600', width: 100, boxm3: 0.216, price: 276},
+        {name: 'Базальтум 130', size: '1200*600', width: 50, boxm3: 0.216, price: 294},
+        {name: 'Базальтум 130', size: '1200*600', width: 100, boxm3: 0.216, price: 294},
+        {name: 'Базальтум 140', size: '1200*600', width: 50, boxm3: 0.216, price: 306},
+        {name: 'Базальтум 140', size: '1200*600', width: 100, boxm3: 0.216, price: 306},
+        {name: 'Базальтум 150', size: '1200*600', width: 50, boxm3: 0.216, price: 324},
+        {name: 'Базальтум 150', size: '1200*600', width: 30, boxm3: 0.216, price: 324},
+        {name: 'Базальтум 150', size: '1200*600', width: 100, boxm3: 0.216, price: 324},
+        {name: 'Базальтум 160', size: '1200*600', width: 50, boxm3: 0.216, price: 342},
+        {name: 'Базальтум 160', size: '1200*600', width: 100, boxm3: 0.216, price: 342},
+        {name: 'Базальтум 170', size: '1200*600', width: 50, boxm3: 0.216, price: 360},
+        {name: 'Базальтум 170', size: '1200*600', width: 100, boxm3: 0.216, price: 360},
+        {name: 'Базальтум 180', size: '1200*600', width: 50, boxm3: 0.216, price: 378},
+        {name: 'Базальтум 180', size: '1200*600', width: 100, boxm3: 0.216, price: 378},
+        {name: 'Базальтум 190', size: '1200*600', width: 50, boxm3: 0.144, price: 396},
+        {name: 'Базальтум 190', size: '1200*600', width: 100, boxm3: 0.144, price: 396},
+        {name: 'Базальтум 200', size: '1200*600', width: 50, boxm3: 0.144, price: 414},
+        {name: 'Базальтум 200', size: '1200*600', width: 100, boxm3: 0.144, price: 414},
     ],
 };
 
@@ -1247,7 +1256,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const getSelectedRoofType = () => {
         const checked = document.querySelector('input[name="radio3"]:checked');
-        return checked ? checked.value : null;
+        return checked ? checked.value : null; // Возвращаем 'Плоская' или 'Скатная'
     };
 
     const getSelectedWidth = () => {
@@ -1286,15 +1295,29 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // ========== ОСНОВНЫЕ ФУНКЦИИ ==========
-    const filterProducts = (purpose, ventRequired, width) => {
+    const filterProducts = (purpose, ventRequired, width, roofType) => {
         if (!purpose || !basaltum_list[purpose]) return [];
         let products = [...basaltum_list[purpose]];
+
+        // Фильтрация для фасада
         if (purpose === 'facade' && ventRequired !== null) {
             products = products.filter(p => p.vent === ventRequired);
         }
+
+        // Фильтрация для кровли по типу
+        if (purpose === 'roof' && roofType) {
+            if (roofType === 'Скатная') {
+                products = products.filter(p => p.slant === true);
+            } else if (roofType === 'Плоская') {
+                products = products.filter(p => p.slant === false || p.slant === undefined);
+            }
+        }
+
+        // Фильтрация по толщине
         if (width) {
             products = products.filter(p => p.width === width);
         }
+
         return products;
     };
 
@@ -1348,7 +1371,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="moreContent__item_line">
                     <div class="moreContent__item_line-text">Упаковок нужно</div>
-                    <div class="moreContent__item_line-info">${packsCount} шт.</div>
+                    <div class="moreContent__item_line-info">
+                        ${packsCount} шт. <br/>
+                        ${escapeHtml(product.size)}*${product.width}
+                    </div>
                 </div>
                 <div class="moreContent__item_line">
                     <div class="moreContent__item_line-text">Объём в упаковке</div>
@@ -1415,9 +1441,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (purpose === 'facade') {
             const ventRequired = getSelectedFacadeType();
-            renderResults(filterProducts(purpose, ventRequired, width), squareMeters, width);
+            renderResults(filterProducts(purpose, ventRequired, width, null), squareMeters, width);
+        } else if (purpose === 'roof') {
+            const roofType = getSelectedRoofType();
+            renderResults(filterProducts(purpose, null, width, roofType), squareMeters, width);
         } else {
-            renderResults(filterProducts(purpose, null, width), squareMeters, width);
+            renderResults(filterProducts(purpose, null, width, null), squareMeters, width);
         }
     };
 
